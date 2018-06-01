@@ -5,11 +5,48 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Font awesome Iconts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Google Fonts API -->
+    <link rel="stylesheet"
+         href="https://fonts.googleapis.com/css?family=Tangerine|Raleway">
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
   </head>
 
   <body>
-    <%= yield %>
+    <!-- Start navbar here -->
+    <div class="container-fluid navigationbar">
+      <%= link_to "Bake is Yum", root_path, { :class=>"logo" }%>
+      <i class="fa fa-bars navigationbar-bars"></i>
+      <hr class="navigationbar-hr-collapse">
+      <ul>
+         <li><%= link_to "About", basic_pages_about_path %></li>
+         <li><%= link_to "Recipies", basic_pages_recipies_path %></li>
+         <li><%= link_to "FAQ", basic_pages_faq_path %></li>
+         <li><%= link_to "Contact", basic_pages_contact_path %></li>
+      </ul>
+    </div> <!-- end container-fluid -->
+    <!-- End navbar here -->
+
+    <!-- Main body here -->
+    <div class="anchor">
+      <%= yield %>
+    </div>
+
+    <!-- Start footer here -->
+    <footer>
+      <div class="container-fluid">
+        &copy; 2018 Elina Charalampous
+      </div> <!-- end container-fluid -->
+    </footer>
+    <!-- End footer here -->
   </body>
 </html>
