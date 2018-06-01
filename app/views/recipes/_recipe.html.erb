@@ -1,0 +1,16 @@
+<% if recipe.name and recipe.image_url %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <%= link_to recipe, :action => 'go' do %>
+      <div class="recipe-card">
+        <div class="recipe-img">
+          <%= image_tag( recipe.image_url , class: "img-responsive", alt: recipe.name) %>
+        </div>
+        <p><%= recipe.name %></p>
+        <div class ="recipe-links-index">
+          <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_recipe_path(recipe) %>
+          <%= link_to '<i class="fa fa-trash-o" ></i>'.html_safe, recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div> <!-- end recipe-links-index -->
+      </div> <!-- end recipe-card -->
+    <% end %>
+  </div>
+<% end %>

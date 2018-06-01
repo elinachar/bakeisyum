@@ -1,0 +1,45 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.recipe-card {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #aaf0d1;
+  overflow: hidden;
+}
+
+.recipe-card:hover img {
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.recipe-img {
+  overflow: hidden;
+}
+
+.recipe-card img {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s
+}
+
+.recipe-card p {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #32251d;
+}
+
+.recipe-links-index {
+  float: right;
+}
+
+.recipe-links-index i {
+  font-size: 18px;
+  color: #32251d;
+  padding: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}

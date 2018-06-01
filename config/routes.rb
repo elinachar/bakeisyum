@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :recipes
   get 'basic_pages/index'
   get 'basic_pages/about'
   get 'basic_pages/contact'
