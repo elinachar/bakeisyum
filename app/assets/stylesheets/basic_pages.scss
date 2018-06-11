@@ -1,3 +1,25 @@
 // Place all the styles related to the basic_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Contact Page
+.address h2 {
+  font-size: 20px;
+}
+
+address i {
+  font-size: 20px !important;
+  color: #aaf0d1;
+  padding-right: 10px;
+}
+
+.contact-form {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form-group {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}

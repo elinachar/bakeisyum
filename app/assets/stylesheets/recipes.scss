@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h2, h6, p {
+  text-align: center;
+}
+
+h2 {
+}
+
+h6 {
+  color: #aaf0d1;
+  font-size: 16px;
+  font-style: italic;
+}
 
 .recipe-card {
   text-align: center;
@@ -42,4 +54,76 @@
   padding: 5px;
   margin-bottom: 5px;
   display: inline-block;
+}
+
+.social-share-button {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #67cabc;
+  background-color: #fefefc;
+  text-align: center;
+  width: auto;
+  float: right;
+  padding-left: 15px;
+  margin-right: 30px;
+}
+
+
+.social-share-button .ssb-pinterest:hover,
+.social-share-button .ssb-facebook:hover,
+.social-share-button .ssb-twitter:hover,
+.social-share-button .ssb-google_plus:hover,
+.social-share-button .ssb-email:hover{
+  color: #67cabc;
+}
+
+.social-share-button .ssb-pinterest,
+.social-share-button .ssb-facebook,
+.social-share-button .ssb-twitter,
+.social-share-button .ssb-google_plus,
+.social-share-button .ssb-email {
+    background-image: none !important;
+    color: #aaf0d1;
+    padding-right: 35px;
+}
+
+.social-share-button .ssb-pinterest:before,
+.social-share-button .ssb-facebook:before,
+.social-share-button .ssb-twitter:before,
+.social-share-button .ssb-google_plus:before,
+.social-share-button .ssb-email:before {
+  background-image: none;
+  font-family: 'FontAwesome';
+  font-size: 30px;
+}
+
+.social-share-button .ssb-pinterest:before {
+   content: "\f231";
+   content: "\f0d3";
+   // content: "\f0d2";
+}
+
+.social-share-button .ssb-facebook:before {
+   content: "\f082";
+   // content: "\f39e";
+}
+
+.social-share-button .ssb-twitter:before {
+   content: "\f099";
+   content: "\f081";
+}
+
+.social-share-button .ssb-google_plus:before {
+  content: "\f0d4";
+  // content: "\f0d5";
+  // content: "\f2b3";
+}
+
+.social-share-button .ssb-email:before {
+   content: "\f0e0";
+   content: "\f199";
+}
+
+.recipe-links-show {
+  clear: both;
 }

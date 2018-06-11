@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-md-offset-2 recipe">
+      <%= image_tag( @recipe.image_url , class: "img-responsive", alt: @recipe.name) %>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description %>
-</p>
+    <div class="col-sm-12">
+      <h2><%= @recipe.name %></h2>
+      <% t = @recipe.updated_at %>
+      <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
+      <p><%= @recipe.description %></p>
+    </div>
+  </div> <!-- end row -->
+</div> <!-- end container -->
 
-<p>
-  <strong>Serving:</strong>
-  <%= @recipe.serving %>
-</p>
+<%= social_share_button_tag(@recipe.name) %>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @recipe.image_url %>
-</p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<div class="recipe-links-show">
+  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+  <%= link_to 'Back', recipes_path %>
+<div>

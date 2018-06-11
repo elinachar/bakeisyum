@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require social-share-button
  *= require_self
  */
 
@@ -57,6 +58,7 @@ a:-webkit-any-link {
 .navigationbar-hr-collapse {
   display: none;
 }
+
 .navigationbar ul {
   list-style-type: none;
   margin: 0;
@@ -165,7 +167,7 @@ footer {
   }
 
 
-}
+
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
