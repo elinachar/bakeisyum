@@ -1,4 +1,5 @@
 class BasicPagesController < ApplicationController
   def index
+    @recipes = Recipe.last(3)
   end
 end
