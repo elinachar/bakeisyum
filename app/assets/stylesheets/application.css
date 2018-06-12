@@ -164,13 +164,4 @@ footer {
     /* display: none; */
     display: unset;
     text-align: left;
-    padding: none;
   }
-
-
-
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-
-}
