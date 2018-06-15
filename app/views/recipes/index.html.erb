@@ -2,6 +2,10 @@
 
 <h1>Recipes</h1>
 
+<div class="row btn-new-recipe">
+  <%= link_to '<span class="glyphicon glyphicon-plus-sign"></span> Add New Recipe'.html_safe, new_recipe_path, class: 'btn btn-default col-xs-12 col-md-3 col-md-offset-9' %>
+</div><!-- end row -->
+
 <div class="container">
   <div class="row">
     <%= render @recipes %>
@@ -9,5 +13,3 @@
 </div> <!-- end container -->
 
 <br>
-
-<%= link_to 'New Recipe', new_recipe_path %>

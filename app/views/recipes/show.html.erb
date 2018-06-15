@@ -19,6 +19,6 @@
 
 
 <div class="recipe-links-show">
-  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-  <%= link_to 'Back', recipes_path %>
-<div>
+  <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
+  <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to all Recipes'.html_safe, recipes_path, class: 'btn btn-default' %>
+</div>
