@@ -1,0 +1,111 @@
+// Application
+body {
+  margin: 0;
+}
+
+html, body {
+ height: 100%; /* for the sticky footer */
+ font-family: 'Raleway', 'serif';
+ color: #33483e;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+/* apply text-decoration:none to all links of the app (it does not work when applied on other styles) */
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+/* Navigation Bar */
+.navigationbar {
+  text-align: center;
+  border-bottom: solid;
+  border-color: #aaf0d1;
+  border-width: 0.5px;
+  background-color: #fefefc;
+
+}
+
+.logo {
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+  color: #aaf0d1;
+}
+
+.logo:hover {
+  color: #aaf0d1;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.navigationbar-hr-collapse {
+  display: none;
+}
+
+.navigationbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.navigationbar li a {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #aaf0d1;
+  font-size: 18px;
+}
+
+.navigationbar li a:hover {
+  color: #67cabc;
+}
+
+.navigationbar-bars {
+  display: none;
+  font-size: 22px;
+  border-style: solid;
+  border-width: 0.2px;
+  padding: 10px;
+  margin-top: 11px;
+  margin-right: 10px;
+  color: #aaf0d1;
+}
+
+.navigationbar-bars:hover {
+  background-color: #f6fdfa;
+  cursor: pointer;
+}
+
+/* Main Body */
+
+.anchor {
+   min-height: 100%; /* for the sticky footer */
+   margin-bottom: -3em; /* for the sticky footer */
+ }
+
+.anchor:after {
+ content: ""; /* for the sticky footer */
+ display: block; /* for the sticky footer */
+}
+
+
+/* Footer **/
+
+footer, .anchor:after {
+ height: 3em;
+}
+
+footer {
+ background-color: #aaf0d1;
+ color: #777;
+ border-top-style: solid;
+ border-color: #67cabc;
+ border-top-width: 1px;
+ margin-top: 20px
+}
