@@ -11,7 +11,6 @@ html, body {
 
 /** Define colors of the page **/
 :root {
-  /* --blue: #435666; */
   --mint: #aaf0d1;
   --dark-mint: #67cabc;
   --off-white: #fefefc;
@@ -35,7 +34,6 @@ a:-webkit-any-link {
   border-color: var(--mint);
   border-width: 0.5px;
   background-color: var(--off-white);
-
 }
 
 .logo {
