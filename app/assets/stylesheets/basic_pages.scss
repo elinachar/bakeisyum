@@ -19,15 +19,6 @@
   transform: translateY(-50%);
 }
 
-.btn {
-  background-color: var(--mint);
-  color: #33483e;
-}
-
-.btn:hover {
-  background-color: #99d8bc;
-}
-
 .recipe-lading-card {
   text-align: center;
   margin-top: 20px;
@@ -65,46 +56,4 @@ address i {
 
 .btn-submit {
   text-align: center;
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-  .logo {
-    float: left;
-  }
-
-  .navigationbar-bars {
-    display: inline-block;
-    float: right;
-  }
-
-  .navigationbar-hr-collapse {
-    display: block;
-    margin: 0px -15px;
-    clear:both;
-  }
-
-  .navigationbar ul {
-    overflow: auto;
-    clear:both;
-    display: block;
-    text-align: left;
-  }
-
-  .navigationbar li {
-    float: none !important;
-    padding: 10px 6px;
-  }
-
-  .navigationbar ul hr {
-    padding: 0;
-    margin: 0;
-  }
-
-  .navigationbar ul li a{
-    /* display: none; */
-    display: unset;
-    text-align: left;
-  }
-
 }

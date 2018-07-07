@@ -13,6 +13,7 @@ html, body {
 :root {
   --mint: #aaf0d1;
   --dark-mint: #67cabc;
+  --dark-grey-mint: #86cead;
   --off-white: #fefefc;
   --grey: #ccc;
 }
@@ -21,14 +22,22 @@ h1 {
   text-align: center;
 }
 
-
 /* apply text-decoration:none to all links of the app (it does not work when applied on other styles) */
 a:-webkit-any-link {
   text-decoration: none;
 }
 
+.btn {
+  background-color: var(--mint);
+  color: #33483e;
+}
+
+.btn:hover {
+  background-color: #99d8bc;
+}
+
 /* Navigation Bar */
-.navigationbar {
+.navigation-bar {
   text-align: center;
   border-bottom: solid;
   border-color: var(--mint);
@@ -47,11 +56,11 @@ a:-webkit-any-link {
   text-shadow: 1px 1px 2px grey;
 }
 
-.navigationbar-hr-collapse {
+.navigation-bar-hr-collapse {
   display: none;
 }
 
-.navigationbar ul {
+.navigation-bar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -60,7 +69,7 @@ a:-webkit-any-link {
   justify-content: center;
 }
 
-.navigationbar li a {
+.navigation-bar li a {
   display: inline-block;
   text-align: center;
   padding: 14px 16px;
@@ -69,11 +78,15 @@ a:-webkit-any-link {
   font-size: 18px;
 }
 
-.navigationbar li a:hover {
-  color: var(--dark-mint);
+.navigation-bar li:hover {
+  cursor: pointer;
 }
 
-.navigationbar-bars {
+.navigation-bar li a:hover {
+  color: var(--dark-grey-mint);
+}
+
+.navigation-bar-bars {
   display: none;
   font-size: 22px;
   border-style: solid;
@@ -84,7 +97,7 @@ a:-webkit-any-link {
   color: var(--mint);
 }
 
-.navigationbar-bars:hover {
+.navigation-bar-bars:hover {
   background-color: #f6fdfa;
   cursor: pointer;
 }
@@ -115,4 +128,45 @@ footer {
  border-color: var(--grey);
  border-top-width: 1px;
  margin-top: 20px
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .logo {
+    float: left;
+  }
+
+  .navigation-bar ul {
+    display: none;
+  }
+
+  .navigation-bar-bars {
+    display: inline-block;
+    float: right;
+  }
+
+
+  .navigation-bar-hr-collapse {
+    display: block;
+    margin: 0px -15px;
+    clear:both;
+  }
+
+  .navigation-bar.responsive ul {
+    overflow: auto;
+    clear:both;
+    display: block;
+    text-align: left;
+  }
+
+  .navigation-bar.responsive li {
+    float: none !important;
+    padding: 5px 6px;
+  }
+
+  .navigation-bar.responsive ul hr {
+    padding: 0;
+    margin: 0;
+  }
+
 }

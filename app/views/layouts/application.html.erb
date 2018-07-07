@@ -23,10 +23,10 @@
 
   <body>
     <!-- Start navbar here -->
-    <div class="container-fluid navigationbar">
+    <div class="container-fluid navigation-bar" id="navbar">
       <%= link_to "Bake is Yum", root_path, { :class=>"logo" }%>
-      <i class="fa fa-bars navigationbar-bars"></i>
-      <hr class="navigationbar-hr-collapse">
+      <i class="fa fa-bars navigation-bar-bars"></i>
+      <hr class="navigation-bar-hr-collapse">
       <ul>
          <li><%= link_to "About", basic_pages_about_path %></li>
          <li><%= link_to "Recipies", recipes_path %></li>
