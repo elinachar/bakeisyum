@@ -58,6 +58,9 @@ a:-webkit-any-link {
 
 .navigation-bar-hr-collapse {
   display: none;
+  margin: 0px -15px;
+  clear:both;
+  // border-color: var(--dark-grey-mint);
 }
 
 .navigation-bar ul {
@@ -131,42 +134,35 @@ footer {
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-  .logo {
-    float: left;
-  }
+@media only screen and (max-width: 767px) {
+ .logo {
+   float: left;
+ }
 
-  .navigation-bar ul {
-    display: none;
-  }
+ .navigation-bar ul {
+   display: none;
+ }
 
-  .navigation-bar-bars {
-    display: inline-block;
-    float: right;
-  }
+ .navigation-bar-bars {
+   display: inline-block;
+   float: right;
+ }
 
+ .navigation-bar.responsive ul {
+   overflow: auto;
+   clear:both;
+   display: block;
+   text-align: left;
+ }
 
-  .navigation-bar-hr-collapse {
-    display: block;
-    margin: 0px -15px;
-    clear:both;
-  }
+ .navigation-bar.responsive li {
+   float: none !important;
+   padding: 5px 6px;
+ }
 
-  .navigation-bar.responsive ul {
-    overflow: auto;
-    clear:both;
-    display: block;
-    text-align: left;
-  }
-
-  .navigation-bar.responsive li {
-    float: none !important;
-    padding: 5px 6px;
-  }
-
-  .navigation-bar.responsive ul hr {
-    padding: 0;
-    margin: 0;
-  }
+ .navigation-bar.responsive ul hr {
+   padding: 0;
+   margin: 0;
+ }
 
 }
