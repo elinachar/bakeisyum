@@ -9,6 +9,9 @@
 <div class="container">
   <div class="row">
     <%= render @recipes %>
+    <div class="col-xs-12">
+      <%= will_paginate @recipes %>
+    </div>
   </div> <!-- end row -->
 </div> <!-- end container -->
 

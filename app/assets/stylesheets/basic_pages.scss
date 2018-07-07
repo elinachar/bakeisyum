@@ -20,7 +20,7 @@
 }
 
 .btn {
-  background-color: #aaf0d1;
+  background-color: var(--mint);
   color: #33483e;
 }
 
@@ -48,7 +48,7 @@
 
 address i {
   font-size: 20px !important;
-  color: #aaf0d1;
+  color: var(--mint);
   padding-right: 10px;
 }
 
