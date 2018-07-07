@@ -67,3 +67,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Gem for user authentication (at bottom of gem file)
+gem 'devise'
+
+# Gem for user authorization (https://github.com/CanCanCommunity/cancancan)
+gem 'cancancan', '~> 2.0'

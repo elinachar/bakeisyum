@@ -37,9 +37,21 @@
     </div> <!-- end container-fluid -->
     <!-- End navbar here -->
 
-    <!-- Main body here -->
+    <!-- main body here -->
     <div class="anchor">
-      <%= yield %>
+      <!-- flash messages -->
+      <div class="container">
+        <% if notice %>
+          <p id="notice" class="alert alert-info", role="alert"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p id="alert" class="alert alert-danger", role="alert"><%= alert %></p>
+        <% end %>
+      </div>
+
+      <div class="main-body">
+        <%= yield %>
+      </div>
     </div>
 
     <!-- Start footer here -->
