@@ -34,6 +34,7 @@ a:-webkit-any-link {
 
 .btn:hover {
   background-color: #99d8bc;
+  // background-color: var(--dark-grey-mint);
 }
 
 /* Navigation Bar */
@@ -135,6 +136,14 @@ footer {
 
 /* Landscape phone to portrait tablet */
 @media only screen and (max-width: 767px) {
+  :root {
+    --mint: #86cead;
+    --dark-mint: #67cabc;
+    --dark-grey-mint: #6ba48a;
+    --off-white: #fefefc;
+    --grey: #ccc;
+  }
+
  .logo {
    float: left;
  }
