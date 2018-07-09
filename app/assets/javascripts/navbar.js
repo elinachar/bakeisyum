@@ -1,17 +1,24 @@
 $(document).on('turbolinks:load', function() {
 
+  // Responsive Navigation Bar
   $(".navigation-bar-bars").click(function() {
-    var navbar = document.getElementById("navbar");
-    var navbarHr = $(".navigation-bar-hr-collapse");
-    if (navbar.className === "container-fluid navigation-bar") {
-        navbar.className += " responsive";
-        navbarHr.css("display","block");
-        $(".navigation-bar-bars").css("background-color", "#f6fdfa");
-    } else {
-        navbar.className = "container-fluid navigation-bar";
-        navbarHr.css("display","none");
-        $(".navigation-bar-bars").css("background-color", "var(--off-white)");
-    };
+    $(".navigation-bar-bars, .navigation-bar-hr-collapse, .navigation-bar-main-body").toggleClass("collapsed");
+    console.log("collapsed")
   });
+
+  // Dropdown menu for login
+  function slideLoginDropdown() {
+    var x =  $(".login-dropdown")
+    if ($(window).width() > 991) {
+      if (x.css("display") == "none") {
+        x.slideDown();
+      } else {
+        x.slideUp();
+      };
+    };
+  };
+
+  $(".login i").click(slideLoginDropdown).mouseover(slideLoginDropdown);
+  $(".login-dropdown").mouseleave(slideLoginDropdown);
 
 });

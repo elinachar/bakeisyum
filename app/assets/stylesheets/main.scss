@@ -37,6 +37,10 @@ a:-webkit-any-link {
   // background-color: var(--dark-grey-mint);
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* Navigation Bar */
 .navigation-bar {
   text-align: center;
@@ -64,9 +68,12 @@ a:-webkit-any-link {
   // border-color: var(--dark-grey-mint);
 }
 
+.nav-links {
+  padding: 0; //for not search-form covers links in sm to medium screen
+}
+
 .navigation-bar ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   overflow: hidden;
   display: flex;
@@ -82,11 +89,20 @@ a:-webkit-any-link {
   font-size: 18px;
 }
 
+.navigation-bar li:first-child a {
+  padding-left: 0;
+}
+
+.navigation-bar li:last-child a {
+  padding-right: 0;
+}
+
 .navigation-bar li:hover {
   cursor: pointer;
 }
 
-.navigation-bar li a:hover {
+.navigation-bar li a:hover,
+.glyphicon-search:hover {
   color: var(--dark-grey-mint);
 }
 
@@ -104,6 +120,95 @@ a:-webkit-any-link {
 .navigation-bar-bars:hover {
   background-color: #f6fdfa;
   cursor: pointer;
+}
+
+.search-form {
+  padding: 10px 0;
+}
+
+.search-input {
+  padding-right: 0;
+}
+
+.search-form .form-group {
+  margin: 0;
+  width: 100%;
+}
+
+.search-input .form-control{
+  border-color: var(--mint);
+  // visibility: hidden;
+}
+
+.search-button {
+  padding: 4px 0 0 0;
+  cursor: pointer;
+  font-size: 21px;
+  background-color: var(--off-white);
+  color: var(--mint);
+  border-style: none;
+}
+
+.search-button:focus,
+.search-button:active {
+  outline: none !important;
+}
+
+.login {
+  padding: 14px 0;
+}
+
+.login span {
+  display: none;
+  color: var(--mint);
+  font-size: 18px;
+}
+
+.login i {
+  color: var(--mint);
+  font-size: 25px;
+  position: absolute;
+  left: 10px;
+}
+
+.login i:hover {
+  cursor: pointer;
+  color: var(--dark-grey-mint);
+}
+
+
+.login-dropdown {
+  display: none;
+  margin-top: -20px;
+}
+
+.login-dropdown:hover {
+  cursor: pointer;
+}
+
+.login-dropdown-box {
+  background-color: var(--mint);
+  color: white;
+  font-size: 15px;
+  padding: 15px 8px;
+  margin-top: -10px;
+  z-index: 1;
+  width: 150px;
+}
+
+.login-dropdown-box p {
+  margin: 0;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid var(--mint);
+  margin-bottom: 10px;
+  margin-left: 55%;
+
 }
 
 /* Main Body */
@@ -135,7 +240,7 @@ footer {
 }
 
 /* Landscape phone to portrait tablet */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   :root {
     --mint: #86cead;
     --dark-mint: #67cabc;
@@ -144,34 +249,73 @@ footer {
     --grey: #ccc;
   }
 
- .logo {
-   float: left;
- }
+  .logo {
+    float: left;
+    margin-left: 15px;
+  }
 
- .navigation-bar ul {
-   display: none;
- }
+  .navigation-bar-main-body {
+    display: none;
+  }
 
- .navigation-bar-bars {
-   display: inline-block;
-   float: right;
- }
+  .navigation-bar-bars {
+    display: inline-block;
+    float: right;
+  }
 
- .navigation-bar.responsive ul {
-   overflow: auto;
-   clear:both;
-   display: block;
-   text-align: left;
- }
+  .navigation-bar-bars.collapsed {
+    background-color: #f6fdfa;
+  }
 
- .navigation-bar.responsive li {
-   float: none !important;
-   padding: 5px 6px;
- }
+  .navigation-bar-hr-collapse.collapsed,
+  .navigation-bar-main-body.collapsed {
+    display: block;
+  }
 
- .navigation-bar.responsive ul hr {
-   padding: 0;
-   margin: 0;
- }
+  .navigation-bar-main-body.collapsed ul {
+    text-align: left;
+    display: block;
+  }
+
+  .navigation-bar li:first-child a {
+    padding-left: 16px;
+  }
+
+  .search-input {
+    padding-right: 15px;
+  }
+
+  .search-form .form-control {
+    visibility: visible;
+  }
+
+  .search-button span {
+    position: absolute;
+    left: 0;
+    padding-top: 5px;
+  }
+
+  .navigation-bar-main-body .login span  {
+    display: inline-block;
+  }
+
+  .login {
+    text-align: left;
+    padding-left: 16px;
+    margin-top: -10px;
+  }
+
+  .login i {
+    position: relative;
+  }
+
+  .login-dropdown {
+    display: none !important;
+  }
+
+  .navigation-bar-main-body.collapsed ul hr {
+    padding: 0;
+    margin: 0;
+  }
 
 }

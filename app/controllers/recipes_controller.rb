@@ -4,7 +4,13 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all.paginate(:page => params[:page], :per_page => 6).order("created_at DESC")
+    if params[:q]
+      @search_term = params[:q]
+      @recipes = Recipe.search(@search_term)
+    else
+      @recipes = Recipe.all
+    end
+    @recipes = @recipes.paginate(:page => params[:page], :per_page => 6).order("created_at DESC")
   end
 
   # GET /recipes/1

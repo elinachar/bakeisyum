@@ -24,16 +24,55 @@
 
   <body>
     <!-- Start navbar here -->
-    <div class="container-fluid navigation-bar" id="navbar">
-      <%= link_to "Bake is Yum", root_path, { :class=>"logo" }%>
-      <i class="fa fa-bars navigation-bar-bars"></i>
-      <hr class="navigation-bar-hr-collapse">
-      <ul>
-         <li><%= link_to "About", basic_pages_about_path %></li>
-         <li><%= link_to "Recipies", recipes_path %></li>
-         <!-- <li><%= link_to "FAQ", basic_pages_faq_path %></li> -->
-         <li><%= link_to "Contact", basic_pages_contact_path %></li>
-      </ul>
+    <div class="container-fluid navigation-bar">
+      <div class="row">
+        <%= link_to "Bake is Yum", root_path, { :class=>"logo" }%>
+        <i class="fa fa-bars navigation-bar-bars"></i>
+        <hr class="navigation-bar-hr-collapse">
+      </div>
+      <div class="row navigation-bar-main-body">
+        <div class="col-md-offset-4 col-md-4 nav-links">
+          <ul>
+             <li><%= link_to "About", basic_pages_about_path %></li>
+             <li><%= link_to "Recipies", recipes_path %></li>
+             <!-- <li><%= link_to "FAQ", basic_pages_faq_path %></li> -->
+             <li><%= link_to "Contact", basic_pages_contact_path %></li>
+          </ul>
+        </div>
+
+        <div class="col-md-1 col-md-push-3 login">
+          <span>Login</span><i class="fa fa-user-circle-o"></i>
+          <% if user_signed_in? %>
+                <%= link_to('<span>Logout</span><i class="fa fa-user-circle-o"></i>'.html_safe, destroy_user_session_path, method: :delete) %>
+            <% else %>
+                <%= link_to('<span>LoginM/span><i class="fa fa-user-circle-o"></i>'.html_safe, new_user_session_path) %>
+            <% end %>
+        </div>
+
+        <%= form_with(url: recipes_path, method: 'get', local: true, class: 'search-form form-horizontal col-md-3 col-md-pull-1') do |form| %>
+          <div class="form-group">
+            <div class="col-xs-10 search-input">
+              <%= form.text_field :q, id: 'q', value: params[:q], placeholder: "Search...", size: 40, class: 'form-control' %>
+            </div>
+            <%= button_tag(class: 'search-button col-xs-2') do %>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <% end %>
+          </div>
+        <% end %>
+      </div><!-- end row -->
+
+      <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2 login-dropdown">
+          <div class="arrow-up"></div>
+          <div class="login-dropdown-box">
+            <p>Login / Sign up</p>
+          </div>
+        </div>
+      </div><!-- end row -->
+
+
+
     </div> <!-- end container-fluid -->
     <!-- End navbar here -->
 
