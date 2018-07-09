@@ -8,6 +8,12 @@
 
 <div class="container">
   <div class="row">
+    <% if @search_term && !@search_term.empty? %>
+      <div class="col-xs-12 search-results">
+        <h4 class="text-center">Search results for:</h4>
+        <p><%= @search_term %></p>
+      </div>
+    <% end %>
     <%= render @recipes %>
     <div class="col-xs-12">
       <%= will_paginate @recipes %>

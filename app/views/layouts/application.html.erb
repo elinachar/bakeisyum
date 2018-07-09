@@ -24,16 +24,43 @@
 
   <body>
     <!-- Start navbar here -->
-    <div class="container-fluid navigation-bar" id="navbar">
-      <%= link_to "Bake is Yum", root_path, { :class=>"logo" }%>
-      <i class="fa fa-bars navigation-bar-bars"></i>
-      <hr class="navigation-bar-hr-collapse">
-      <ul>
-         <li><%= link_to "About", basic_pages_about_path %></li>
-         <li><%= link_to "Recipies", recipes_path %></li>
-         <!-- <li><%= link_to "FAQ", basic_pages_faq_path %></li> -->
-         <li><%= link_to "Contact", basic_pages_contact_path %></li>
-      </ul>
+    <div class="container-fluid navigation-bar">
+      <div class="row">
+        <%= link_to "Bake is Yum", root_path, { :class=>"logo" }%>
+        <i class="fa fa-bars navigation-bar-bars"></i>
+        <hr class="navigation-bar-hr-collapse">
+      </div>
+      <div class="row navigation-bar-main-body">
+        <div class="col-xs-12 col-sm-offset-4 col-sm-4 nav-links">
+          <ul>
+             <li><%= link_to "About", basic_pages_about_path %></li>
+             <li><%= link_to "Recipies", recipes_path %></li>
+             <!-- <li><%= link_to "FAQ", basic_pages_faq_path %></li> -->
+             <li><%= link_to "Contact", basic_pages_contact_path %></li>
+          </ul>
+        </div>
+
+        <%= form_with(url: recipes_path, method: 'get', local: true, class: 'search-form form-horizontal col-xs-12 col-sm-3') do |form| %>
+          <div class="form-group">
+            <div class="col-xs-10 search-input">
+              <%= form.text_field :q, id: 'q', value: params[:q], placeholder: "Search...", size: 40, class: 'form-control' %>
+            </div>
+            <%= button_tag(class: 'search-button col-xs-2') do %>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="col-xs-12 col-sm-1 login">
+          <span>Login</span><i class="fa fa-user-circle-o"></i>
+        </div>
+
+
+
+      </div>
+
+
+
     </div> <!-- end container-fluid -->
     <!-- End navbar here -->
 
