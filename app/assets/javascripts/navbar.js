@@ -3,7 +3,6 @@ $(document).on('turbolinks:load', function() {
   // Responsive Navigation Bar
   $(".navigation-bar-bars").click(function() {
     $(".navigation-bar-bars, .navigation-bar-hr-collapse, .navigation-bar-main-body").toggleClass("collapsed");
-    console.log("collapsed")
   });
 
   // Dropdown menu for login
@@ -20,5 +19,9 @@ $(document).on('turbolinks:load', function() {
 
   $(".login i").click(slideLoginDropdown).mouseover(slideLoginDropdown);
   $(".login-dropdown").mouseleave(slideLoginDropdown);
+
+  $(".login").hover(function() {
+    $(".login span, .login i").toggleClass("hover-color");
+  });
 
 });
