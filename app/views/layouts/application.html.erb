@@ -31,7 +31,7 @@
         <hr class="navigation-bar-hr-collapse">
       </div>
       <div class="row navigation-bar-main-body">
-        <div class="col-xs-12 col-sm-offset-4 col-sm-4 nav-links">
+        <div class="col-md-offset-4 col-md-4 nav-links">
           <ul>
              <li><%= link_to "About", basic_pages_about_path %></li>
              <li><%= link_to "Recipies", recipes_path %></li>
@@ -40,7 +40,11 @@
           </ul>
         </div>
 
-        <%= form_with(url: recipes_path, method: 'get', local: true, class: 'search-form form-horizontal col-xs-12 col-sm-3') do |form| %>
+        <div class="col-md-1 col-md-push-3 login">
+          <span>Login</span><i class="fa fa-user-circle-o"></i>
+        </div>
+
+        <%= form_with(url: recipes_path, method: 'get', local: true, class: 'search-form form-horizontal col-md-3 col-md-pull-1') do |form| %>
           <div class="form-group">
             <div class="col-xs-10 search-input">
               <%= form.text_field :q, id: 'q', value: params[:q], placeholder: "Search...", size: 40, class: 'form-control' %>
@@ -51,9 +55,7 @@
           </div>
         <% end %>
 
-        <div class="col-xs-12 col-sm-1 login">
-          <span>Login</span><i class="fa fa-user-circle-o"></i>
-        </div>
+
 
 
 

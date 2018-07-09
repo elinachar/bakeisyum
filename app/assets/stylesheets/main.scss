@@ -205,7 +205,7 @@ footer {
 }
 
 /* Landscape phone to portrait tablet */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   :root {
     --mint: #86cead;
     --dark-mint: #67cabc;
@@ -234,7 +234,7 @@ footer {
 
   .navigation-bar-hr-collapse.collapsed,
   .navigation-bar-main-body.collapsed {
-  display: block;
+    display: block;
   }
 
   .navigation-bar-main-body.collapsed ul {
@@ -267,6 +267,7 @@ footer {
   .login {
     text-align: left;
     padding-left: 16px;
+    margin-top: -10px;
   }
 
   .login i {
