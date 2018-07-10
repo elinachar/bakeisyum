@@ -76,11 +76,14 @@ a:-webkit-any-link {
   list-style-type: none;
   padding: 0;
   overflow: hidden;
-  display: flex;
   justify-content: center;
 }
 
-.navigation-bar li a {
+.navigation-bar-main-body ul{
+  display: flex;
+}
+
+.navigation-bar-main-body li a {
   display: inline-block;
   text-align: center;
   padding: 14px 16px;
@@ -89,19 +92,19 @@ a:-webkit-any-link {
   font-size: 18px;
 }
 
-.navigation-bar li:first-child a {
+.navigation-bar-main-body li:first-child a {
   padding-left: 0;
 }
 
-.navigation-bar li:last-child a {
+.navigation-bar-main-body li:last-child a {
   padding-right: 0;
 }
 
-.navigation-bar li:hover {
+.navigation-bar li a:hover {
   cursor: pointer;
 }
 
-.navigation-bar li a:hover,
+.navigation-bar-main-body li a:hover,
 .glyphicon-search:hover {
   color: var(--dark-grey-mint);
 }
@@ -176,13 +179,13 @@ a:-webkit-any-link {
   color: var(--dark-grey-mint);
 }
 
-.login-dropdown {
+.login-collapsed {
   display: none;
-  margin-top: -20px;
 }
 
-.login-dropdown:hover {
-  cursor: pointer;
+.login-dropdown {
+  // display: none;
+  margin-top: -20px;
 }
 
 .login-dropdown-box {
@@ -193,11 +196,28 @@ a:-webkit-any-link {
   width: 150px;
 }
 
+.login-dropdown-box ul {
+  margin-bottom: 0;
+}
+
+.login-dropdown-box,
 .login-dropdown-box a {
-  margin: 0;
-  text-decoration: none;
   color: white;
   font-size: 15px;
+}
+
+.login-dropdown-box li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.login-dropdown-box li:first-child {
+  border-bottom: solid;
+  border-color: white;
+  border-width: 1px;
+}
+
+.login-dropdown-box p {
+  margin-bottom: 5px;
 }
 
 .login-dropdown-box a:hover {
@@ -214,7 +234,22 @@ a:-webkit-any-link {
   margin-left: 55%;
 }
 
+.login-collapsed p {
+  color: var(--mint);
+  font-size: 18px;
+  text-align: left;
+}
+
+.login-collapsed p i {
+  float: right;
+  padding-right: 40px;
+}
+
 /* Main Body */
+
+.alert {
+  margin-top: 20px;
+}
 
 .anchor {
    min-height: 100%; /* for the sticky footer */
@@ -275,7 +310,7 @@ footer {
     display: block;
   }
 
-  .navigation-bar-main-body.collapsed ul {
+  .navigation-bar-main-body.collapsed .nav-links ul {
     text-align: left;
     display: block;
   }
@@ -300,6 +335,18 @@ footer {
 
   .navigation-bar-main-body .login span  {
     display: inline-block;
+  }
+
+  .login-md {
+    display: none;
+  }
+
+  .login-collapsed  {
+    display: block;
+  }
+
+  .login-collapsed ul {
+    display: none;
   }
 
   .login {

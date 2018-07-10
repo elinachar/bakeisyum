@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
 
-  $(".alert").delay(4000).animate({ opacity: 0 }, 3000, function(){
-    $(".main-body").animate({marginTop: '-=72px'}, 1500).css("margin-top", "0px");
-  });
+  // Slide up flash messages when show up
+  $(".alert").delay(4000).slideUp(3000);
 
 });

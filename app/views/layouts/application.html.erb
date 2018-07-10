@@ -41,11 +41,21 @@
         </div>
 
         <div class="col-md-1 col-md-push-3 login">
-          <% if user_signed_in? %>
-            <%= link_to('<span>Logout</span><i class="fa fa-user-circle-o"></i>'.html_safe, destroy_user_session_path, method: :delete) %>
-          <% else %>
-            <%= link_to('<span>Login</span><i class="fa fa-user-circle-o"></i>'.html_safe, new_user_session_path) %>
-          <% end %>
+          <i class="fa fa-user-circle-o login-md"></i>
+          <div class="login-collapsed">
+            <% if user_signed_in? %>
+              <p>Hi <b><%= current_user.first_name %>!<i class="fa fa-angle-down"></i></p></b>
+              <ul>
+                <li><%= link_to('My account', user_path(current_user)) %></li>
+                <% if current_user.admin? %>
+                  <li><%= link_to('Manage users', users_path) %><li>
+                <% end %>
+                <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+              </ul>
+            <% else %>
+              <%= link_to('<span>Login</span><i class="fa fa-user-circle-o"></i>'.html_safe, new_user_session_path) %>
+            <% end %>
+          </div>
         </div>
 
         <%= form_with(url: recipes_path, method: 'get', local: true, class: 'search-form form-horizontal col-md-3 col-md-pull-1') do |form| %>
@@ -66,7 +76,14 @@
           <div class="arrow-up"></div>
           <div class="login-dropdown-box">
             <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <ul>
+                <li><p>Hi <b><%= current_user.first_name %>!</p></b></li>
+                <li><%= link_to('My account', user_path(current_user)) %></li>
+                <% if current_user.admin? %>
+                  <li><%= link_to('Manage users', users_path) %><li>
+                <% end %>
+                <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+              </ul>
             <% else %>
               <%= link_to('Login / Sign up', new_user_session_path) %>
             <% end %>

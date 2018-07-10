@@ -6,10 +6,12 @@
           <%= image_tag( recipe.image_url , class: "img-responsive", alt: recipe.name) %>
         </div>
         <p><%= recipe.name %></p>
-        <div class ="recipe-links-index">
-          <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_recipe_path(recipe) %>
-          <%= link_to '<i class="fa fa-trash-o" ></i>'.html_safe, recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div> <!-- end recipe-links-index -->
+        <% if signed_in? && (current_user.admin? || current_user.author?) %>
+          <div class ="recipe-links-index">
+            <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_recipe_path(recipe) %>
+            <%= link_to '<i class="fa fa-trash-o" ></i>'.html_safe, recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div> <!-- end recipe-links-index -->
+        <% end %>
       </div> <!-- end recipe-card -->
     <% end %>
   </div>

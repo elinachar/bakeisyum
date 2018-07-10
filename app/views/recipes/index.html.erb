@@ -1,10 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Recipes</h1>
 
-<div class="row btn-new-recipe">
-  <%= link_to '<span class="glyphicon glyphicon-plus-sign"></span> Add New Recipe'.html_safe, new_recipe_path, class: 'btn btn-default col-xs-12 col-md-3 col-md-offset-9' %>
-</div><!-- end row -->
+<% if signed_in? && (current_user.admin? || current_user.author?) %>
+  <div class="row btn-new-recipe">
+    <%= link_to '<span class="glyphicon glyphicon-plus-sign"></span> Add New Recipe'.html_safe, new_recipe_path, class: 'btn btn-default col-xs-12 col-md-3 col-md-offset-9' %>
+  </div><!-- end row -->
+<% end %>
 
 <div class="container">
   <div class="row">

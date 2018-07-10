@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-md-offset-2 recipe">
@@ -19,6 +17,9 @@
 
 
 <div class="recipe-links-show">
-  <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
+  <% if signed_in? && (current_user.admin? || current_user.author?) %>
+    <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
+    <%= link_to '<i class="fa fa-trash-o" ></i> Delete'.html_safe, @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'  %>
+  <% end %>
   <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to all Recipes'.html_safe, recipes_path, class: 'btn btn-default' %>
 </div>
