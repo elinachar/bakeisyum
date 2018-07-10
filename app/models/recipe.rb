@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
+  has_many :comments
 
   def self.search(search_term)
     if Rails.env.production?

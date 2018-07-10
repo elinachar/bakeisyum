@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container recipe-show">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-md-offset-2 recipe">
       <%= image_tag( @recipe.image_url , class: "img-responsive", alt: @recipe.name) %>
@@ -11,9 +11,26 @@
       <p><%= @recipe.description %></p>
     </div>
   </div> <!-- end row -->
-</div> <!-- end container -->
 
-<%= social_share_button_tag(@recipe.name) %>
+  <div class="row">
+    <div class="social-share text-center col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+      <h4>Share</h4>
+      <%= social_share_button_tag(@recipe.name) %>
+    </div>
+  </div> <!-- end row -->
+
+  <div>
+    <div class="row comment-title">
+      <%=  button_tag 'Leave a comment', class: 'btn btn-default col-sm-offset-5 col-md-offset-8 col-md-2 col-md-push-2', id: 'create-new-comment' %>
+      <% if @comments.count == 1 %>
+        <h4 class="col-md-2 col-md-pull-10"><%= @comments.count %> Comment</h4>
+      <% else %>
+        <h4 class="col-md-2 col-md-pull-10"><%= @comments.count %> Comments</h4>
+      <% end %>
+    </div>
+    <%= render "new_comment" %>
+    <%= render "comments" %>
+  </div>
 
 
 <div class="recipe-links-show">
@@ -23,3 +40,5 @@
   <% end %>
   <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to all Recipes'.html_safe, recipes_path, class: 'btn btn-default' %>
 </div>
+
+</div> <!-- end container -->

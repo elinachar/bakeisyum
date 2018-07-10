@@ -1,0 +1,25 @@
+<div class="row new-comment">
+  <%= form_with(model: [@recipe, @recipe.comments.build], local: true) do |f| %>
+    <div class="col-xs-12">
+      <h4>Add a comment</h4>
+    </div>
+
+    <div class="form-group col-xs-12 commentator">
+      <%= f.label :cοmmentator, "Name*", class: "sr-only" %><br>
+      <% if user_signed_in? %>
+        <% @user_name = current_user.first_name %>
+      <% end %>
+      <%= f.text_field :cοmmentator, placeholder: "Name *", value: @user_name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-xs-12">
+      <%= f.label :body, "Comments", class: "sr-only" %><br>
+      <%= f.text_area :body, placeholder: "Your comments on the recipe...", class: 'form-control', size: '5x10'  %>
+    </div>
+
+    <div class="actions col-xs-12">
+      <%= f.submit "Submit", class: "btn btn-default" %>
+    <hr>
+    </div>
+  <% end %>
+</div><!-- end row -->

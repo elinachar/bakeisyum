@@ -32,5 +32,4 @@ $(document).on('turbolinks:load', function() {
 
   $(".login-collapsed p i").click(slideLoginDropdownXsSm);
 
-
 });

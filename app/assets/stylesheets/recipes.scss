@@ -117,15 +117,27 @@ h6 {
 
 // Show
 
+.recipe-show {
+  margin-top: 10px;
+}
+
+.social-share {
+  margin-top: 10px;
+  border-style: solid;
+  border-color: var(--mint);
+  border-width: 1px;
+  margin-bottom: 40px;
+}
+
 .social-share-button {
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: var(--grey);
+  // border-top-style: solid;
+  // border-top-width: 1px;
+  // border-top-color: var(--grey);
   background-color: #fefefc;
   text-align: center;
-  float: right;
-  padding-left: 15px;
-  margin-right: 30px;
+  // float: right;
+  // padding-left: 15px;
+  // margin-right: 30px;
   margin-bottom: 10px;
 }
 
@@ -189,6 +201,30 @@ h6 {
   margin-left: 20px;
 }
 
+.comment-title {
+  border-bottom: solid;
+  border-color: var(--grey);
+  border-width: 1px;
+  margin-bottom: 20px;
+}
+
+.new-comment {
+  display: none;
+}
+
+
+.new-comment h4,
+.commentator {
+  margin-bottom: 0;
+}
+
+.commentator .form-control {
+  width: 40%;
+}
+
+.comments p {
+  text-align: left;
+}
 //New - Update
 .recipe-form {
   margin-bottom: 10px;
