@@ -37,6 +37,19 @@ a:-webkit-any-link {
   // background-color: var(--dark-grey-mint);
 }
 
+.btn-red {
+  color: #a94442;
+  background-color: #f2dede;
+  // border-color: #ebccd1;
+}
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red:active {
+  color: #a94442 !important;
+  background-color: #f8eeee !important;
+}
+
 .text-center {
   text-align: center;
 }
