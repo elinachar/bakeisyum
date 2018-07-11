@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
 
   def welcome(user)
   @appname = "Bake is Yum"
-  mail( from: "welcome@bakeisyum.com"
+  mail( from: "welcome@bakeisyum.com",
         to: user.email,
         subject: "Welcome to #{@appname}!")
 end
