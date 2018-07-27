@@ -3,7 +3,7 @@
     <%= link_to recipe, :action => 'go' do %>
       <div class="recipe-card">
         <div class="recipe-img">
-          <%= image_tag( recipe.image_url.to_s , class: "img-responsive", alt: recipe.name) %>
+          <%= image_tag( recipe.image.url.to_s , class: "img-responsive", alt: recipe.name) %>
         </div>
         <p><%= recipe.name %></p>
         <% if signed_in? && (current_user.admin? || current_user.author?) %>
