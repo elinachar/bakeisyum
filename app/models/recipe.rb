@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   has_many :comments
+  mount_uploader :image, ImageUploader
 
   def self.search(search_term)
     if Rails.env.production?

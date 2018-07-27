@@ -16,9 +16,18 @@ class CommentsController < ApplicationController
 
 
   def destroy
+    byebug
     @comment = Comment.find(params[:id])
     recipe = @comment.recipe
     @comment.destroy
+    redirect_to recipe
+  end
+
+  def review
+    byebug
+    @comment = Comment.find(params[:id])
+    recipe = @comment.recipe
+    @comment.update_attribute(reviewed: true)
     redirect_to recipe
   end
 
