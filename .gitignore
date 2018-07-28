@@ -31,3 +31,6 @@
 
 # Ignore uploaded test images
 /public/uploads
+
+# Ignore app/images
+/app_images
