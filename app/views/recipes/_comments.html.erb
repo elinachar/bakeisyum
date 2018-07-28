@@ -9,7 +9,14 @@
           <%= comment.cοmmentator %> <small class="review-dt-uploaded"><%= "&#8729; #{time_ago_in_words(comment.created_at)} ago".html_safe %></small>
           <% if signed_in? && (current_user.admin? || current_user.moderator?) %>
             <%= link_to ('<span class="glyphicon glyphicon-remove" style="color:#b20000"></span>').html_safe, recipe_comment_path(comment.recipe, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-            <%= link_to 'Approve', recipe_comment_review_path(comment.recipe, comment), method: :put, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Approve update', recipe_comment_path(comment.recipe, comment), method: :put, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Approve review', recipe_comment_review_path(comment.recipe, comment), method: :put, data: { confirm: 'Are you sure?' } %>
+            <%= form_for(comment, url: recipe_comment_path(comment.recipe, comment), method: :put) do |f| %>
+              <div class="action">
+                <%= f.check_box :reviewed %>
+                <%= f.label :reviewed %>
+              </div>
+            <% end %>
           <% end %>
         </p>
         <p><%= comment.body %></p>
