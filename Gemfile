@@ -47,7 +47,7 @@ gem 'social-share-button'
 gem 'carrierwave'
 
 # Gem for AWS S3
-gem 'fog'
+gem 'fog-aws'
 
 
 group :development, :test do
