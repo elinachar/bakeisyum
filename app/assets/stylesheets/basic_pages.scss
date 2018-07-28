@@ -57,3 +57,12 @@ address i {
 .btn-submit {
   text-align: center;
 }
+
+// Small devices (landscape phones, 576px and down)
+@media only screen and (max-width: 576px) {
+
+.carousel-caption {
+  font-size: 1.5em;
+}
+
+}
