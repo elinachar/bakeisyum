@@ -46,6 +46,9 @@ gem 'social-share-button'
 # Gem for image upload
 gem 'carrierwave'
 
+# Gem for AWS S3
+gem 'fog'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
