@@ -25,7 +25,6 @@ class CommentsController < ApplicationController
 
 
   def destroy
-    byebug
     @comment = Comment.find(params[:id])
     recipe = @comment.recipe
     @comment.destroy
@@ -33,7 +32,7 @@ class CommentsController < ApplicationController
   end
 
   def review
-    byebug
+    # byebug
     @comment = Comment.find(params[:id])
     recipe = @comment.recipe
     @comment.update_attribute(reviewed: true)
