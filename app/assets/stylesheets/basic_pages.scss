@@ -63,6 +63,11 @@ address i {
 
 .carousel-caption {
   font-size: 1.5em;
+  top: 25%;
+  -webkit-transform: translateY(-25%);
+  -ms-transform: translateY(-25%);
+  transform: translateY(-25%);
+
 }
 
 }
