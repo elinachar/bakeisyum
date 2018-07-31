@@ -11,15 +11,12 @@ class UserMailer < ApplicationMailer
           subject: "A new contact from #{name}")
   end
 
-  def new_recipe(recipe)
+  def new_recipe(recipe, subscription)
     @recipe = recipe
     @appname = "Bake is Yum"
-    @subscriptions = Subscription.all
-    @subscriptions.each do |subscription|
-      @subscription = subscription
-      mail( to: subscription.email,
-            subject: @recipe.name + " from " + @appname)
-    end
+    @subscription = subscription
+    mail( to: @subscription.email,
+          subject: @recipe.name + " from " + @appname)
   end
 
 
