@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20180730090441_change_email_to_subscriptions.rb

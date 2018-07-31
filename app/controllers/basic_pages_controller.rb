@@ -1,6 +1,7 @@
 class BasicPagesController < ApplicationController
   def index
     @recipes = Recipe.last(3)
+    @subscription = Subscription.new
   end
 
   def thank_you

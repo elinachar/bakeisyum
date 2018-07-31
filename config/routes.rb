@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :subscriptions
+
   get 'homes/show'
   get 'basic_pages/index'
   get 'basic_pages/about'

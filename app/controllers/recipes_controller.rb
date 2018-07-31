@@ -38,6 +38,7 @@ class RecipesController < ApplicationController
       if @recipe.save
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
+        UserMailer.new_recipe(@recipe).deliver_now
       else
         format.html { render :new }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }

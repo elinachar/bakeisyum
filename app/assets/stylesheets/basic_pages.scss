@@ -32,6 +32,15 @@
   opacity: 0.7;
 }
 
+.subscribe-box {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--mint);
+  background-color: var(--off-white);
+  margin-top: 110px;
+  padding: 10px 10px 10px 10px;
+}
+
 // Contact Page
 .address h2 {
   font-size: 20px;
@@ -67,7 +76,15 @@ address i {
   -webkit-transform: translateY(-25%);
   -ms-transform: translateY(-25%);
   transform: translateY(-25%);
+}
 
+}
+
+// For xs of bootsrap grid
+@media only screen and (max-width: 767px) {
+
+.subscribe-box {
+  margin-top: 20px;
 }
 
 }

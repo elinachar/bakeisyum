@@ -1,0 +1,45 @@
+<table>
+
+  <thead>
+    <tr>
+      <td><h1 style="color:#aaf0d1; font-size:25px; text-align: center;"><%= @appname %></h1></td>
+    </tr>
+    <tr>
+      <td>
+        <p>Thank you! You have successfully subscribed to Bake is Yum!</p>
+        <p>Now you will never miss a new recipe! Check out the latest recipes:</p></td>
+      </tr>
+  </thead>
+
+  <tbody style="text-align: center;">
+    <% @recipes.reverse.each do |recipe| %>
+      <tr>
+        <td>
+          <%= link_to recipe, :action => 'go', style: "text-decoration:none" do %>
+            <div style="width:50%; background-color:#aaf0d1">
+              <%= image_tag( recipe.image.url.to_s , style: "width:100%;", alt: recipe.name) %>
+              <p style="padding-bottom:18px; color:#33483e;"><%= recipe.name %></p>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td>
+        <p style="margin-bottom:0">Enjoy,</p>
+        <p style="margin-top:2px">Elina</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="font-size:15px;">
+        <p><strong>This email is created automatically. Please do not respond to this email.</strong></p>
+        <p>If you need any help, please send to <%= mail_to "elinachar@gmail.com", "elina@bakeisyum.com" %>.</p>
+        <p>If you would like to unsubscribe, please click <%= link_to "here", @subscription, method: :delete %></p>
+      </td>
+    </tr>
+  </tfoot>
+</table>

@@ -38,24 +38,40 @@
 <!-- Recipes list starts here -->
 <div class="container">
   <div class="row">
-    <% @recipes.reverse.each do |recipe| %>
-      <% if recipe.name and recipe.image_url %>
-        <div class="col-xs-12 recipe-lading-card">
-          <h2><%= recipe.name %></h2>
-          <% t = recipe.updated_at %>
-          <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
-          <%= link_to recipe, :action => 'go' do %>
-            <div class="recipe-landing-img">
-              <%= image_tag( recipe.image_url , class: "img-responsive", alt: recipe.name) %>
-            </div>
-          <% end %>
-          <p class="recipe-landing-description"><%= recipe.description %></p>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-push-9 col-sm-offset-0 subscribe-box text-center">
+      <p> Subscribe to receive e-mails with the new recipes!</p>
+      <%= form_with(model: @subscription) do |form| %>
+        <div class="form-group">
+          <%= form.label :email, "Email address*" %>
+          <%= form.text_field :email, class: 'form-control' %>
+        </div>
 
+        <div class="actions">
+          <%= form.submit 'Subscribe', class: "btn btn-default" %>
         </div>
       <% end %>
-    <% end %>
+    </div>
 
-    <%=link_to "Check out all the recipes", recipes_path, :class => 'col-xs-10 col-xs-offset-1 btn btn-get-more-recipes'%>
+    <div class="col-sm-9 col-sm-pull-3">
+      <% @recipes.reverse.each do |recipe| %>
+        <% if recipe.name and recipe.image_url %>
+          <div class="col-xs-12 recipe-lading-card">
+            <h2><%= recipe.name %></h2>
+            <% t = recipe.updated_at %>
+            <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
+            <%= link_to recipe, :action => 'go' do %>
+              <div class="recipe-landing-img">
+                <%= image_tag( recipe.image_url , class: "img-responsive", alt: recipe.name) %>
+              </div>
+            <% end %>
+            <p class="recipe-landing-description"><%= recipe.description %></p>
+
+          </div>
+        <% end %>
+      <% end %>
+      <%=link_to "Check out all the recipes", recipes_path, :class => 'col-xs-10 col-xs-offset-1 btn btn-get-more-recipes'%>
+    </div>
+
   </div> <!-- end row -->
 </div><!-- end container -->
 <!-- Recipes list ends here -->

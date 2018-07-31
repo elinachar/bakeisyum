@@ -3,6 +3,10 @@ class UserRegistrationsController < Devise::RegistrationsController
     super
     if @user.persisted?
       UserMailer.welcome(@user).deliver_now
+
+      if @user.subscribed?
+        Subscription.create(email: @user.email)
+      end
     end
   end
 
