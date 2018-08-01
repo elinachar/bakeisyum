@@ -11,9 +11,9 @@
             <% if signed_in? && (current_user.admin? || current_user.moderator?) %>
               <%= link_to ('<span class="glyphicon glyphicon-remove" style="color:#b20000"></span>').html_safe, recipe_comment_path(comment.recipe, comment), method: :delete, data: { confirm: 'Are you sure?', toggle: 'tooltip', placement: 'bottom', original_title: 'Delete the comment' } %>
               <% if comment.approved? %>
-                <%= link_to 'Approved', recipe_comment_approve_path(comment.recipe, comment), method: :put, class: "btn btn-default disabled", id:"comment-approve-btn"%>
+                <%= link_to 'Approved', recipe_comment_approve_path(comment.recipe, comment), method: :put, class: "btn btn-default disabled" %>
               <% else %>
-                <%= link_to 'Approve', recipe_comment_approve_path(comment.recipe, comment), method: :put, remote: true, class: "btn btn-default", id:"comment-approve-btn" %>
+                <%= link_to 'Approve', recipe_comment_approve_path(comment.recipe, comment), method: :put, remote: true, class: "btn btn-default", id: dom_id(comment) %>
               <% end %>
             <% end %>
           </p>

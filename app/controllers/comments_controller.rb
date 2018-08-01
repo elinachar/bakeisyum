@@ -27,6 +27,8 @@ class CommentsController < ApplicationController
     @comment.update_attribute(:approved, true)
     respond_to do |format|
       if @comment.save
+        @approved_comments = recipe.comments.where(:approved => true).count
+        @not_approved_comments = recipe.comments.where(:approved => false).count
         format.html { redirect_to recipe, notice: 'Comment was approved.' }
         format.json { render :show, status: :created, location: @recipe }
         format.js

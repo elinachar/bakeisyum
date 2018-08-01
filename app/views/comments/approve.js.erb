@@ -1,1 +1,4 @@
-$("#comment-approve-btn").html("Approved").addClass("disabled")
+$("#comment_<%= @comment.id %>").html("Approved").addClass("disabled");
+
+$(".count-approved-comments").html('<%= @approved_comments %> Comments');
+$(".count-not-approved-comments").html('<%= @not_approved_comments %> Not approved comments');
