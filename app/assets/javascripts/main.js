@@ -6,4 +6,9 @@ $(document).on('turbolinks:load', function() {
     $("#create-new-comment").prop('disabled', true);
   });
 
+  //Enable Tooltips
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
 });

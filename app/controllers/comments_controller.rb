@@ -14,16 +14,6 @@ class CommentsController < ApplicationController
     end
   end
 
-
-  def update
-    byebug
-    @comment = Comment.find(params[:id])
-    @comment.update_attributes(reviewed: true)
-    recipe = @comment.recipe
-    redirect_to recipe
-  end
-
-
   def destroy
     @comment = Comment.find(params[:id])
     recipe = @comment.recipe
@@ -31,12 +21,21 @@ class CommentsController < ApplicationController
     redirect_to recipe
   end
 
-  def review
-    # byebug
-    @comment = Comment.find(params[:id])
+  def approve
+    @comment = Comment.find(params[:comment_id])
     recipe = @comment.recipe
-    @comment.update_attribute(reviewed: true)
-    redirect_to recipe
+    @comment.update_attribute(:approved, true)
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to recipe, notice: 'Comment was approved.' }
+        format.json { render :show, status: :created, location: @recipe }
+        format.js
+      else
+        format.html { redirect_to recipe, alert: 'Comment was not approved.' }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
 
   private

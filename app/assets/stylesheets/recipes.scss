@@ -211,7 +211,6 @@ h6 {
   display: none;
 }
 
-
 .new-comment h4,
 .commentator {
   margin-bottom: 0;
@@ -221,9 +220,14 @@ h6 {
   width: 40%;
 }
 
+.comments a {
+  margin-left: 20px;
+}
+
 .comments p {
   text-align: left;
 }
+
 //New - Update
 .recipe-form {
   margin-bottom: 10px;

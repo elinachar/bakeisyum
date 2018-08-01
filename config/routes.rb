@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resources :comments do
-      put :review
+      put :approve
     end
   end
 
