@@ -17,18 +17,13 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  # DELETE /subscriptions/1
-  # DELETE /subscriptions/1.json
-  # def destroy
-  def show
-    @subscription = Subscription.find(params[:id])
+  # GET /subscriptions/1
+  # GET /subscriptions/1.json
+  def unsubscribe
+    @subscription = Subscription.find(params[:format])
     @subscription.destroy
-    respond_to do |format|
-      format.html { redirect_to basic_pages_index_path, notice: 'You have successfully unsubscribed from our list.' }
-      format.json { head :no_content }
-    end
+    redirect_to basic_pages_index_path, notice: 'You have successfully unsubscribed from our list.'
   end
-
 
 
   private

@@ -6,7 +6,7 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def new_recipe
-    UserMailer.new_recipe(Recipe.first)
+    UserMailer.new_recipe(Recipe.first, Subscription.first)
   end
 
   def subscription_successful

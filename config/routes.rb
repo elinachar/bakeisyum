@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :subscriptions
+  resources :subscriptions do
+    collection do
+      get :unsubscribe # http://example.com/subscriptions/unsubscribe?token=xxxxxx
+    end
+  end
 
   get 'homes/show'
   get 'basic_pages/index'
