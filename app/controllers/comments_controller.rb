@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find_by(name: params[:recipe_name].tr("-"," ").titleize)
     @comment = @recipe.comments.new(comment_params)
 
     respond_to do |format|

@@ -1,15 +1,16 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'colors';
 
-h2, h6, p {
+h2,
+h6 {
   text-align: center;
 }
 
-h6 {
-  color: var(--mint);
-  font-size: 16px;
-  font-style: italic;
+h2,
+h3 {
+  font-weight: 400;
 }
 
 .btn-new-recipe {
@@ -21,14 +22,14 @@ h6 {
 }
 
 .search-results p {
-  color: var(--mint);
+  color: $mint;
   font-size: 20px;
 }
 
 .recipe-card {
   text-align: center;
   margin-bottom: 20px;
-  background-color: var(--mint);
+  background-color: $mint;
   overflow: hidden;
 }
 
@@ -84,7 +85,7 @@ h6 {
 .pagination .gap:after {
   content: "\00b7 \00b7 \00b7";
   visibility: visible;
-  color: var(--mint);
+  color: $mint;
   padding-right: 3px;
   margin-left: -3px;
 }
@@ -97,7 +98,7 @@ h6 {
   border-radius: 50%;
   border: solid;
   border-width: 1px;
-  border-color: var(--mint);
+  border-color: $mint;
   text-decoration: none;
   font-size: 15px;
   padding-top: 2px;
@@ -105,104 +106,180 @@ h6 {
 }
 
 .pagination a {
-  color: var(--mint);
-  background-color: var(--off-white);
+  color: $mint;
+  background-color: $offWhite;
+}
+
+.pagination a:hover {
+  background-color: $lightMint;
 }
 
 .pagination em {
-  color: var(--off-white);
-  background-color: var(--mint);
+  color: $offWhite;
+  background-color: $mint;
   font-style: normal;
 }
 
 // Show
-
 .recipe-show {
   margin-top: 10px;
-}
 
-.social-share {
-  margin-top: 10px;
-  border-style: solid;
-  border-color: var(--mint);
-  border-width: 1px;
-  margin-bottom: 40px;
-}
+  p {
+    font-size: 18px;
+  }
 
-.social-share-button {
-  // border-top-style: solid;
-  // border-top-width: 1px;
-  // border-top-color: var(--grey);
-  background-color: #fefefc;
-  text-align: center;
-  // float: right;
-  // padding-left: 15px;
-  // margin-right: 30px;
-  margin-bottom: 10px;
-}
 
-.social-share-button .ssb-pinterest,
-.social-share-button .ssb-facebook,
-.social-share-button .ssb-twitter,
-.social-share-button .ssb-google_plus,
-.social-share-button .ssb-email {
-    background-image: none !important;
-    color: var(--mint);
-    padding-right: 35px;
-}
+  h6 {
+    color: $mint;
+    font-size: 16px;
+  }
 
-.social-share-button .ssb-pinterest:hover,
-.social-share-button .ssb-facebook:hover,
-.social-share-button .ssb-twitter:hover,
-.social-share-button .ssb-google_plus:hover,
-.social-share-button .ssb-email:hover{
-  color: var(--dark-mint);
-}
+  h6,
+  .borrowed-recipe {
+    font-style: italic;
+  }
 
-.social-share-button .ssb-pinterest:before,
-.social-share-button .ssb-facebook:before,
-.social-share-button .ssb-twitter:before,
-.social-share-button .ssb-google_plus:before,
-.social-share-button .ssb-email:before {
-  background-image: none;
-  font-family: 'FontAwesome';
-  font-size: 30px;
-}
+  .borrowed-recipe {
+    font-size: 16px;
 
-.social-share-button .ssb-pinterest:before {
-   content: "\f231";
-   content: "\f0d3";
-   // content: "\f0d2";
-}
+    a {
+      color: $mint;
+    }
 
-.social-share-button .ssb-facebook:before {
-   content: "\f082";
-   // content: "\f39e";
-}
+    a:hover {
+      color: $darkGreyMint;
+    }
+  }
 
-.social-share-button .ssb-twitter:before {
-   content: "\f099";
-   content: "\f081";
-}
+  .social-share {
+    margin-top: 10px;
+    border-style: solid;
+    border-color: $mint;
+    border-width: 1px;
+    margin-bottom: 40px;
+  }
 
-.social-share-button .ssb-google_plus:before {
-  content: "\f0d4";
-  // content: "\f0d5";
-  // content: "\f2b3";
-}
+  .social-share-button {
+    background-color: #fefefc;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-.social-share-button .ssb-email:before {
-   content: "\f0e0";
-   content: "\f199";
-}
+  .social-share-button .ssb-pinterest,
+  .social-share-button .ssb-facebook,
+  .social-share-button .ssb-twitter,
+  .social-share-button .ssb-google_plus,
+  .social-share-button .ssb-email {
+      background-image: none !important;
+      color: $mint;
+      padding-right: 35px;
+  }
 
-.recipe-links-show {
-  clear: both;
+  .social-share-button .ssb-pinterest:hover,
+  .social-share-button .ssb-facebook:hover,
+  .social-share-button .ssb-twitter:hover,
+  .social-share-button .ssb-google_plus:hover,
+  .social-share-button .ssb-email:hover{
+    color: $darkMint;
+  }
+
+  .social-share-button .ssb-pinterest:before,
+  .social-share-button .ssb-facebook:before,
+  .social-share-button .ssb-twitter:before,
+  .social-share-button .ssb-google_plus:before,
+  .social-share-button .ssb-email:before {
+    background-image: none;
+    font-family: 'FontAwesome';
+    font-size: 30px;
+  }
+
+  .social-share-button .ssb-pinterest:before {
+     content: "\f231";
+     content: "\f0d3";
+     // content: "\f0d2";
+  }
+
+  .social-share-button .ssb-facebook:before {
+     content: "\f082";
+     // content: "\f39e";
+  }
+
+  .social-share-button .ssb-twitter:before {
+     content: "\f099";
+     content: "\f081";
+  }
+
+  .social-share-button .ssb-google_plus:before {
+    content: "\f0d4";
+    // content: "\f0d5";
+    // content: "\f2b3";
+  }
+
+  .social-share-button .ssb-email:before {
+     content: "\f0e0";
+     content: "\f199";
+  }
+
+  .descriptions-show {
+    img {
+      margin: 20px auto;
+      width: 50%;
+    }
+  }
+
+  .ingredients-show {
+    margin-top: 30px;
+    padding-top: 20px;
+    border: solid thin $mint;
+
+    img {
+      width: 30%;
+      margin: auto;
+    }
+
+    h2,
+    h3,
+    i {
+      color: $darkGreyMint
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    h3 {
+      font-size: 23px;
+    }
+
+    .recipe-information {
+      margin: 0;
+      padding-top: 20px;
+      background: $lightMint;
+
+      .information-group {
+        i {
+          font-size: 30px;
+          height: 30px;
+        }
+
+        .information-input {
+          font-size: 20px;
+          margin-top: 10px;
+          margin-bottom: 5px;
+        }
+
+        .information-description {
+          font-size: 15px;
+          color: $grey;
+        }
+      }
+    }
+  }
 }
 
 .comment-title {
   border-bottom: solid;
-  border-color: var(--grey);
+  border-color: $grey;
   border-width: 1px;
   margin-bottom: 20px;
 }
@@ -232,14 +309,43 @@ h6 {
   text-align: left;
 }
 
+.recipe-links-show {
+  clear: both;
+}
+
 //New - Update
 .recipe-form {
   margin-bottom: 10px;
+
+  .btn-submit .btn {
+    width: 80%;
+  }
 }
 
 /* Landscape phone to portrait tablet */
 @media only screen and (max-width: 767px) {
   .btn-goback-edit {
     margin-bottom: 10px;
+  }
+}
+
+// XS
+// @media (max-width: 576px) {...}
+// XS and SM Devices
+@media (max-width: 767px) {
+  .recipe-show {
+    .ingredients-show {
+
+      .recipe-information {
+        .information-group {
+          margin-bottom: 30px;
+
+          .information-input {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
   }
 }

@@ -1,14 +1,15 @@
 <div class="container recipe-show">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-md-offset-2 recipe">
-      <%= image_tag( @recipe.image_url.to_s , class: "img-responsive", alt: @recipe.name) %>
+      <%= image_tag( @recipe.image_url_url.to_s , class: "img-responsive", alt: @recipe.name) %>
     </div>
 
     <div class="col-sm-12">
       <h2><%= @recipe.name %></h2>
       <% t = @recipe.updated_at %>
       <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
-      <p><%= @recipe.description %></p>
+      <p class="borrowed-recipe text-center">Recipe borrowed from <%= link_to @recipe.original_recipie_author, @recipe.original_recipie_url %> and modified.</p>
+      <p><%= @recipe.short_description %></p>
     </div>
   </div> <!-- end row -->
 
@@ -18,6 +19,64 @@
       <%= social_share_button_tag(@recipe.name) %>
     </div>
   </div> <!-- end row -->
+
+  <div class="descriptions-show">
+    <% @descriptions.each do |description| %>
+      <p><%= description.description %></p>
+      <% unless description.image_url_url.nil? %>
+        <%= image_tag( description.image_url_url.to_s, alt: File.basename(description.image_url_url.to_s) , class: "img-responsive" ) %>
+      <% end %>
+    <% end %>
+  </div> <!-- end descriptions-show -->
+
+  <div class="ingredients-show">
+    <%= image_tag( @recipe.image_url_url.to_s , class: "img-responsive", alt: @recipe.name) %>
+    <h2><%= @recipe.name %></h2>
+
+    <div class="recipe-information row text-center">
+      <% if @recipe.waiting_time.nil? %>
+        <div class="col-sm-4 information-group">
+      <% else %>
+        <div class="col-sm-3 information-group">
+      <% end %>
+        <i class='far fa-clock'></i><br>
+        <p class="information-input"><%=@recipe.preparation_time%></p>
+        <p class="information-description">Preparation Time</p>
+      </div>
+      <% unless @recipe.waiting_time.nil? %>
+        <div class="col-sm-3 information-group">
+          <i class='far fa-hourglass'></i><br>
+          <p class="information-input"><%=@recipe.waiting_time%></p>
+          <p class="information-description">Waiting Time</p>
+        </div>
+      <% end %>
+      <% if @recipe.waiting_time.nil? %>
+        <div class="col-sm-4 information-group">
+      <% else %>
+        <div class="col-sm-3 information-group">
+      <% end %>
+        <i class='far fa-clock'></i><br>
+        <p class="information-input"><%=@recipe.cooking_time%></p>
+        <p class="information-description">Cooking Time</p>
+      </div>
+      <% if @recipe.waiting_time.nil? %>
+        <div class="col-sm-4 information-group">
+      <% else %>
+        <div class="col-sm-3 information-group">
+      <% end %>
+        <i class="fas fa-utensils"></i><br>
+        <p class="information-input"><%=@recipe.serving%></p>
+        <p class="information-description">Servings</p>
+      </div>
+    </div>
+
+    <h3>Ingredients</h3>
+    <h3>Instructions</h3>
+
+  </div> <!-- end ingredients-show -->
+
+  <div class="notes-show">
+  </div> <!-- end notes-show-->
 
   <div>
     <div class="row comment-title">

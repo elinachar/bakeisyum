@@ -12,7 +12,7 @@
     <div class="carousel-inner" role="listbox">
       <% @recipes.reverse.each do |recipe| %>
         <div class="item <%="active" if recipe == @recipes.last %>">
-          <%= image_tag(recipe.image_url, class: "img-responsive", alt: recipe.name) %>
+          <%= image_tag(recipe.image_url_url.to_s, class: "img-responsive", alt: recipe.name) %>
           <div class="carousel-caption">
             <p><%= recipe.name %></p>
             <%=link_to "Read more", recipe, :class => 'btn btn-read-more'%>
@@ -54,17 +54,17 @@
 
     <div class="col-sm-9 col-sm-pull-3">
       <% @recipes.reverse.each do |recipe| %>
-        <% if recipe.name and recipe.image_url %>
+        <% if recipe.name and recipe.image_url_url.to_s %>
           <div class="col-xs-12 recipe-lading-card">
             <h2><%= recipe.name %></h2>
             <% t = recipe.updated_at %>
             <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
             <%= link_to recipe, :action => 'go' do %>
               <div class="recipe-landing-img">
-                <%= image_tag( recipe.image_url , class: "img-responsive", alt: recipe.name) %>
+                <%= image_tag( recipe.image_url_url.to_s , class: "img-responsive", alt: recipe.name) %>
               </div>
             <% end %>
-            <p class="recipe-landing-description"><%= recipe.description %></p>
+            <p class="recipe-landing-description"><%= recipe.short_description %></p>
 
           </div>
         <% end %>

@@ -1,0 +1,16 @@
+<div class="nested-fields">
+  <div class="field form-group">
+    <%= f.label :description %>
+    <%= link_to_remove_association "<i class='fa fa-trash-o'></i>".html_safe, f, data: { confirm: 'Are you sure that you want to remove this Description?' } %>
+    <%= f.text_area :description, class: 'form-control',size: '5x10' %>
+  </div>
+
+  <div class="field form-group">
+    <% if f.index != "new_descriptions" %> <!-- Do not show image if add new puzzle was clicked, else gets the img of the first puzzle of category -->
+      <%= image_tag @recipe.descriptions[f.index.to_f].image_url_url.to_s, alt: @recipe.descriptions[f.index.to_f].image_url.to_s, class: "img-responsive" %>
+    <% end %>
+    <%= f.label :image_url, class: "sr-only" %>
+    <%= f.file_field :image_url %>
+  </div>
+
+</div>

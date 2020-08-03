@@ -1,0 +1,21 @@
+@import 'colors';
+
+// Form
+.btn-nested-fields {
+  width: 80%;
+  background: $orange;
+}
+
+.btn-nested-fields:hover {
+  background: $orangeHover;
+}
+
+.nested-fields {
+  a {
+    color: $red;
+  }
+
+  a:hover {
+    color: $redHover;
+  }
+}

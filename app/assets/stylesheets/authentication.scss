@@ -1,5 +1,7 @@
+@import 'colors';
+
 .authentication {
-  background-color: var(--mint);
+  background-color: $mint;
   margin-top: 20px;
   width: 60%;
   padding-bottom: 20px;
@@ -14,7 +16,7 @@
 }
 
 .authentication .btn {
-  background-color: var(--off-white);
+  background-color: $offWhite;
 }
 
 .authentication .btn:hover {

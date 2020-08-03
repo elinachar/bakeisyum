@@ -11,12 +11,13 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all
     end
-    @recipes = @recipes.paginate(:page => params[:page], :per_page => 6).order("created_at DESC")
+    @recipes = @recipes.paginate(:page => params[:page], :per_page => 6).order("id DESC")
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @descriptions = @recipe.descriptions.order(:id)
     @comments = @recipe.comments.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
   end
 
@@ -77,11 +78,13 @@ class RecipesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
-      @recipe = Recipe.find(params[:id])
+      @recipe = Recipe.find_by(name: params[:name].tr("-"," ").titleize)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :serving, :image)
+      params.require(:recipe).permit(:name, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :original_recipie_url, :image_url,
+      descriptions_attributes: [:id, :description, :image_url, :_destroy])
+
     end
 end

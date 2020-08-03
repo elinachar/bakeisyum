@@ -1,4 +1,6 @@
 // Application
+@import 'colors';
+
 body {
   margin: 0;
 }
@@ -10,14 +12,6 @@ html, body {
 }
 
 /** Define colors of the page **/
-:root {
-  --mint: #aaf0d1;
-  --dark-mint: #67cabc;
-  --dark-grey-mint: #86cead;
-  --off-white: #fefefc;
-  --grey: #ccc;
-}
-
 h1 {
   text-align: center;
 }
@@ -28,13 +22,12 @@ a:-webkit-any-link {
 }
 
 .btn {
-  background-color: var(--mint);
+  background-color: $mint;
   color: #33483e;
 }
 
 .btn:hover {
   background-color: #99d8bc;
-  // background-color: var(--dark-grey-mint);
 }
 
 .btn-red {
@@ -58,19 +51,19 @@ a:-webkit-any-link {
 .navigation-bar {
   text-align: center;
   border-bottom: solid;
-  border-color: var(--mint);
+  border-color: $mint;
   border-width: 0.5px;
-  background-color: var(--off-white);
+  background-color: $offWhite;
 }
 
 .logo {
   font-family: 'Tangerine', serif;
   font-size: 48px;
-  color: var(--mint);
+  color: $mint;
 }
 
 .logo:hover {
-  color: var(--mint);
+  color: $mint;
   text-shadow: 1px 1px 2px grey;
 }
 
@@ -78,7 +71,6 @@ a:-webkit-any-link {
   display: none;
   margin: 0px -15px;
   clear:both;
-  // border-color: var(--dark-grey-mint);
 }
 
 .nav-links {
@@ -101,7 +93,7 @@ a:-webkit-any-link {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  color: var(--mint);
+  color: $mint;
   font-size: 18px;
 }
 
@@ -119,7 +111,7 @@ a:-webkit-any-link {
 
 .navigation-bar-main-body li a:hover,
 .glyphicon-search:hover {
-  color: var(--dark-grey-mint);
+  color: $darkGreyMint;
 }
 
 .navigation-bar-bars {
@@ -130,7 +122,7 @@ a:-webkit-any-link {
   padding: 10px;
   margin-top: 11px;
   margin-right: 10px;
-  color: var(--mint);
+  color: $mint;
 }
 
 .navigation-bar-bars:hover {
@@ -152,7 +144,7 @@ a:-webkit-any-link {
 }
 
 .search-input .form-control{
-  border-color: var(--mint);
+  border-color: $mint;
   // visibility: hidden;
 }
 
@@ -160,8 +152,8 @@ a:-webkit-any-link {
   padding: 4px 0 0 0;
   cursor: pointer;
   font-size: 21px;
-  background-color: var(--off-white);
-  color: var(--mint);
+  background-color: $offWhite;
+  color: $mint;
   border-style: none;
 }
 
@@ -176,12 +168,12 @@ a:-webkit-any-link {
 
 .login span {
   display: none;
-  color: var(--mint);
+  color: $mint;
   font-size: 18px;
 }
 
 .login i {
-  color: var(--mint);
+  color: $mint;
   font-size: 25px;
   position: absolute;
   left: 10px;
@@ -189,7 +181,7 @@ a:-webkit-any-link {
 
 .login i:hover {
   cursor: pointer;
-  color: var(--dark-grey-mint);
+  color: $darkGreyMint;
 }
 
 .login-collapsed {
@@ -202,7 +194,7 @@ a:-webkit-any-link {
 }
 
 .login-dropdown-box {
-  background-color: var(--mint);
+  background-color: $mint;
   padding: 15px 8px;
   margin-top: -10px;
   z-index: 1;
@@ -242,13 +234,13 @@ a:-webkit-any-link {
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-bottom: 15px solid var(--mint);
+  border-bottom: 15px solid $mint;
   margin-bottom: 10px;
   margin-left: 55%;
 }
 
 .login-collapsed p {
-  color: var(--mint);
+  color: $mint;
   font-size: 18px;
   text-align: left;
 }
@@ -282,24 +274,16 @@ footer, .anchor:after {
 }
 
 footer {
- background-color: var(--mint);
+ background-color: $mint;
  color: #777;
  border-top-style: solid;
- border-color: var(--grey);
+ border-color: $grey;
  border-top-width: 1px;
  margin-top: 20px
 }
 
 /* Landscape phone to portrait tablet */
 @media only screen and (max-width: 991px) {
-  :root {
-    --mint: #86cead;
-    --dark-mint: #67cabc;
-    --dark-grey-mint: #6ba48a;
-    --off-white: #fefefc;
-    --grey: #ccc;
-  }
-
   .logo {
     float: left;
     margin-left: 15px;
@@ -370,7 +354,7 @@ footer {
 
   .login span.hover-color,
   .login i.hover-color {
-    color: var(--dark-grey-mint);
+    color: $darkGreyMint;
   }
 
   .login i {

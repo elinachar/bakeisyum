@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require jquery3
 //= require social-share-button
+//= require cocoon
 //= require_tree .
