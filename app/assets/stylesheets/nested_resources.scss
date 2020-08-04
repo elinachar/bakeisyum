@@ -24,3 +24,13 @@ hr {
     color: $redHover;
   }
 }
+
+.ingredients-fields {
+  .nested-fields {
+    margin-bottom: 10px;
+  }
+
+  .create_new_ingredient {
+    margin-bottom: 20px;
+  }
+}

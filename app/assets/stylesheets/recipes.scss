@@ -136,7 +136,7 @@ h3 {
 
   h6,
   .borrowed-recipe,
-  li {
+  .notes-show li {
     font-style: italic;
   }
 
@@ -277,6 +277,19 @@ h3 {
       }
     }
 
+    ul {
+      list-style: none; /* Remove default bullets */
+    }
+
+    li::before {
+      content: "\2022";
+      color: $darkGreyMint;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
     .ingredients-instructions {
       padding: 0px 40px;
 
@@ -288,20 +301,15 @@ h3 {
         margin: 20px 0 15px 0;
       }
 
+      .ingredients {
+        span {
+          color: $grey;
+        }
+      }
+
     }
 
     .notes-show {
-      list-style: none; /* Remove default bullets */
-
-      li::before {
-        content: "\2022";
-        color: $darkGreyMint;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-      }
-
       li {
         margin-bottom: 10px;
       }
@@ -346,14 +354,6 @@ h3 {
 }
 
 //New - Update
-.width-80 {
-  width: 80%;
-}
-
-.width-80.btn {
-  color: black;
-}
-
 .recipe-form {
   margin-bottom: 10px;
 

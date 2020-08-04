@@ -1,6 +1,8 @@
 class Recipe < ApplicationRecord
   has_many :descriptions, dependent: :destroy, inverse_of: :recipe
   has_many :parts, dependent: :destroy, inverse_of: :recipe
+  has_many :ingredients, through: :parts
+  has_many :instructions, through: :parts
   has_many :notes, dependent: :destroy, inverse_of: :recipe
   has_many :comments
 

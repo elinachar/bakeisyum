@@ -30,6 +30,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    @parts = @recipe.parts
   end
 
   # POST /recipes
@@ -87,7 +88,9 @@ class RecipesController < ApplicationController
     def recipe_params
       params.require(:recipe).permit(:name, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :original_recipie_url, :image_url,
       descriptions_attributes: [:id, :description, :image_url, :_destroy],
-      parts_attributes: [:id, :name, :_destroy],
+      parts_attributes: [:id, :name, :_destroy,
+      ingredients_attributes: [:id, :name, :weight, :weight_unit, :weight_optional, :weight_optional_unit, :_destroy],
+      instructions_attributes: [:id, :instruction, :_destroy]],
       notes_attributes: [:id, :note, :_destroy])
 
     end

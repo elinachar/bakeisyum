@@ -1,0 +1,27 @@
+<% @parts.each do |part| %>
+  <h4><%= part.name %></h4>
+  <ul>
+    <% part.ingredients.each do |ingredient| %>
+      <li>
+        <% if ingredient.weight % 1 == 0 %>
+          <%=sprintf("%g",ingredient.weight)%>
+        <% else %>
+          <%= ingredient.weight.to_r %>
+        <% end %>
+        <%= ingredient.weight_unit %>
+        <% unless ingredient.weight_optional.nil? %>
+          <span>(
+          <% if ingredient.weight_optional % 1 == 0 %>
+            <%=sprintf("%g",ingredient.weight_optional)%>
+          <% else %>
+            <%= ingredient.weight_optional.to_r %>
+          <% end %>
+          <%= ingredient.weight_optional_unit %>
+          )</span>
+        <% end %>
+        <%= ingredient.name %>
+
+      </li>
+    <% end %>
+  </ul>
+<% end %>

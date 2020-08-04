@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   resources :users
 
   resources :recipes, param: :name do
-    resources :descriptions
-    resources :parts
-    resources :notes
     resources :comments do
       put :approve
     end

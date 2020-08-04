@@ -1,7 +1,9 @@
-<h1>Editing Recipe</h1>
+<div class="container-fluid">
+  <h1>Editing Recipe</h1>
 
-<%= render 'form', recipe: @recipe %>
+  <%= render 'form', recipe: @recipe %>
 
-<div class="cancel-editing text-center">
-  <%= link_to 'Cancel Editing Recipe'.html_safe, @recipe, class: 'btn width-80' %>
+  <div class="cancel-editing text-center">
+    <%= link_to 'Cancel Editing Recipe'.html_safe, @recipe, class: 'btn w-85 m-auto' %>
+  </div>
 </div>

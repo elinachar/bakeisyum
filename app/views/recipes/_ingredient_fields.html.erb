@@ -1,0 +1,32 @@
+<div class="nested-fields row w-85 m-auto">
+  <div class="field col-xs-3" style="padding-left:0px">
+    <%= f.label :name, class: 'sr-only' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="field col-xs-2">
+    <%= f.label :weight, class: 'sr-only' %>
+    <%= f.text_field :weight, class: 'form-control' %>
+  </div>
+
+  <div class="field col-xs-2">
+    <%= f.label :weight_unit, class: 'sr-only' %>
+    <%= f.text_field :weight_unit, class: 'form-control' %>
+  </div>
+
+  <div class="field col-xs-2">
+    <%= f.label :weight_optional, class: 'sr-only' %>
+    <%= f.text_field :weight_optional, class: 'form-control' %>
+  </div>
+
+  <div class="field col-xs-2">
+    <%= f.label :weight_optional_unit, class: 'sr-only' %>
+    <%= f.text_field :weight_optional_unit, class: 'form-control' %>
+  </div>
+
+  <div class="col-xs-1 text-center">
+    <%= link_to_remove_association "<i class='fa fa-trash-o'></i>".html_safe, f, data: { confirm: 'Are you sure that you want to remove this Ingredient?' } %>
+  </div>
+
+
+</div>

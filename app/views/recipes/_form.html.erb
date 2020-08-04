@@ -67,33 +67,33 @@
           <%= render 'description_fields', f: description %>
         <% end %>
         <div class="links text-center">
-          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Description".html_safe, f, :descriptions, class: "btn btn-nested-fields width-80" %>
+          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Description".html_safe, f, :descriptions, class: "btn btn-nested-fields w-85 m-auto" %>
         </div>
       </div> <!-- end descriptions-fields -->
       <hr>
 
-      <div class="parts-filds" id="parts">
+      <div class="parts-fields" id="parts">
         <%= f.fields_for :parts do |part| %>
           <%= render 'part_fields', f: part %>
         <% end %>
         <div class="links text-center">
-          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Part".html_safe, f, :parts, class: "btn btn-nested-fields width-80" %>
+          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Part".html_safe, f, :parts, class: "btn btn-nested-fields w-85 m-auto" %>
         </div>
       </div> <!-- end parts-fields -->
       <hr>
 
-      <div class="notes-filds" id="notes">
+      <div class="notes-fields" id="notes">
         <%= f.fields_for :notes do |note| %>
           <%= render 'note_fields', f: note %>
         <% end %>
         <div class="links text-center">
-          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Note".html_safe, f, :notes, class: "btn btn-nested-fields width-80" %>
+          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Note".html_safe, f, :notes, class: "btn btn-nested-fields w-85 m-auto" %>
         </div>
       </div> <!-- end notes-fields-->
       <hr>
 
       <div class="actions btn-submit">
-        <%= f.submit class: 'btn width-80' %>
+        <%= f.submit class: 'btn w-85 m-auto' %>
       </div>
 
     </div>
