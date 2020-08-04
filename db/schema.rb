@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_112750) do
+ActiveRecord::Schema.define(version: 2020_08_04_074520) do
 
   create_table "comments", force: :cascade do |t|
     t.string "cοmmentator"
@@ -29,6 +29,22 @@ ActiveRecord::Schema.define(version: 2020_08_03_112750) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_descriptions_on_recipe_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text "note"
+    t.integer "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_notes_on_recipe_id"
+  end
+
+  create_table "parts", force: :cascade do |t|
+    t.string "name"
+    t.integer "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_parts_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|

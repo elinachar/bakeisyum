@@ -18,6 +18,8 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @descriptions = @recipe.descriptions.order(:id)
+    @parts = @recipe.parts.order(:id)
+    @notes = @recipe.notes.order(:id)
     @comments = @recipe.comments.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
   end
 
@@ -84,7 +86,9 @@ class RecipesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
       params.require(:recipe).permit(:name, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :original_recipie_url, :image_url,
-      descriptions_attributes: [:id, :description, :image_url, :_destroy])
+      descriptions_attributes: [:id, :description, :image_url, :_destroy],
+      parts_attributes: [:id, :name, :_destroy],
+      notes_attributes: [:id, :note, :_destroy])
 
     end
 end

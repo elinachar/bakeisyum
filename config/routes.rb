@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  resources :descriptions
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}, controllers: { registrations: "user_registrations" }
 
   resources :users
 
   resources :recipes, param: :name do
     resources :descriptions
+    resources :parts
+    resources :notes
     resources :comments do
       put :approve
     end

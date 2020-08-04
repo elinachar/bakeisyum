@@ -21,12 +21,7 @@
   </div> <!-- end row -->
 
   <div class="descriptions-show">
-    <% @descriptions.each do |description| %>
-      <p><%= description.description %></p>
-      <% unless description.image_url_url.nil? %>
-        <%= image_tag( description.image_url_url.to_s, alt: File.basename(description.image_url_url.to_s) , class: "img-responsive" ) %>
-      <% end %>
-    <% end %>
+    <%= render 'descriptions' %>
   </div> <!-- end descriptions-show -->
 
   <div class="ingredients-show">
@@ -45,7 +40,7 @@
       </div>
       <% unless @recipe.waiting_time.nil? %>
         <div class="col-sm-3 information-group">
-          <i class='far fa-hourglass'></i><br>
+          <i class="fa fa-hourglass-o"></i><br>
           <p class="information-input"><%=@recipe.waiting_time%></p>
           <p class="information-description">Waiting Time</p>
         </div>
@@ -70,13 +65,26 @@
       </div>
     </div>
 
-    <h3>Ingredients</h3>
-    <h3>Instructions</h3>
+    <div class="ingredients-instructions">
+      <div class="ingredients">
+        <h3>Ingredients</h3>
+        <%= render 'parts' %>
+      </div>
+      <div class="instructions">
+        <h3>Instructions</h3>
+        <%= render 'parts' %>
+      </div>
+    </div>
+
+
+
+    <ul class="notes-show">
+      <%= render 'notes' %>
+    </ul>
 
   </div> <!-- end ingredients-show -->
 
-  <div class="notes-show">
-  </div> <!-- end notes-show-->
+
 
   <div>
     <div class="row comment-title">
@@ -97,8 +105,8 @@
 
 <div class="recipe-links-show">
   <% if signed_in? && (current_user.admin? || current_user.author?) %>
-    <%= link_to '<i class="fa fa-edit"></i> Edit'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
-    <%= link_to '<i class="fa fa-trash-o" ></i> Delete'.html_safe, @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'  %>
+    <%= link_to '<i class="fa fa-edit"></i> Edit Recipe'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
+    <%= link_to '<i class="fa fa-trash-o" ></i> Delete Recipe'.html_safe, @recipe, method: :delete, data: { confirm: 'Are you sure that you want to delete the recipe? You cannot undo this action.' }, class: 'btn btn-default'  %>
   <% end %>
   <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to all Recipes'.html_safe, recipes_path, class: 'btn btn-default' %>
 </div>

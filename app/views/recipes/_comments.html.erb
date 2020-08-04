@@ -1,7 +1,7 @@
 <div class="comments">
   <% @comments.each do |comment| %>
     <% if comment.approved?  || ( signed_in? && (current_user.admin? || current_user.moderator?) ) %>
-      <div class="row">
+      <div class="row comments-index">
         <div class="col-xs-12">
           <p>
             <%= comment.cοmmentator %> <small class="review-dt-uploaded"><%= "&#8729; #{time_ago_in_words(comment.created_at)} ago".html_safe %></small>

@@ -1,8 +1,13 @@
 @import 'colors';
 
 // Form
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-color: $grey;
+}
+
 .btn-nested-fields {
-  width: 80%;
   background: $orange;
 }
 

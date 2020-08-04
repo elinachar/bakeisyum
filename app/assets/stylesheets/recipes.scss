@@ -124,10 +124,10 @@ h3 {
 .recipe-show {
   margin-top: 10px;
 
-  p {
+  p,
+  li {
     font-size: 18px;
   }
-
 
   h6 {
     color: $mint;
@@ -135,7 +135,8 @@ h3 {
   }
 
   h6,
-  .borrowed-recipe {
+  .borrowed-recipe,
+  li {
     font-style: italic;
   }
 
@@ -228,8 +229,8 @@ h3 {
   }
 
   .ingredients-show {
-    margin-top: 30px;
     padding-top: 20px;
+    margin: 30px 0;
     border: solid thin $mint;
 
     img {
@@ -249,6 +250,7 @@ h3 {
 
     h3 {
       font-size: 23px;
+      margin-top: 40px;
     }
 
     .recipe-information {
@@ -272,6 +274,36 @@ h3 {
           font-size: 15px;
           color: $grey;
         }
+      }
+    }
+
+    .ingredients-instructions {
+      padding: 0px 40px;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      h4 {
+        margin: 20px 0 15px 0;
+      }
+
+    }
+
+    .notes-show {
+      list-style: none; /* Remove default bullets */
+
+      li::before {
+        content: "\2022";
+        color: $darkGreyMint;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+
+      li {
+        margin-bottom: 10px;
       }
     }
   }
@@ -301,7 +333,7 @@ h3 {
   color: grey;
 }
 
-.comments a {
+.comments-index a {
   margin-left: 20px;
 }
 
@@ -314,12 +346,25 @@ h3 {
 }
 
 //New - Update
+.width-80 {
+  width: 80%;
+}
+
+.width-80.btn {
+  color: black;
+}
+
 .recipe-form {
   margin-bottom: 10px;
 
-  .btn-submit .btn {
-    width: 80%;
-  }
+}
+
+.cancel-editing .btn {
+  background-color: #ff9999;
+}
+
+.cancel-editing .btn:hover {
+  background-color: #ff6666;
 }
 
 /* Landscape phone to portrait tablet */
