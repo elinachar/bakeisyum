@@ -1,0 +1,7 @@
+<div class="nested-fields">
+  <div class="field form-group">
+    <%= f.label :instruction %>
+    <%= link_to_remove_association "<i class='fa fa-trash-o'></i>".html_safe, f, data: { confirm: 'Are you sure that you want to remove this Instruction?' }, class: "remove-btn" %>
+    <%= f.text_area :instruction, class: 'form-control',size: '5x3' %>
+  </div>
+</div>

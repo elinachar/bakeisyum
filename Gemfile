@@ -46,6 +46,9 @@ gem 'social-share-button'
 # Gem for image upload
 gem 'carrierwave'
 
+# MiniMagick: for proccess uploading photos
+gem "mini_magick"
+
 # Gem for AWS S3
 gem 'fog-aws'
 

@@ -157,7 +157,7 @@ h3 {
     border-style: solid;
     border-color: $mint;
     border-width: 1px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .social-share-button {
@@ -221,6 +221,10 @@ h3 {
      content: "\f199";
   }
 
+  .jump-to-recipe {
+    margin-bottom: 30px;
+  }
+
   .descriptions-show {
     img {
       margin: 20px auto;
@@ -228,13 +232,14 @@ h3 {
     }
   }
 
-  .ingredients-show {
+  .ingredients-instructions-notes {
     padding-top: 20px;
     margin: 30px 0;
     border: solid thin $mint;
 
     img {
       width: 30%;
+      max-width: 550px;
       margin: auto;
     }
 
@@ -278,16 +283,11 @@ h3 {
     }
 
     ul {
-      list-style: none; /* Remove default bullets */
-    }
+      color: $mint;
 
-    li::before {
-      content: "\2022";
-      color: $darkGreyMint;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
+      p {
+        color: $darkGrey;
+      }
     }
 
     .ingredients-instructions {
@@ -305,6 +305,10 @@ h3 {
         span {
           color: $grey;
         }
+      }
+
+      li {
+        padding-bottom: 10px;
       }
 
     }
@@ -379,7 +383,7 @@ h3 {
 // XS and SM Devices
 @media (max-width: 767px) {
   .recipe-show {
-    .ingredients-show {
+    .ingredients-instructions-notes {
 
       .recipe-information {
         .information-group {

@@ -8,7 +8,7 @@
       <h2><%= @recipe.name %></h2>
       <% t = @recipe.updated_at %>
       <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
-      <p class="borrowed-recipe text-center">Recipe borrowed from <%= link_to @recipe.original_recipie_author, @recipe.original_recipie_url %> and modified.</p>
+      <p class="borrowed-recipe text-center">Recipe borrowed from <%= link_to @recipe.original_recipie_author, @recipe.original_recipie_url, target: "_blank" %> and modified.</p>
       <p><%= @recipe.short_description %></p>
     </div>
   </div> <!-- end row -->
@@ -20,12 +20,16 @@
     </div>
   </div> <!-- end row -->
 
+  <div class="text-center jump-to-recipe">
+    <%= link_to "<i class='fas fa-arrow-alt-circle-down'></i> Jump to Recipe".html_safe, "#recipe-ingredients-instructions-notes", class: 'btn' %>
+  </div>
+
   <div class="descriptions-show">
     <%= render 'descriptions' %>
   </div> <!-- end descriptions-show -->
 
-  <div class="ingredients-show">
-    <%= image_tag( @recipe.image_url_url.to_s , class: "img-responsive", alt: @recipe.name) %>
+  <div class="ingredients-instructions-notes" id="recipe-ingredients-instructions-notes">
+    <%= image_tag( @recipe.image_url_url(:show_thumb).to_s , class: "img-responsive", alt: @recipe.name) %>
     <h2><%= @recipe.name %></h2>
 
     <div class="recipe-information row text-center">
@@ -72,16 +76,15 @@
       </div>
       <div class="instructions">
         <h3>Instructions</h3>
+        <%= render 'parts_instructions' %>
       </div>
     </div>
-
-
 
     <ul class="notes-show">
       <%= render 'notes' %>
     </ul>
 
-  </div> <!-- end ingredients-show -->
+  </div> <!-- end ingredients-instructions-notes -->
 
 
 

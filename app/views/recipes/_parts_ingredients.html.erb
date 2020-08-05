@@ -2,7 +2,7 @@
   <h4><%= part.name %></h4>
   <ul>
     <% part.ingredients.each do |ingredient| %>
-      <li>
+      <li><p>
         <% if ingredient.weight % 1 == 0 %>
           <%=sprintf("%g",ingredient.weight)%>
         <% else %>
@@ -21,7 +21,7 @@
         <% end %>
         <%= ingredient.name %>
 
-      </li>
+      </p></li>
     <% end %>
   </ul>
 <% end %>

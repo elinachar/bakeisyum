@@ -16,16 +16,18 @@ hr {
 }
 
 .nested-fields {
-  a {
+  .remove-btn {
     color: $red;
   }
 
-  a:hover {
+  .remove-btn:hover {
     color: $redHover;
   }
 }
 
 .ingredients-fields {
+  margin-bottom: 40px;
+
   .nested-fields {
     margin-bottom: 10px;
   }

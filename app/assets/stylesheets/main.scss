@@ -1,5 +1,8 @@
 // Application
 @import 'colors';
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -8,7 +11,7 @@ body {
 html, body {
  height: 100%; /* for the sticky footer */
  font-family: 'Raleway', 'serif';
- color: #33483e;
+ color: $darkGrey;
 }
 
 /** Define colors of the page **/
@@ -23,7 +26,7 @@ a:-webkit-any-link {
 
 .btn {
   background-color: $mint;
-  color: #33483e;
+  color: $darkGrey;
 }
 
 .btn:hover {
