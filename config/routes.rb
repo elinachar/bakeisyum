@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :recipes, param: :name do
+    resources :ratings
     resources :comments do
       put :approve
     end

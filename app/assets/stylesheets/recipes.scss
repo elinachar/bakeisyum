@@ -258,6 +258,14 @@ h3 {
       margin-top: 40px;
     }
 
+    .rating {
+      margin-bottom: 25px;
+
+      .rating-count {
+        color: $grey;
+      }
+    }
+
     .recipe-information {
       margin: 0;
       padding-top: 20px;

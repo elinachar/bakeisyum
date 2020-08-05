@@ -39,6 +39,27 @@
   <div class="ingredients-instructions-notes" id="recipe-ingredients-instructions-notes">
     <%= image_tag( @recipe.image_url_url(:show_thumb).to_s , class: "img-responsive", alt: @recipe.name) %>
     <h2><%= @recipe.name %></h2>
+    <div class="rating text-center" data-rating="<%= @recipe.ratings.average(:rating)%>">
+      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 1, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-1" %>
+      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 2, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-2" %>
+      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 3, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-3" %>
+      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 4, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-4" %>
+      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 5, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-5" %>
+      <div class="rating-count">
+        <% unless @recipe.ratings.empty? %>
+          <% if @recipe.ratings.average(:rating) % 1 == 0 %>
+            <%=sprintf("%g", @recipe.ratings.average(:rating))%>
+          <% else %>
+            <% if @recipe.ratings.average(:rating) > 4.5 %>
+              5
+            <% else %>
+              <%=number_with_precision(@recipe.ratings.average(:rating), precision: 1)%>
+            <% end %>
+          <% end %>
+          from <%= @recipe.ratings.count %> votes
+        <% end %>
+      </div>
+    </div>
 
     <div class="recipe-information row text-center">
       <% if @recipe.waiting_time.empty? %>
@@ -93,8 +114,6 @@
     </ul>
 
   </div> <!-- end ingredients-instructions-notes -->
-
-
 
   <div>
     <div class="row comment-title">
