@@ -8,7 +8,16 @@
       <h2><%= @recipe.name %></h2>
       <% t = @recipe.updated_at %>
       <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
-      <p class="borrowed-recipe text-center">Recipe borrowed from <%= link_to @recipe.original_recipie_author, @recipe.original_recipie_url, target: "_blank" %> and modified.</p>
+      <% unless ( @recipe.original_recipie_author.nil? || @recipe.original_recipie_author.empty? ) %>
+        <p class="borrowed-recipe text-center">Recipe borrowed from
+        <% unless ( @recipe.original_recipie_url.nil? || @recipe.original_recipie_url.empty? )%>
+           <%= link_to @recipe.original_recipie_author, @recipe.original_recipie_url, target: "_blank" %>
+        <% else %>
+          <%= @recipe.original_recipie_author %>
+        <% end %>
+        and modified.</p>
+        <%=@recipe.original_recipie_url.nil?%>
+      <% end %>
       <p><%= @recipe.short_description %></p>
     </div>
   </div> <!-- end row -->
