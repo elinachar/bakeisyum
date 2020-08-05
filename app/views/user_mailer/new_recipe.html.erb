@@ -21,14 +21,14 @@
     <tr>
       <td style="text-align:center">
         <%= link_to @recipe, :action => 'go', style: "text-decoration:none" do %>
-          <%= image_tag(@recipe.image.url.to_s , style: "width:80%;", alt: @recipe.name) %>
+          <%= image_tag(@recipe.image_url.url.to_s , style: "width:80%;", alt: @recipe.name) %>
         <% end %>
       </td>
     </tr>
 
     <tr>
       <td>
-        <p style="padding-left: 20px; padding-right: 20px;"><%= @recipe.description %></p>
+        <p style="padding-left: 20px; padding-right: 20px;"><%= @recipe.short_description %></p>
       </td>
     </tr>
   </tbody>

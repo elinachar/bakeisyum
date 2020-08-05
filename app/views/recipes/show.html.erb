@@ -8,15 +8,14 @@
       <h2><%= @recipe.name %></h2>
       <% t = @recipe.updated_at %>
       <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
-      <% unless ( @recipe.original_recipie_author.nil? || @recipe.original_recipie_author.empty? ) %>
+      <% unless @recipe.original_recipie_author.empty? %>
         <p class="borrowed-recipe text-center">Recipe borrowed from
-        <% unless ( @recipe.original_recipie_url.nil? || @recipe.original_recipie_url.empty? )%>
+        <% unless @recipe.original_recipie_url.empty?%>
            <%= link_to @recipe.original_recipie_author, @recipe.original_recipie_url, target: "_blank" %>
         <% else %>
           <%= @recipe.original_recipie_author %>
         <% end %>
         and modified.</p>
-        <%=@recipe.original_recipie_url.nil?%>
       <% end %>
       <p><%= @recipe.short_description %></p>
     </div>
@@ -42,7 +41,7 @@
     <h2><%= @recipe.name %></h2>
 
     <div class="recipe-information row text-center">
-      <% if @recipe.waiting_time.nil? %>
+      <% if @recipe.waiting_time.empty? %>
         <div class="col-sm-4 information-group">
       <% else %>
         <div class="col-sm-3 information-group">
@@ -51,14 +50,14 @@
         <p class="information-input"><%=@recipe.preparation_time%></p>
         <p class="information-description">Preparation Time</p>
       </div>
-      <% unless @recipe.waiting_time.nil? %>
+      <% unless @recipe.waiting_time.empty? %>
         <div class="col-sm-3 information-group">
           <i class="fa fa-hourglass-o"></i><br>
           <p class="information-input"><%=@recipe.waiting_time%></p>
           <p class="information-description">Waiting Time</p>
         </div>
       <% end %>
-      <% if @recipe.waiting_time.nil? %>
+      <% if @recipe.waiting_time.empty? %>
         <div class="col-sm-4 information-group">
       <% else %>
         <div class="col-sm-3 information-group">
@@ -67,7 +66,7 @@
         <p class="information-input"><%=@recipe.cooking_time%></p>
         <p class="information-description">Cooking Time</p>
       </div>
-      <% if @recipe.waiting_time.nil? %>
+      <% if @recipe.waiting_time.empty? %>
         <div class="col-sm-4 information-group">
       <% else %>
         <div class="col-sm-3 information-group">
