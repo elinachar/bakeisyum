@@ -1,5 +1,3 @@
-//= require ratings
-
 // Get the average rating and get is as integer or floating with one decimal
 var avg = <%= @recipe.ratings.average(:rating) %>;
 if ( Number.isInteger(avg)) {
@@ -12,7 +10,7 @@ if ( avg > 4.5 ) {
   avg = 5
 }
 
+// Update stars
+updateStarClass(avg);
 // Update average rating under stars
 $(".rating-count").html(avg + ' from <%= @recipe.ratings.count %> votes');
-
-updateStarClass(avg);

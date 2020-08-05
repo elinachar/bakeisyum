@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @descriptions = @recipe.descriptions.order(:id)
+    @rating = @recipe.ratings.average(:rating)
     @parts = @recipe.parts.order(:id)
     @notes = @recipe.notes.order(:id)
     @comments = @recipe.comments.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")

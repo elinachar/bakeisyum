@@ -47,13 +47,13 @@
       <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 5, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-5" %>
       <div class="rating-count">
         <% unless @recipe.ratings.empty? %>
-          <% if @recipe.ratings.average(:rating) % 1 == 0 %>
-            <%=sprintf("%g", @recipe.ratings.average(:rating))%>
+          <% if @rating % 1 == 0 %>
+            <%=sprintf("%g", @rating)%>
           <% else %>
-            <% if @recipe.ratings.average(:rating) > 4.5 %>
+            <% if @rating > 4.5 %>
               5
             <% else %>
-              <%=number_with_precision(@recipe.ratings.average(:rating), precision: 1)%>
+              <%=number_with_precision(@rating, precision: 1)%>
             <% end %>
           <% end %>
           from <%= @recipe.ratings.count %> votes
