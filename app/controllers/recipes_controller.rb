@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   def index
     if params[:q]
       @search_term = params[:q]
-      @recipes = Recipe.search(@search_term)
+      @recipes = Recipe.search(@search_term).distinct
     else
       @recipes = Recipe.all
     end

@@ -15,9 +15,9 @@ class Recipe < ApplicationRecord
 
   def self.search(search_term)
     if Rails.env.production?
-      Recipe.where('name ilike :search OR description LIKE :search', search: "%#{search_term}%")
+      Recipe.left_outer_joins(:descriptions).left_outer_joins(:ingredients).where('recipes.name ilike :search OR recipes.short_description ilike :search OR descriptions.description ilike :search OR ingredients.name ilike :search', search: "%#{search_term}%")
     else
-      Recipe.where('name LIKE :search OR description LIKE :search', search: "%#{search_term}%")
+      Recipe.left_outer_joins(:descriptions).left_outer_joins(:ingredients).where('recipes.name LIKE :search OR recipes.short_description LIKE :search  OR descriptions.description LIKE :search OR ingredients.name LIKE :search', search: "%#{search_term}%")
     end
   end
 
