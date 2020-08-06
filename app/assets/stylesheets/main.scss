@@ -1,5 +1,8 @@
 // Application
 @import 'colors';
+@import 'vendor_prefixes';
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -75,11 +78,13 @@ a:-webkit-any-link {
   font-family: 'Tangerine', serif;
   font-size: 48px;
   color: $mint;
+  @include transition(text-shadow 0.7s);
 }
 
 .logo:hover {
   color: $mint;
-  text-shadow: 1px 1px 2px grey;
+  text-shadow: 1px 1px 2px #76a892;
+  @include transition(text-shadow 0.7s);
 }
 
 .navigation-bar-hr-collapse {
