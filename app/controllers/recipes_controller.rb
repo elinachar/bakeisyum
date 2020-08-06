@@ -21,7 +21,8 @@ class RecipesController < ApplicationController
     @rating = @recipe.ratings.average(:rating)
     @parts = @recipe.parts.order(:id)
     @notes = @recipe.notes.order(:id)
-    @comments = @recipe.comments.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
+    @comments = @recipe.comments.order("created_at DESC")
+    # .paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
   end
 
   # GET /recipes/new
