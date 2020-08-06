@@ -294,15 +294,34 @@ footer, .anchor:after {
 }
 
 footer {
- background-color: $mint;
- color: #777;
- border-top-style: solid;
- border-color: $grey;
- border-top-width: 1px;
- margin-top: 20px
+  background-color: $mint;
+  color: #777;
+  border-top-style: solid;
+  border-color: $grey;
+  border-top-width: 1px;
+  margin-top: 20px;
+  padding-top: 20px;
+  height: 60px;
+
+  .unsplash {
+    text-align: right;
+  }
+
 }
 
-/* Landscape phone to portrait tablet */
+// XS and SM
+@media (max-width: 767px) {
+  footer {
+    height: 90px;
+
+    .unsplash,
+    .copyright {
+      text-align: center;
+    }
+  }
+}
+
+/* XS, SM and MD */
 @media only screen and (max-width: 991px) {
   .logo {
     float: left;
