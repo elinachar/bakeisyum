@@ -15,7 +15,7 @@
           <%= image_tag(recipe.image_url_url.to_s, class: "img-responsive", alt: recipe.name) %>
           <div class="carousel-caption">
             <p><%= recipe.name %></p>
-            <%=link_to "Read more", recipe, :class => 'btn btn-read-more'%>
+            <%=link_to "Read more", recipe, class: 'btn-read-more'%>
           </div>
 
         </div> <!-- end item -->

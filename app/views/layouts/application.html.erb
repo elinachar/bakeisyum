@@ -38,7 +38,6 @@
           <ul>
              <li><%= link_to "About", basic_pages_about_path %></li>
              <li><%= link_to "Recipies", recipes_path %></li>
-             <!-- <li><%= link_to "FAQ", basic_pages_faq_path %></li> -->
              <li><%= link_to "Contact", basic_pages_contact_path %></li>
           </ul>
         </div>
@@ -51,7 +50,7 @@
               <ul>
                 <li><%= link_to('My account', user_path(current_user)) %></li>
                 <% if current_user.admin? %>
-                  <li><%= link_to('Manage users', users_path) %><li>
+                  <li><%= link_to('Manage users', users_path) %></li>
                 <% end %>
                 <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
               </ul>

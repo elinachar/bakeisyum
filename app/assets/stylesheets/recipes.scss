@@ -155,6 +155,7 @@ h3 {
     border-color: $mint;
     border-width: 1px;
     margin-bottom: 30px;
+    width: 90%;
   }
 
   .social-share-button {
@@ -165,52 +166,37 @@ h3 {
 
   .social-share-button .ssb-pinterest,
   .social-share-button .ssb-facebook,
-  .social-share-button .ssb-twitter,
-  .social-share-button .ssb-google_plus,
   .social-share-button .ssb-email {
-      background-image: none !important;
-      color: $mint;
-      padding-right: 35px;
+    background-image: none !important;
+    color: $mint;
+    width: 47px;
+    height: 47px;
+    margin: 0 5px;
   }
 
   .social-share-button .ssb-pinterest:hover,
   .social-share-button .ssb-facebook:hover,
-  .social-share-button .ssb-twitter:hover,
-  .social-share-button .ssb-google_plus:hover,
   .social-share-button .ssb-email:hover{
     color: $darkMint;
   }
 
   .social-share-button .ssb-pinterest:before,
   .social-share-button .ssb-facebook:before,
-  .social-share-button .ssb-twitter:before,
-  .social-share-button .ssb-google_plus:before,
   .social-share-button .ssb-email:before {
     background-image: none;
     font-family: 'FontAwesome';
-    font-size: 30px;
+    font-size: 45px;
   }
 
   .social-share-button .ssb-pinterest:before {
      content: "\f231";
      content: "\f0d3";
+     padding-bottom: -10px;
      // content: "\f0d2";
   }
 
   .social-share-button .ssb-facebook:before {
      content: "\f082";
-     // content: "\f39e";
-  }
-
-  .social-share-button .ssb-twitter:before {
-     content: "\f099";
-     content: "\f081";
-  }
-
-  .social-share-button .ssb-google_plus:before {
-    content: "\f0d4";
-    // content: "\f0d5";
-    // content: "\f2b3";
   }
 
   .social-share-button .ssb-email:before {
@@ -220,6 +206,11 @@ h3 {
 
   .jump-to-recipe {
     margin-bottom: 30px;
+
+    a {
+      padding-top: 12px;
+      height: 47px;
+    }
   }
 
   .descriptions-show {
@@ -257,6 +248,10 @@ h3 {
 
     .rating {
       margin-bottom: 25px;
+
+      i:hover {
+        color: $mint;
+      }
 
       .rating-count {
         color: $grey;
@@ -333,10 +328,20 @@ h3 {
   border-color: $grey;
   border-width: 1px;
   margin-bottom: 20px;
+
+  #create-new-comment {
+    height: 47px;
+    margin-bottom: 20px;
+  }
 }
 
 .new-comment {
   display: none;
+
+  .btn {
+    height: 47px;
+    width: 100px;
+  }
 }
 
 .new-comment h4,
@@ -380,6 +385,7 @@ h3 {
 
 /* Landscape phone to portrait tablet */
 @media only screen and (max-width: 767px) {
+
   .btn-goback-edit {
     margin-bottom: 10px;
   }

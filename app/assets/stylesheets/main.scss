@@ -4,7 +4,7 @@
 
 
 html {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 body {
@@ -140,9 +140,12 @@ a:-webkit-any-link {
   border-style: solid;
   border-width: 0.2px;
   padding: 10px;
+  padding-top: 12px;
   margin-top: 11px;
   margin-right: 10px;
   color: $mint;
+  height: 50px;
+  width: 50px;
 }
 
 .navigation-bar-bars:hover {
@@ -209,7 +212,7 @@ a:-webkit-any-link {
 }
 
 .login-dropdown {
-  display: none;
+  // display: none;
   margin-top: -20px;
 }
 
@@ -232,7 +235,8 @@ a:-webkit-any-link {
 }
 
 .login-dropdown-box li:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .login-dropdown-box li:first-child {
@@ -268,6 +272,9 @@ a:-webkit-any-link {
 .login-collapsed p i {
   float: right;
   padding-right: 40px;
+  padding-top: 10px;
+  width: 50px;
+  height: 50px;
 }
 
 /* Main Body */
@@ -355,8 +362,18 @@ footer {
     padding-left: 16px;
   }
 
+  .navigation-bar li a {
+    width: 100%;
+    text-align: left;
+  }
+
   .search-input {
     padding-right: 15px;
+  }
+
+  .search-button {
+    width: 50px;
+    height: 50px;
   }
 
   .search-form .form-control {
@@ -379,6 +396,11 @@ footer {
 
   .login-collapsed  {
     display: block;
+
+    a {
+      display: block;
+      height: 55px;
+    }
   }
 
   .login-collapsed ul {

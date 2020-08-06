@@ -21,12 +21,10 @@
     </div>
   </div> <!-- end row -->
 
-  <div class="row">
-    <div class="social-share text-center col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
-      <h4>Share</h4>
-      <%= social_share_button_tag(@recipe.name) %>
-    </div>
-  </div> <!-- end row -->
+  <div class="social-share text-center m-auto">
+    <h4>Share</h4>
+    <%= social_share_button_tag(@recipe.name) %>
+  </div>
 
   <div class="text-center jump-to-recipe">
     <%= link_to "<i class='fas fa-arrow-alt-circle-down'></i> Jump to Recipe".html_safe, "#recipe-ingredients-instructions-notes", class: 'btn' %>
