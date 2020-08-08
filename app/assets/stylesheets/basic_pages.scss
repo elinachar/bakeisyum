@@ -19,10 +19,13 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+
+  p {
+    padding-bottom: 20px;
+  }
 }
 
 .btn-read-more {
-  font-size: 25px;
   color: $offWhite;
   border-top: 2px solid $offWhite;
   border-bottom: 2px solid $offWhite;
