@@ -26,6 +26,11 @@ $(document).on('turbolinks:load', function() {
   $(".like-info-user").mouseleave(function() {
     if ( $(".like i").hasClass("not-logged-in-user") ) {
       $(".like-info-user").slideUp();
+      if ( $(".like i").hasClass("far")) { // if empty
+        $(".like i").removeClass("far").addClass("fas"); //full
+      } else  { // if full
+        $(".like i").removeClass("fas").addClass("far"); //empty
+      }
     }
   })
 
