@@ -49,6 +49,7 @@
               <p>Hi <b><%= current_user.first_name %>!<i class="fa fa-angle-down"></i></p></b>
               <ul>
                 <li><%= link_to('My account', user_path(current_user)) %></li>
+                <li><%= link_to('Favorite Recipes', user_favorites_path(current_user)) %></li>
                 <% if current_user.admin? %>
                   <li><%= link_to('Manage users', users_path) %></li>
                 <% end %>
@@ -81,6 +82,7 @@
               <ul>
                 <li><p>Hi <b><%= current_user.first_name %>!</p></b></li>
                 <li><%= link_to('My account', user_path(current_user)) %></li>
+                <li><%= link_to('Favorite Recipes', user_favorites_path(current_user)) %></li>
                 <% if current_user.admin? %>
                   <li><%= link_to('Manage users', users_path) %><li>
                 <% end %>

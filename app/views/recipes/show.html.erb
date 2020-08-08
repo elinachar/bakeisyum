@@ -58,6 +58,30 @@
         <% end %>
       </div>
     </div>
+    <div class="like text-center">
+      <% if user_signed_in? %>
+        <% if @favorites.include? @recipe.id %>
+          <%= link_to "<i class='fas fa-heart'></i>".html_safe, user_favorite_path(id: @favorite.id, user_id: @favorite.user_id), method: :delete, remote: true %>
+          <div class="like-info-user">
+            <div class="arrow-up"></div>
+            <p class="remove-favorite m-auto">Remove <%= @recipe.name %> from your favorite recipes.</p>
+          </div>
+        <% else %>
+          <%= link_to "<i class='far fa-heart'></i>".html_safe, user_favorites_path(current_user, recipe_id: @recipe.id), method: :post, remote: true %>
+          <div class="like-info-user">
+            <div class="arrow-up"></div>
+            <p class="add-favorite m-auto">Add <%= @recipe.name %> to your favorite recipes.</p>
+          </div>
+        <% end %>
+      <% else %>
+        <i class='far fa-heart not-logged-in-user'></i>
+        <div class="like-info-user">
+          <div class="arrow-up"></div>
+          <p class="m-auto">You should <%= link_to "login".html_safe, new_user_session_path %> first in order to add the recipe to your favorites.</p>
+        </div>
+
+      <% end %>
+    </div>
 
     <div class="recipe-information row text-center">
       <% if @recipe.waiting_time.empty? %>

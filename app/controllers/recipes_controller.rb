@@ -19,10 +19,13 @@ class RecipesController < ApplicationController
   def show
     @descriptions = @recipe.descriptions.order(:id)
     @rating = @recipe.ratings.average(:rating)
+    unless current_user.nil?
+      @favorites = current_user.favorites.pluck(:recipe_id)
+      @favorite =  @recipe.favorites.where(user: current_user)[0]
+    end
     @parts = @recipe.parts.order(:id)
     @notes = @recipe.notes.order(:id)
     @comments = @recipe.comments.order("created_at DESC")
-    # .paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
   end
 
   # GET /recipes/new

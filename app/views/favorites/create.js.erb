@@ -1,0 +1,18 @@
+// Set full heart and update hover text to remove favorite
+var recipeName = "<%= "#{@recipe.name}" %>";
+var userId = "<%= "#{current_user.id}" %>";
+var favoriteId = "<%= "#{@favorite.id}" %>";
+var favoriteHref = "/users/" + userId + "/favorites/" + favoriteId;
+$(".like i").removeClass("far").addClass("fas clicked");
+$(".like a").attr({"data-method": "delete", "href": favoriteHref});
+updateLikeInfoUserText(".like-info-user");
+
+function updateLikeInfoUserText(element) {
+  $(element + " p").html(recipeName + " added to your favorite recipes!")
+  setTimeout(function() {
+    setTimeout(function() {
+      $(element + " p").html("Remove " + recipeName + " from your favorite recipes.");  // runs secod after 4000
+    }, 1000)
+    $(element).slideUp("slow"); // runs first after 3000
+  }, 3000)
+}

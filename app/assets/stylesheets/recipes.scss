@@ -247,7 +247,7 @@ h3 {
     }
 
     .rating {
-      margin-bottom: 25px;
+      margin-bottom: 10px;
 
       i:hover {
         color: $mint;
@@ -256,6 +256,33 @@ h3 {
       .rating-count {
         color: $grey;
         font-weight: 200;
+      }
+    }
+
+    .like {
+      i {
+        font-size: 22px;
+      }
+
+      margin-bottom: 25px;
+
+      .not-logged-in-user {
+        cursor: pointer;
+      }
+
+      .like-info-user {
+        display: none;
+
+        .arrow-up {
+          margin-bottom: 0;
+          margin: auto;
+        }
+
+        p {
+          background: $mint;
+          padding: 15px;
+          width: 50%;
+        }
       }
     }
 
