@@ -1,4 +1,8 @@
 <div class="container favorites-index">
   <h1>Your Favorite Recipes</h1>
-  <%= render @recipes %>
+  <% if @recipes.empty? %>
+    <p class="text-center">You do not have any favorite recipes...</p>
+  <% else %>
+    <%= render @recipes %>
+  <% end %>
 </div>

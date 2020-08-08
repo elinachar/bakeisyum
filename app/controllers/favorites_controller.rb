@@ -8,20 +8,6 @@ class FavoritesController < ApplicationController
     @recipes = Recipe.find(@favorites.pluck(:recipe_id))
   end
 
-  # GET /favorites/1
-  # GET /favorites/1.json
-  def show
-  end
-
-  # GET /favorites/new
-  def new
-    @favorite = Favorite.new
-  end
-
-  # GET /favorites/1/edit
-  def edit
-  end
-
   # POST /favorites
   # POST /favorites.json
   def create
@@ -36,20 +22,6 @@ class FavoritesController < ApplicationController
         format.js
       else
           format.html { redirect_to @recipe, alert: 'Favorite was not created.' }
-        format.json { render json: @favorite.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /favorites/1
-  # PATCH/PUT /favorites/1.json
-  def update
-    respond_to do |format|
-      if @favorite.update(favorite_params)
-        format.html { redirect_to @favorite, notice: 'Favorite was successfully updated.' }
-        format.json { render :show, status: :ok, location: @favorite }
-      else
-        format.html { render :edit }
         format.json { render json: @favorite.errors, status: :unprocessable_entity }
       end
     end
