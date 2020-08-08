@@ -26,6 +26,7 @@
 }
 
 .btn-read-more {
+  font-size: 0.7em;
   color: $offWhite;
   border-top: 2px solid $offWhite;
   border-bottom: 2px solid $offWhite;
@@ -126,6 +127,10 @@ address i {
   -webkit-transform: translateY(-25%);
   -ms-transform: translateY(-25%);
   transform: translateY(-25%);
+
+  p {
+    padding-bottom: 0;
+  }
 }
 
 }
