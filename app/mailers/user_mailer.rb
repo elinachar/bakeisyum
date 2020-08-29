@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: "info@bakeisyum.com"
+  default from: "Bake is Yum"
 
   def contact_form(email, name, phone, message)
     @email = email
@@ -24,15 +24,13 @@ class UserMailer < ApplicationMailer
     @subscription = subscription
     @recipes = recipes
     @appname = "Bake is Yum"
-    mail( from: "welcome@bakeisyum.com",
-          to: @subscription.email,
+    mail( to: @subscription.email,
           subject: "Thank you for subscribed to #{@appname}!")
   end
 
   def welcome(user)
     @appname = "Bake is Yum"
-    mail( from: "welcome@bakeisyum.com",
-          to: user.email,
+    mail( to: user.email,
           subject: "Welcome to #{@appname}!")
   end
 
