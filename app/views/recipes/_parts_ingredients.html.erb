@@ -6,7 +6,11 @@
         <% if ingredient.weight % 1 == 0 %>
           <%=sprintf("%g",ingredient.weight)%>
         <% else %>
-          <%= ingredient.weight.to_r %>
+          <% if ingredient.weight % 0.33 == 0 %>
+              <%= sprintf("%g",ingredient.weight / 0.33) %>/3
+          <% else %>
+            <%= ingredient.weight.to_r %>
+          <% end %>
         <% end %>
         <%= ingredient.weight_unit %>
         <% unless ingredient.weight_optional.nil? %>
@@ -14,7 +18,11 @@
           <% if ingredient.weight_optional % 1 == 0 %>
             <%=sprintf("%g",ingredient.weight_optional)%>
           <% else %>
-            <%= ingredient.weight_optional.to_r %>
+            <% if ingredient.weight_optional % 0.33 == 0 %>
+              <%= sprintf("%g",ingredient.weight_optional / 0.33) %>/3
+            <% else %>
+              <%= ingredient.weight_optional.to_r %>
+            <% end %>
           <% end %>
           <%= ingredient.weight_optional_unit %>
           )</span>
