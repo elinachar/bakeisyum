@@ -6,10 +6,14 @@
         <% if ingredient.weight % 1 == 0 %>
           <%=sprintf("%g",ingredient.weight)%>
         <% else %>
-          <% if ingredient.weight % 0.33 == 0 %>
-              <%= sprintf("%g",ingredient.weight / 0.33) %>/3
+          <% if ingredient.weight_unit.include? 'cup' %>
+            <% if ingredient.weight % 0.33 == 0 %>
+                <%= sprintf("%g",ingredient.weight / 0.33) %>/3
+            <% else %>
+              <%= ingredient.weight.to_r %>
+            <% end %>
           <% else %>
-            <%= ingredient.weight.to_r %>
+            <%= ingredient.weight %>
           <% end %>
         <% end %>
         <%= ingredient.weight_unit %>
@@ -18,10 +22,14 @@
           <% if ingredient.weight_optional % 1 == 0 %>
             <%=sprintf("%g",ingredient.weight_optional)%>
           <% else %>
-            <% if ingredient.weight_optional % 0.33 == 0 %>
-              <%= sprintf("%g",ingredient.weight_optional / 0.33) %>/3
+            <%if ingredient.weight_optional_unit.include? 'cup' %>
+              <% if ingredient.weight_optional % 0.33 == 0 %>
+                <%= sprintf("%g",ingredient.weight_optional / 0.33) %>/3
+              <% else %>
+                <%= ingredient.weight_optional.to_r %>
+              <% end %>
             <% else %>
-              <%= ingredient.weight_optional.to_r %>
+              <%= ingredient.weight_optional %>
             <% end %>
           <% end %>
           <%= ingredient.weight_optional_unit %>
