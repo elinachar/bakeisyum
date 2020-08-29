@@ -17,7 +17,7 @@
         <td>
           <%= link_to recipe, :action => 'go', style: "text-decoration:none" do %>
             <div style="width:50%; background-color:#aaf0d1">
-              <%= image_tag( recipe.image.url.to_s , style: "width:100%;", alt: recipe.name) %>
+              <%= image_tag( recipe.image_url_url.to_s , style: "width:100%;", alt: recipe.name) %>
               <p style="padding-bottom:18px; color:#33483e;"><%= recipe.name %></p>
             </div>
           <% end %>
