@@ -15,7 +15,8 @@ class UserMailer < ApplicationMailer
     @recipe = recipe
     @appname = "Bake is Yum"
     @subscription = subscription
-    mail( to: @subscription.email,
+    mail( from: @appname,
+          to: @subscription.email,
           subject: @recipe.name + " from " + @appname)
   end
 
