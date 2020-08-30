@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_103155) do
+ActiveRecord::Schema.define(version: 2020_08_30_140209) do
 
   create_table "comments", force: :cascade do |t|
     t.string "cοmmentator"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_103155) do
     t.boolean "admin", default: false, null: false
     t.boolean "author", default: false, null: false
     t.boolean "moderator", default: false, null: false
+    t.boolean "agreement_terms", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

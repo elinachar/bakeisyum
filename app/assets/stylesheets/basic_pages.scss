@@ -141,10 +141,17 @@ address i {
 }
 
 // Privacy Policy
-.privacy_policy {
-  .section {
-    padding-bottom: 30px;
-  }
+// Terms and Conditions
+ol.sections {
+  padding-left: 15px;
+}
+
+.section {
+  padding-bottom: 30px;
+}
+
+ol.subsection li {
+  margin-bottom: 10px;
 }
 
 // Small devices (landscape phones, 576px and down)

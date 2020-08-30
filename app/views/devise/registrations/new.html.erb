@@ -2,7 +2,6 @@
   <h2>Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
 
     <div class="field">
       <%= f.label :first_name %><br />
@@ -15,26 +14,42 @@
     </div><br />
 
     <div class="field">
-      <%= f.label :email %><br />
+      <%= f.label :email, "Email*"%><br />
       <%= f.email_field :email, autocomplete: "email" %>
+      <% if resource.errors.messages[:email][0].present? %>
+        <div class="error-message">Email <%=resource.errors.messages[:email][0]%></div>
+      <% end %>
     </div><br />
 
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> characters minimum)*</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "off" %>
+      <% if resource.errors.messages[:password][0].present? %>
+        <div class="error-message">Password <%= resource.errors.messages[:password][0] %></div>
+      <% end %>
     </div><br />
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation, "Password confirmation*" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <% if resource.errors.messages[:password_confirmation][0].present? %>
+        <div class="error-message not-matching-password">Password confirmation <%=resource.errors.messages[:password_confirmation][0] %></div>
+      <% end %>
     </div></br>
 
     <div class="field">
       <%= f.check_box :subscribed %>
       <%= f.label "I would like to receive emails with the new recipes"%>
+    </div><br />
+
+    <div class="field">
+      <%= f.label :agreement_terms do %>
+        <%= f.check_box :agreement_terms %>
+        I agree to the Bake Is Yum <%= link_to 'Terms and Conditions', terms_and_conditions_path %> and <%= link_to 'Privacy Policy', privacy_policy_path %>.
+      <% end %>
     </div><br />
 
 

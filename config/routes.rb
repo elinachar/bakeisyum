@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'basic_pages#contact'
   post 'thank_you', to: 'basic_pages#thank_you'
   get 'privacy_policy', to: 'basic_pages#privacy_policy'
+  get 'terms_and_conditions', to: 'basic_pages#terms_and_conditions'
   root 'basic_pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

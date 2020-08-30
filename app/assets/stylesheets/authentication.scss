@@ -5,20 +5,34 @@
   margin-top: 20px;
   width: 60%;
   padding-bottom: 20px;
-}
 
-.authentication h2 {
-  padding-bottom: 15px;
-}
 
-.authentication h4 {
-  margin-top: 40px;
-}
+  h2 {
+    padding-bottom: 15px;
+  }
 
-.authentication .btn {
-  background-color: $offWhite;
-}
+  h4 {
+    margin-top: 40px;
+  }
 
-.authentication .btn:hover {
-  background-color: #e5e5e5;
+  .btn {
+    background-color: $offWhite;
+  }
+
+ .btn:hover {
+   background-color: #e5e5e5;
+  }
+
+  .field_with_errors {
+    color: red;
+    display: inline-block;
+
+    input {
+      outline: 1px solid red;
+    }
+  }
+
+  .error-message {
+    color: red;
+  }
 }
