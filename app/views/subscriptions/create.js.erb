@@ -1,3 +1,28 @@
-// Hide submition box and show thank you message
-console.log("create");
-$(".subscribe-box").html("<p>You have successfully subscribed to Bake is Yum!</p><p>From now on you will receive emails with the new recipes!</p>")
+// Successfully subscribedif ( <%= @subscription_error.nil? %> && <%= @privacy_policy %> == 1) {
+  $(".subscribe-box").html("<p>You have successfully subscribed to Bake is Yum!</p><p>From now on you will receive emails with the new recipes!</p>")
+
+// Error in subscription
+} else {
+  // Error in email
+  if ( <%= !@subscription_error.nil? %> ) {
+    var errorMessage;
+    if ( <%= @subscription_error == "blank" %> ) {
+        errorMessage = "cannot be blank";
+      } else if ( <%= @subscription_error == "invalid" %> ) {
+        errorMessage = "is invalid";
+      } else if ( <%= @subscription_error == "taken" %> ) {
+        errorMessage = "has already been taken";
+      }
+    $(".email-error").html("Email " + errorMessage).show();
+    $("#subscription_email").addClass("error");
+  } else {
+    $(".email-error").hide();
+    $("#subscription_email").removeClass("error");
+  }
+
+  // Error in privacy policy
+  if ( <%= @privacy_policy %> == 0) {
+    $(".privacy_policy").addClass("error");
+  }
+
+}

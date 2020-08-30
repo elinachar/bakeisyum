@@ -20,10 +20,10 @@ Rails.application.routes.draw do
 
   get 'homes/show'
   get 'basic_pages/index'
-  get 'basic_pages/about'
-  get 'basic_pages/contact'
-  get 'basic_pages/faq'
-  post 'basic_pages/thank_you'
+  get 'about', to: 'basic_pages#about'
+  get 'contact', to: 'basic_pages#contact'
+  post 'thank_you', to: 'basic_pages#thank_you'
+  get 'privacy_policy', to: 'basic_pages#privacy_policy'
   root 'basic_pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

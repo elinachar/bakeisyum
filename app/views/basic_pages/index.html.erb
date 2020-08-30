@@ -44,6 +44,14 @@
         <div class="form-group">
           <%= form.label :email, "Email address*" %>
           <%= form.text_field :email, class: 'form-control' %>
+          <p class="email-error"></p>
+        </div>
+
+        <div class="privacy_policy">
+          <%= form.label :privacy_policy do %>
+            <%= form.check_box :privacy_policy %>
+            I agree to sign up to receive email updates. We take your privacy seriously. See our <%= link_to 'Privacy Policy', privacy_policy_path %>.
+          <% end %>
         </div>
 
         <div class="actions">

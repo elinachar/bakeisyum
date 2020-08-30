@@ -71,6 +71,28 @@
   margin-top: 110px;
   padding: 10px 10px 10px 10px;
 
+
+  #subscription_email.error {
+    border-color: #a94442;
+  }
+
+  .email-error {
+    display: none;
+    color: #a94442;
+  }
+
+  .privacy_policy {
+    padding: 5px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+  }
+
+  .privacy_policy.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+
   .btn {
     height: 47px;
     width: 100px;
@@ -116,6 +138,13 @@ address i {
 
 .btn-submit {
   text-align: center;
+}
+
+// Privacy Policy
+.privacy_policy {
+  .section {
+    padding-bottom: 30px;
+  }
 }
 
 // Small devices (landscape phones, 576px and down)
