@@ -6,7 +6,7 @@
         <% if ingredient.weight % 1 == 0 %>
           <%=sprintf("%g",ingredient.weight)%>
         <% else %>
-          <% if ingredient.weight_unit.include? 'cup' %>
+          <% if (['cup', 'tsp','tbsp'].include? ingredient.weight_unit) && (ingredient.weight < 1 ) %>
             <% if ingredient.weight % 0.33 == 0 %>
                 <%= sprintf("%g",ingredient.weight / 0.33) %>/3
             <% else %>
@@ -22,7 +22,7 @@
           <% if ingredient.weight_optional % 1 == 0 %>
             <%=sprintf("%g",ingredient.weight_optional)%>
           <% else %>
-            <%if ingredient.weight_optional_unit.include? 'cup' %>
+            <% if (['cup', 'tsp','tbsp'].include? ingredient.weight_optional_unit) && (ingredient.weight_optional < 1) %>
               <% if ingredient.weight_optional % 0.33 == 0 %>
                 <%= sprintf("%g",ingredient.weight_optional / 0.33) %>/3
               <% else %>
