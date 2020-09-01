@@ -167,13 +167,15 @@
     <%= render "comments" %>
   </div>
 
+  <div id="go-top" title="Go to top" class="btn"><i class='fas fa-angle-up fa-lg'></i></div>
 
-<div class="recipe-links-show">
-  <% if signed_in? && (current_user.admin? || current_user.author?) %>
-    <%= link_to '<i class="fa fa-edit"></i> Edit Recipe'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
-    <%= link_to '<i class="fa fa-trash-o" ></i> Delete Recipe'.html_safe, @recipe, method: :delete, data: { confirm: 'Are you sure that you want to delete the recipe? You cannot undo this action.' }, class: 'btn btn-default'  %>
-  <% end %>
-  <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to all Recipes'.html_safe, recipes_path, class: 'btn btn-default' %>
-</div>
+
+  <div class="recipe-links-show">
+    <% if signed_in? && (current_user.admin? || current_user.author?) %>
+      <%= link_to '<i class="fa fa-edit"></i> Edit Recipe'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
+      <%= link_to '<i class="fa fa-trash-o" ></i> Delete Recipe'.html_safe, @recipe, method: :delete, data: { confirm: 'Are you sure that you want to delete the recipe? You cannot undo this action.' }, class: 'btn btn-default'  %>
+    <% end %>
+    <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to all Recipes'.html_safe, recipes_path, class: 'btn btn-default' %>
+  </div>
 
 </div> <!-- end container -->
