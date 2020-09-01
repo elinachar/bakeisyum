@@ -132,9 +132,11 @@
     </div>
 
     <% unless @recipe.notes.empty? %>
-      <ul class="notes-show">
-        <%= render 'notes' %>
-      </ul>
+      <div class="notes">
+        <ul>
+          <%= render 'notes' %>
+        </ul>
+      </div>
     <% end %>
 
   </div> <!-- end ingredients-instructions-notes -->
