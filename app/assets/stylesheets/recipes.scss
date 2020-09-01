@@ -447,6 +447,12 @@ h3 {
   .recipe-show {
     width: 100%;
 
+    .descriptions-show {
+      img {
+        width: 90%
+      }
+    }
+
     .ingredients-instructions-notes {
       img {
         width: 30%;
