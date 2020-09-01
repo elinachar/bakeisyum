@@ -17,6 +17,15 @@
         <% end %>
         and modified.</p>
       <% end %>
+      <% unless @recipe.photos_from.empty? %>
+        <p class="borrowed-recipe text-center">Photos from
+        <% unless @recipe.photos_from_url.empty?%>
+           <%= link_to @recipe.photos_from, @recipe.photos_from_url, target: "_blank" %>
+        <% else %>
+          <%= @recipe.photos_from %>
+        <% end %>
+        </p>
+      <% end %>
       <p><%= @recipe.short_description %></p>
     </div>
   </div> <!-- end row -->
@@ -35,7 +44,7 @@
   </div> <!-- end descriptions-show -->
 
   <div class="ingredients-instructions-notes" id="recipe-ingredients-instructions-notes">
-    <%= image_tag( @recipe.image_url_url(:show_thumb).to_s , class: "img-responsive", alt: @recipe.name) %>
+    <%= image_tag( @recipe.square_image_url_url(:show_thumb).to_s , class: "img-responsive", alt: @recipe.name) %>
     <h2><%= @recipe.name %></h2>
     <div class="rating text-center" data-rating="<%= @recipe.ratings.average(:rating)%>">
       <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 1, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-1" %>

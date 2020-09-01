@@ -13,6 +13,7 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :notes, allow_destroy: true, reject_if: :all_blank
 
   mount_uploader :image_url, ImageUploader
+  mount_uploader :square_image_url, ImageUploader
 
   def self.search(search_term)
     if Rails.env.production?

@@ -29,6 +29,16 @@
           </div>
         </div>
 
+        <div class="form-group row">
+          <%= f.label :square_image_url %><br>
+          <div class="col-xs-6" style="padding-left: 0">
+            <%= f.file_field :square_image_url %>
+          </div>
+          <div class="col-xs-6" style="padding-right: 0">
+            <%= File.basename(@recipe.image_url_url.to_s)%><br>
+          </div>
+        </div>
+
         <div class="form-group">
           <%= f.label :short_description %>
           <%= f.text_area :short_description, class: 'form-control', size: '5x10' %>
@@ -63,6 +73,17 @@
         <div class="form-group">
           <%= f.label :original_recipie_url %>
           <%= f.text_field :original_recipie_url, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :photos_from %>
+          <%= f.text_field :photos_from, class: 'form-control' %>
+        </div>
+
+
+        <div class="form-group">
+          <%= f.label :photos_from_url %>
+          <%= f.text_field :photos_from_url, class: 'form-control' %>
         </div>
       </div> <!-- end recipe-fields -->
 

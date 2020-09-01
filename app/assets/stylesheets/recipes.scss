@@ -230,9 +230,10 @@ h3 {
     border: solid thin $mint;
 
     img {
-      width: 30%;
+      width: 20%;
       max-width: 550px;
       margin: auto;
+      border-radius: 50%;
     }
 
     h2,
@@ -430,6 +431,9 @@ h3 {
     width: 100%;
 
     .ingredients-instructions-notes {
+      img {
+        width: 30%;
+      }
 
       .recipe-information {
         .information-group {
