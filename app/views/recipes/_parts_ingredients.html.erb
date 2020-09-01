@@ -1,7 +1,7 @@
 <% @parts.each do |part| %>
   <h4><%= part.name %></h4>
   <ul>
-    <% part.ingredients.order(:id).each do |ingredient| %>
+    <% part.ingredients.each do |ingredient| %>
       <li><p>
         <% if ingredient.weight % 1 == 0 %>
           <%=sprintf("%g",ingredient.weight)%>

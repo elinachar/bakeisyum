@@ -17,14 +17,14 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-    @descriptions = @recipe.descriptions.order(:id)
+    @descriptions = @recipe.descriptions
     @rating = @recipe.ratings.average(:rating)
     unless current_user.nil?
       @favorites = current_user.favorites.pluck(:recipe_id)
       @favorite =  @recipe.favorites.where(user: current_user)[0]
     end
-    @parts = @recipe.parts.order(:id)
-    @notes = @recipe.notes.order(:id)
+    @parts = @recipe.parts
+    @notes = @recipe.notes
     @comments = @recipe.comments.order("created_at DESC")
   end
 
