@@ -11,8 +11,16 @@ SitemapGenerator::Sitemap.create do
 
 
   add recipes_path, changefreq: 'daily'
+  count = 0
+  recipes_per_page = 6
   Recipe.find_each do |recipe|
     add recipe_path(recipe), changefreq: 'yearly', lastmod: recipe.updated_at
+    count += 1
+    if count % recipes_per_page == 0
+      n = 1 + count/recipes_per_page
+      add recipes_path+ "?page=" + n.to_s, changefreq: 'weekly'
+    end
+
   end
 
 end
