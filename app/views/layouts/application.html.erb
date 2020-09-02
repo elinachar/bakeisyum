@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <title>Bakeisyum - Dessert Recipes from Elina Charalampous</title> -->
     <title><%= yield(:title) %></title>
-    <%= favicon_link_tag asset_path('bakeisyum_favicon_dark_transparent.png'), :rel => 'icon', :type =>  'image/png' %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Baking blog with dessert recipes of all kind from chocoholic Elina Charalampous with step by step recipes and demonstration pictures.">
+    <meta name="keywords" content="baking blog, desserts, recipes, recipe, chocolate, cookies, brownies, cakes, tarts, smoothies">
+    <meta name="image" content='<%= image_tag( "https://bakeisyum-elina.s3.amazonaws.com/uploads/IMG_4608__1_.jpg" , alt: "Bake is Yum") %>'>
+    <%= favicon_link_tag asset_path('bakeisyum_favicon_dark_transparent.png'), :rel => 'icon', :type =>  'image/png' %>
+    <link rel="canonical" href="http://bakeisyum.herokuapp.com/"/>
+
+    <!-- Facebook meta tags -->
+    <meta property="og:title" content="Bake is Yum" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://bakeisyum-elina.s3.amazonaws.com/uploads/IMG_4608__1_.jpg">
+    <meta property="og:image:alt" content="Bake is Yum" />
+    <meta property="og:description" content="Bake is Yum - Dessert Recipes from Elina Charalampous" />
 
     <!-- Font awesome Iconts -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
