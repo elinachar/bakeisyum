@@ -1,6 +1,10 @@
 class BasicPagesController < ApplicationController
   def index
-    @recipes = Recipe.last(3)
+    if !current_user.nil? && current_user.admin?
+      @recipes = Recipe.last(3)
+    else
+      @recipes = Recipe.where(public: true).last(3)
+    end
     @subscription = Subscription.new
   end
 

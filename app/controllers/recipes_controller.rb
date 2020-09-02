@@ -5,12 +5,18 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
+
+    if !current_user.nil? && current_user.admin?
+      @recipes = Recipe.all
+    else
+      @recipes = Recipe.where(public: true)
+    end
+
     if params[:q]
       @search_term = params[:q]
-      @recipes = Recipe.search(@search_term).distinct
-    else
-      @recipes = Recipe.all
+      @recipes = @recipes.search(@search_term).distinct
     end
+
     @recipes = @recipes.paginate(:page => params[:page], :per_page => 6).order("id DESC")
   end
 
@@ -91,7 +97,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :original_recipie_url, :photos_from, :photos_from_url, :image_url, :square_image_url,
+      params.require(:recipe).permit(:name, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :original_recipie_url, :photos_from, :photos_from_url, :image_url, :square_image_url, :public,
       descriptions_attributes: [:id, :description, :image_url, :_destroy],
       parts_attributes: [:id, :name, :_destroy,
       ingredients_attributes: [:id, :name, :weight, :weight_unit, :weight_optional, :weight_optional_unit, :_destroy],
