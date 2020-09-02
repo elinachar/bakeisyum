@@ -1,3 +1,4 @@
+<% content_for :title, "Recipes - Bakeisyum" %>
 <h1>Recipes</h1>
 
 <% if signed_in? && (current_user.admin? || current_user.author?) %>
@@ -11,7 +12,7 @@
     <% if @search_term && !@search_term.empty? %>
       <div class="col-xs-12 search-results">
         <h4 class="text-center">Search results for:</h4>
-        <p><%= @search_term %></p>
+        <p class="text-center"><%= @search_term %></p>
       </div>
     <% end %>
     <%= render @recipes %>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bakeisyum</title>
+    <!-- <title>Bakeisyum - Dessert Recipes from Elina Charalampous</title> -->
+    <title><%= yield(:title) %></title>
     <%= favicon_link_tag asset_path('bakeisyum_favicon_dark_transparent.png'), :rel => 'icon', :type =>  'image/png' %>
 
     <%= csrf_meta_tags %>
