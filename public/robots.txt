@@ -8,3 +8,4 @@ Disallow: /password/
 Disallow: /users/
 Disallow: /edit
 Disallow: /new
+Sitemap: http://bakeisyum.herokuapp.com/sitemap.xml
