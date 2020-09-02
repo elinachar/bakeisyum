@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}, controllers: { registrations: "user_registrations" }
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'sign-up'}, controllers: { registrations: "user_registrations" }
 
   resources :users do
     resources :favorites
@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   get 'basic_pages/index'
   get 'about', to: 'basic_pages#about'
   get 'contact', to: 'basic_pages#contact'
-  post 'thank_you', to: 'basic_pages#thank_you'
-  get 'privacy_policy', to: 'basic_pages#privacy_policy'
-  get 'terms_and_conditions', to: 'basic_pages#terms_and_conditions'
+  post 'thank-you', to: 'basic_pages#thank_you'
+  get 'privacy-policy', to: 'basic_pages#privacy_policy'
+  get 'terms-and-conditions', to: 'basic_pages#terms_and_conditions'
   root 'basic_pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

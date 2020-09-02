@@ -55,6 +55,9 @@ gem 'fog-aws'
 # Cocoon: gem for nested associations
 gem 'cocoon'
 
+# Gem for creating sitemap
+gem 'sitemap-generator'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,1 +1,10 @@
 # See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+User-agent: *
+Disallow: /thank-you
+Disallow: /login
+Disallow: /sign-up
+Disallow: /logout
+Disallow: /password/
+Disallow: /users/
+Disallow: /edit
+Disallow: /new
