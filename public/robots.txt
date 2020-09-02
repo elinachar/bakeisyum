@@ -8,4 +8,5 @@ Disallow: /password/
 Disallow: /users/
 Disallow: /edit
 Disallow: /new
+Disallow: /recipes?page=1
 Sitemap: http://bakeisyum.herokuapp.com/sitemap.xml
