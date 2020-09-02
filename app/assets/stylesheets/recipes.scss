@@ -140,8 +140,9 @@ h3 {
   .notes li {
     font-style: italic;
   }
-
-  .borrowed-recipe-photos {
+  
+  .recipe-introduction,
+  .descriptions-show {
     font-size: 16px;
 
     a {
@@ -152,7 +153,6 @@ h3 {
       color: $darkGreyMint;
     }
   }
-
   .social-share {
     margin-top: 10px;
     border-style: solid;

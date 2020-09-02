@@ -4,7 +4,7 @@
       <%= image_tag( @recipe.image_url_url.to_s , class: "img-responsive", alt: @recipe.name) %>
     </div>
 
-    <div class="col-sm-12">
+    <div class="recipe-introduction col-sm-12">
       <h2><%= @recipe.name %></h2>
       <% t = @recipe.updated_at %>
       <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
@@ -27,7 +27,7 @@
         <% end %>
         and modified.</p>
       <% end %>
-      <p><%= @recipe.short_description %></p>
+      <p><%= @recipe.short_description.html_safe %></p>
     </div>
   </div> <!-- end row -->
 

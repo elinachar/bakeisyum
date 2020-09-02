@@ -1,5 +1,5 @@
 <% @descriptions.each do |description| %>
-  <p><%= description.description %></p>
+  <p><%= description.description.html_safe %></p>
   <% unless description.image_url_url.nil? %>
     <%= image_tag( description.image_url_url.to_s, alt: File.basename(description.image_url_url.to_s) , class: "img-responsive" ) %>
   <% end %>
