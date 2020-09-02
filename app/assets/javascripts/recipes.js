@@ -53,4 +53,14 @@ $(document).on('turbolinks:load', function() {
   $("#go-top").on("click", function() {
    $("html, body").animate({ scrollTop: 0 }, "slow");
   });
+
+  // Pagination SEO Friendly
+  // Change anchor of first paginated page to /recipes from /recipes?page=1
+  // to avoid duplicate pages
+  $(".pagination a").each(function(){
+    if (this.href == window.location.origin + "/recipes?page=1") {
+      $(this).attr("href", "/recipes");
+    }
+  })
+
 })
