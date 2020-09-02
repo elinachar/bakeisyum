@@ -6,7 +6,7 @@
 
     <div class="recipe-introduction col-sm-12">
       <h2><%= @recipe.name %></h2>
-      <% t = @recipe.updated_at %>
+      <% t = @recipe.created_at %>
       <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
       <% unless @recipe.original_recipie_author.empty? %>
         <p class="borrowed-recipe-photos text-center">Recipe borrowed from
