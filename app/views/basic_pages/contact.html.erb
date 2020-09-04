@@ -1,13 +1,13 @@
 <% content_for :title, "Contact - Bakeisyum" %>
 <div class="container contact">
   <h1>Contact</h1>
-  <p>I would be glad to here from you!</p>
-  <address>
+  <p class="text-center">I would be glad to receive a message from you!</p>
+  <!-- <address>
     <h2>Elina Charalampous</h2>
     <p><i class="fa fa-map-marker"></i>Sourgiadaki 8-10, 71306 Heraklion, Crete, Greece</p>
     <p><i class="fa fa-mobile-phone"></i>+30 694 8510515</p>
     <p><i class="fa fa-envelope"></i><a href="mailto:elinachar@gmail.com">elinachar@gmail.com</a></p>
-  </address>
+  </address> -->
 
   <%= form_with(url:"/thank-you", method: "post", local: true) do |form| %>
     <div class="row">

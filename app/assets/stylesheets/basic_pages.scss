@@ -123,19 +123,24 @@
 }
 
 // Contact Page
-.address h2 {
-  font-size: 20px;
-}
-
-address i {
-  font-size: 20px !important;
-  color: $mint;
-  padding-right: 10px;
-}
+// .address h2 {
+//   font-size: 20px;
+// }
+//
+// address i {
+//   font-size: 20px !important;
+//   color: $mint;
+//   padding-right: 10px;
+// }
 
 .contact-form {
   text-align: center;
   margin-top: 30px;
+}
+
+.contact .btn {
+  width: 68px;
+  height: 48px;
 }
 
 .form-group {
