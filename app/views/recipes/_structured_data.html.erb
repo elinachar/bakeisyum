@@ -1,0 +1,70 @@
+<%= content_for :structured_data do %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "<%= @recipe.name %>",
+    "image": [
+    "<%= @recipe.image_url_url.to_s %>",
+    "<%= @recipe.square_image_url_url.to_s %>"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Elina Charalampous"
+    },
+    "datePublished": "<%= @recipe.created_at.iso8601 %>",
+    "description": "<%= @recipe.short_description %>",
+    // "recipeCuisine": "American",
+    // "prepTime": "PT1m",
+    // "cookTime": "PT2M",
+    // "totalTime": "PT3M",
+    // "keywords": "non-alcoholic",
+    "recipeYield": "<%= @recipe.serving %>",
+    // "recipeCategory": "Drink",
+    // "nutrition": {
+    //   "@type": "NutritionInformation",
+    //   "calories": "120 calories"
+    // },
+    <% if @rating && @rating >0 %>
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "<%= @rating %>",
+        "ratingCount": "<%= @recipe.ratings.count %>"
+      },
+    <% end %>
+    "recipeIngredient": [
+      <% @parts.each do |part| %>
+        <% part.ingredients.each do |ingredient| %>
+          <% if ingredient != part.ingredients.last %>
+            "<%= ingredient.weight %> <%= ingredient.weight_unit %> <%= ingredient.name %>",
+          <% else %>
+            "<%= ingredient.weight %> <%= ingredient.weight_unit %> <%= ingredient.name %>"
+          <% end %>
+        <% end %>
+      <% end %>
+    ],
+    "recipeInstructions": [
+      <% @parts.each do |part| %>
+        <% part.instructions.each do |instruction| %>
+          {
+            "@type": "HowToStep",
+            "text": "<%= instruction.instruction %>"
+          },
+        <% end %>
+      <% end %>
+      {
+        "@type": "HowToStep",
+        "text": "Blend 2 cups of pineapple juice and 5/8 cup cream of coconut until smooth."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Fill a glass with ice."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Pour the pineapple juice and coconut mixture over ice."
+      }
+    ]
+  }
+  </script>
+<% end %>

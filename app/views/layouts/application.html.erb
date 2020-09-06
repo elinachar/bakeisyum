@@ -10,15 +10,23 @@
     <meta name="keywords" content="baking blog, desserts, recipes, recipe, chocolate, cookies, brownies, cakes, tarts, smoothies">
     <meta name="image" content='<%= image_tag( "https://bakeisyum-elina.s3.amazonaws.com/uploads/IMG_4608__1_.jpg" , alt: "Bake is Yum") %>'>
     <%= favicon_link_tag asset_path('bakeisyum_favicon_dark_transparent.png'), :rel => 'icon', :type =>  'image/png' %>
-    <link rel="canonical" href="http://bakeisyum.herokuapp.com/"/>
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="<%=request.original_url%>"/>
 
     <!-- Facebook meta tags -->
-    <meta property="og:title" content="Bake is Yum" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://bakeisyum.herokuapp.com/" />
-    <meta property="og:image" content="https://bakeisyum-elina.s3.amazonaws.com/uploads/IMG_4608__1_.jpg">
-    <meta property="og:image:alt" content="Bake is Yum" />
-    <meta property="og:description" content="Bake is Yum - Dessert Recipes from Elina Charalampous" />
+    <% if content_for?(:facebook_meta_tags) %>
+      <%= yield(:facebook_meta_tags) %>
+    <% else %>
+      <meta property="og:title" content="Bake is Yum" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="http://bakeisyum.herokuapp.com/" />
+      <meta property="og:image" content="https://bakeisyum-elina.s3.amazonaws.com/uploads/IMG_4608__1_.jpg">
+      <meta property="og:image:alt" content="Bake is Yum" />
+      <meta property="og:description" content="Bake is Yum - Dessert Recipes from Elina Charalampous" />
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="Bake is Yum">
+    <% end %>
 
     <!-- Font awesome Iconts -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
