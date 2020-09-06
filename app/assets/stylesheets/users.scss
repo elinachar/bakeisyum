@@ -26,3 +26,10 @@
 .index-user th {
   font-size: 18px;
 }
+
+// Touch screens
+@media (hover: none) and (pointer: coarse) {
+  .user-card {
+    border-color: $mintSmallScreens;
+  }
+}

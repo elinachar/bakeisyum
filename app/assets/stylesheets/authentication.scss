@@ -36,3 +36,10 @@
     color: red;
   }
 }
+
+// Touch screens
+@media (hover: none) and (pointer: coarse) {
+  .authentication {
+    background-color: $mintSmallScreens;
+  }
+}

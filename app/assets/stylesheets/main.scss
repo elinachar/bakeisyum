@@ -165,7 +165,7 @@ a:-webkit-any-link {
   width: 100%;
 }
 
-.search-input .form-control{
+.search-input .form-control {
   border-color: $mint;
   // visibility: hidden;
 }
@@ -429,4 +429,41 @@ footer {
     margin: 0;
   }
 
+}
+
+// Touch screens
+@media (hover: none) and (pointer: coarse) {
+  .btn,
+  .login-dropdown-box,
+  footer {
+    background-color: $mintSmallScreens;
+  }
+
+  .navigation-bar,
+  .search-input .form-control {
+    border-color: $mintSmallScreens;
+  }
+
+  .logo,
+  .logo:hover,
+  .navigation-bar-main-body li a,
+  .navigation-bar-bars,
+  .search-button,
+  .login span,
+  .login i,
+  .login-collapsed p {
+    color: $mintSmallScreens;
+  }
+
+  .navigation-bar-main-body li a:hover,
+  .glyphicon-search:hover,
+  .login i:hover,
+  .login span.hover-color,
+  .login i.hover-color {
+    color: $darkGreyMintSmallScreens;
+  }
+
+  .arrow-up {
+    border-bottom: 15px solid $mintSmallScreens;
+  }
 }

@@ -167,7 +167,7 @@ ol.subsection li {
   margin-bottom: 10px;
 }
 
-// Small devices (landscape phones, 576px and down)
+// XS Screens
 @media only screen and (max-width: 576px) {
 
 .carousel-caption {
@@ -184,11 +184,36 @@ ol.subsection li {
 
 }
 
-// For xs of bootsrap grid
+// XS and SM screens
 @media only screen and (max-width: 767px) {
 
-.subscribe-box {
-  margin-top: 20px;
+  .subscribe-box {
+    margin-top: 20px;
+  }
 }
 
+// Touch screens
+@media (hover: none) and (pointer: coarse) {
+  .recipe-landing-description a {
+    color: $mintSmallScreens;
+  }
+  .recipe-landing-description a:hover {
+    color: $darkGreyMintSmallScreens;
+  }
+
+  .subscribe-box {
+    border-color: $mintSmallScreens;
+  }
+
+  .about {
+    p {
+      a {
+        color: $darkGreyMintSmallScreens;
+      }
+
+      a:hover {
+        color: $mintSmallScreens;
+      }
+    }
+  }
 }
