@@ -67,7 +67,7 @@
           <div class="col-xs-12 recipe-lading-card">
             <h2><%= recipe.name %></h2>
             <% t = recipe.created_at %>
-            <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
+            <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + ", " + t.strftime("%Y")%></h6>
             <%= link_to recipe, :action => 'go' do %>
               <div class="recipe-landing-img">
                 <%= image_tag( recipe.image_url_url.to_s , class: "img-responsive", alt: recipe.name) %>

@@ -1,4 +1,69 @@
 <% content_for :title, @recipe.name + " - Bakeisyum" %>
+<%= content_for :structured_data do %>
+  <script type="application/ld+json">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "<%= @recipe.name %>",
+    "image": [
+    "<%= @recipe.image_url_url.to_s %>"
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Elina Charalampous"
+    },
+    "datePublished": "<%= @recipe.created_at.iso8601 %>",
+    "description": "<%= @recipe.short_description.html_safe %>",
+    // "recipeCuisine": "American",
+    // "prepTime": "PT1m",
+    // "cookTime": "PT2M",
+    // "totalTime": "PT3M",
+    // "keywords": "non-alcoholic",
+    "recipeYield": "<%= @recipe.serving %>",
+    // "recipeCategory": "Drink",
+    // "nutrition": {
+    //   "@type": "NutritionInformation",
+    //   "calories": "120 calories"
+    // },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "<%= @rating %>",
+      "ratingCount": "<%= @recipe.ratings.count %>"
+    },
+    "recipeIngredient": [
+      <% @parts.each do |part| %>
+        <% part.ingredients.each do |ingredient| %>
+          "<%= ingredient.weight %> <%= ingredient.weight_unit %> <%= ingredient.name %>",
+        <% end %>
+      <% end %>
+    ],
+    "recipeInstructions": [
+      <% @parts.each do |part| %>
+        <% part.instructions.each do |instruction| %>
+          {
+            "@type": "HowToStep",
+            "text": "<%= instruction.instruction %>"
+          },
+        <% end %>
+      <% end %>
+      {
+        "@type": "HowToStep",
+        "text": "Blend 2 cups of pineapple juice and 5/8 cup cream of coconut until smooth."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Fill a glass with ice."
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Pour the pineapple juice and coconut mixture over ice."
+      }
+    ]
+  }
+  </script>
+<% end %>
+
 <div class="container recipe-show w-85">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-md-offset-2 recipe">
@@ -8,7 +73,7 @@
     <div class="recipe-introduction col-sm-12">
       <h2><%= @recipe.name %></h2>
       <% t = @recipe.created_at %>
-      <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + "," + t.strftime("%Y")%></h6>
+      <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + ", " + t.strftime("%Y")%></h6>
       <% unless @recipe.original_recipie_author.empty? %>
         <p class="borrowed-recipe-photos text-center">Recipe borrowed from
         <% unless @recipe.original_recipie_url.empty?%>

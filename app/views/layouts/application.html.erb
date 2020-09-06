@@ -36,44 +36,48 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Google Structed Data -->
-    <script type='application/ld+json'>
-      {
-      "@context":"https://schema.org",
-      "@graph":
-        [{
-	      "@type":"Organization",
-        "@id":"http://bakeisyum.herokuapp.com/#organization",
-        "name":"Bake is Yum",
-        "url":"http://bakeisyum.herokuapp.com/",
-        "sameAs":[
-    	     "https://gr.pinterest.com/elinachar/boards/"],
-        "logo":{
-     	    "@type":"ImageObject",
-          "@id":"http://bakeisyum.herokuapp.com/#logo",
-          "inLanguage":"en-US",
-          "url":"http://bakeisyum.herokuapp.com/logo.png",
-          "width":900,
-          "height":300,
-          "caption":"Bake is Yum"},
-          "image":{"@id":"http://bakeisyum.herokuapp.com/#logo"
-          }
-        },
+    <% if content_for?(:structured_data) %>
+      <%= yield(:structured_data) %>
+    <% else %>
+      <script type='application/ld+json'>
         {
-        "@type":"WebSite",
-        "@id":"http://bakeisyum.herokuapp.com/#website",
-        "url":"http://bakeisyum.herokuapp.com/",
-        "name":"Bake is Yum",
-        "description":"Baking Blog and dessert recipes to follow, share and enjoy.",
-        "publisher":{
-     	    "@id":"http://bakeisyum.herokuapp.com/#organization"},
-        "potentialAction":[{
-          "@type":"SearchAction",
-          "target":"http://bakeisyum.herokuapp.com/recipes?utf8=%E2%9C%93&q={search_term_string}=",
-          "query-input":"required name=search_term_string"}],
-        "inLanguage":"en-US"
-        }]
-      }
-    </script>
+        "@context":"https://schema.org",
+        "@graph":
+          [{
+  	      "@type":"Organization",
+          "@id":"http://bakeisyum.herokuapp.com/#organization",
+          "name":"Bake is Yum",
+          "url":"http://bakeisyum.herokuapp.com/",
+          "sameAs":[
+      	     "https://gr.pinterest.com/elinachar/boards/"],
+          "logo":{
+       	    "@type":"ImageObject",
+            "@id":"http://bakeisyum.herokuapp.com/#logo",
+            "inLanguage":"en-US",
+            "url":"http://bakeisyum.herokuapp.com/logo.png",
+            "width":900,
+            "height":300,
+            "caption":"Bake is Yum"},
+            "image":{"@id":"http://bakeisyum.herokuapp.com/#logo"
+            }
+          },
+          {
+          "@type":"WebSite",
+          "@id":"http://bakeisyum.herokuapp.com/#website",
+          "url":"http://bakeisyum.herokuapp.com/",
+          "name":"Bake is Yum",
+          "description":"Baking Blog and dessert recipes to follow, share and enjoy.",
+          "publisher":{
+       	    "@id":"http://bakeisyum.herokuapp.com/#organization"},
+          "potentialAction":[{
+            "@type":"SearchAction",
+            "target":"http://bakeisyum.herokuapp.com/recipes?utf8=%E2%9C%93&q={search_term_string}=",
+            "query-input":"required name=search_term_string"}],
+          "inLanguage":"en-US"
+          }]
+        }
+      </script>
+    <% end %>
   </head>
 
   <body>
