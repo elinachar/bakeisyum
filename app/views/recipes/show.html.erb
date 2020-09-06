@@ -14,7 +14,7 @@
       "name": "Elina Charalampous"
     },
     "datePublished": "<%= @recipe.created_at.iso8601 %>",
-    // "description": "<%= @recipe.short_description.html_safe %>",
+    // "description": "<%= @recipe.short_description %>",
     // "recipeCuisine": "American",
     // "prepTime": "PT1m",
     // "cookTime": "PT2M",
@@ -26,15 +26,21 @@
     //   "@type": "NutritionInformation",
     //   "calories": "120 calories"
     // },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "<%= @rating %>",
-      "ratingCount": "<%= @recipe.ratings.count %>"
-    },
+    <% if @rating && @rating >0 %>
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "<%= @rating %>",
+        "ratingCount": "<%= @recipe.ratings.count %>"
+      },
+    <% end %>
     "recipeIngredient": [
       <% @parts.each do |part| %>
         <% part.ingredients.each do |ingredient| %>
-          "<%= ingredient.weight %> <%= ingredient.weight_unit %> <%= ingredient.name %>",
+          <% if ingredient != part.ingredients.last %>
+            "<%= ingredient.weight %> <%= ingredient.weight_unit %> <%= ingredient.name %>",
+          <% else %>
+            "<%= ingredient.weight %> <%= ingredient.weight_unit %> <%= ingredient.name %>"
+          <% end %>
         <% end %>
       <% end %>
     ],
