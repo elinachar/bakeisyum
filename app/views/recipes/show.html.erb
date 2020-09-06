@@ -6,14 +6,15 @@
     "@type": "Recipe",
     "name": "<%= @recipe.name %>",
     "image": [
-    "<%= @recipe.image_url_url.to_s %>"
+    "<%= @recipe.image_url_url.to_s %>",
+    "<%= @recipe.square_image_url_url.to_s %>"
     ],
     "author": {
       "@type": "Person",
       "name": "Elina Charalampous"
     },
     "datePublished": "<%= @recipe.created_at.iso8601 %>",
-    "description": "<%= @recipe.short_description.html_safe %>",
+    // "description": "<%= @recipe.short_description.html_safe %>",
     // "recipeCuisine": "American",
     // "prepTime": "PT1m",
     // "cookTime": "PT2M",
