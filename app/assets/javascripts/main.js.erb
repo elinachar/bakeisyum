@@ -16,9 +16,19 @@ $(document).on('turbolinks:load', function() {
   })
 
   // Enable Lazy loading
-  // $("img").lazyload({
-  //   threshold : 1000,
-  //   effect : "fadeIn"
-  // });
+  $("img").lazyload({
+    threshold : 1000,
+    effect : "fadeIn"
+  });
+
+  // Disable Lazy Loading when images are cached
+  var lazyImages = $('img[data-original]');
+  // console.log(cached(lazyImages[0]));
+  // console.log(cached($(".recipe img")));
+  function cached(url){
+    var test = document.createElement("img");
+    test.src = url;
+    return test.complete || test.width+test.height > 0;
+  }
 
 });
