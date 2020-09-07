@@ -23,8 +23,8 @@ $(document).on('turbolinks:load', function() {
 
   // Disable Lazy Loading when images are cached
   var lazyImages = $('img[data-original]');
-  // console.log(cached(lazyImages[0]));
-  // console.log(cached($(".recipe img")));
+  console.log(cached(lazyImages[0]));
+  console.log(cached($(".recipe img")));
   function cached(url){
     var test = document.createElement("img");
     test.src = url;
