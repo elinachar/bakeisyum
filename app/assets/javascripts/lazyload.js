@@ -14,7 +14,6 @@
  */
 
 (function($, window, document, undefined) {
-  console.log("lazy")
     var $window = $(window);
 
     $.fn.lazyload = function(options) {
@@ -106,7 +105,6 @@
                     }
                     $("<img />")
                         .one("load", function() {
-                            console.log("appear")
                             var original = $self.attr("data-" + settings.data_attribute);
                             var srcset = $self.attr("data-" + settings.data_srcset);
 
