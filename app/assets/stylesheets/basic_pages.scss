@@ -195,24 +195,24 @@ ol.subsection li {
 // Touch screens
 @media (hover: none) and (pointer: coarse) {
   .recipe-landing-description a {
-    color: $mintSmallScreens;
+    color: $mintTouchScreens;
   }
   .recipe-landing-description a:hover {
-    color: $darkGreyMintSmallScreens;
+    color: $darkGreyMintTouchScreens;
   }
 
   .subscribe-box {
-    border-color: $mintSmallScreens;
+    border-color: $mintTouchScreens;
   }
 
   .about {
     p {
       a {
-        color: $darkGreyMintSmallScreens;
+        color: $darkGreyMintTouchScreens;
       }
 
       a:hover {
-        color: $mintSmallScreens;
+        color: $mintTouchScreens;
       }
     }
   }
