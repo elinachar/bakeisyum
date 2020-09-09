@@ -191,29 +191,3 @@ ol.subsection li {
     margin-top: 20px;
   }
 }
-
-// Touch screens
-@media (hover: none) and (pointer: coarse) {
-  .recipe-landing-description a {
-    // color: $mintTouchScreens;
-  }
-  .recipe-landing-description a:hover {
-    // color: $darkGreyMintTouchScreens;
-  }
-
-  .subscribe-box {
-    // border-color: $mintTouchScreens;
-  }
-
-  .about {
-    p {
-      a {
-        // color: $darkGreyMintTouchScreens;
-      }
-
-      a:hover {
-        // color: $mintTouchScreens;
-      }
-    }
-  }
-}
