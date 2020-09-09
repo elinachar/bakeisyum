@@ -436,12 +436,12 @@ footer {
   .btn,
   .login-dropdown-box,
   footer {
-    background-color: $mintTouchScreens;
+    // background-color: $mintTouchScreens;
   }
 
   .navigation-bar,
   .search-input .form-control {
-    border-color: $mintTouchScreens;
+    // border-color: $mintTouchScreens;
   }
 
   .logo,
@@ -452,7 +452,7 @@ footer {
   .login span,
   .login i,
   .login-collapsed p {
-    color: $mintTouchScreens;
+    // color: $mintTouchScreens;
   }
 
   .navigation-bar-main-body li a:hover,
@@ -460,10 +460,10 @@ footer {
   .login i:hover,
   .login span.hover-color,
   .login i.hover-color {
-    color: $darkGreyMintTouchScreens;
+    // color: $darkGreyMintTouchScreens;
   }
 
   .arrow-up {
-    border-bottom: 15px solid $mintTouchScreens;
+    // border-bottom: 15px solid $mintTouchScreens;
   }
 }
