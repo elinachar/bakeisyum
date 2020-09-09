@@ -1,7 +1,7 @@
 <% if recipe.name and recipe.image_url_url %>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <%= link_to recipe, :action => 'go' do %>
-      <div class="recipe-card">
+      <div class="recipe-card rounded-border">
         <div class="recipe-img">
           <%= image_tag( recipe.image_url.url.to_s , class: "img-responsive", alt: recipe.name) %>
         </div>

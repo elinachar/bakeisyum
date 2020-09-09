@@ -37,7 +37,7 @@
     </div>
   </div> <!-- end row -->
 
-  <div class="social-share text-center m-auto">
+  <div class="social-share text-center m-auto rounded-border">
     <h4>Share</h4>
     <%= social_share_button_tag(@recipe.name) %>
   </div>
@@ -50,7 +50,7 @@
     <%= render 'descriptions' %>
   </div> <!-- end descriptions-show -->
 
-  <div class="ingredients-instructions-notes" id="recipe-ingredients-instructions-notes">
+  <div class="ingredients-instructions-notes rounded-border" id="recipe-ingredients-instructions-notes">
     <%= image_tag( @recipe.square_image_url_url(:show_thumb).to_s , class: "img-responsive", alt: @recipe.name) %>
     <h2><%= @recipe.name %></h2>
     <div class="rating text-center" data-rating="<%= @recipe.ratings.average(:rating)%>">
