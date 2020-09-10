@@ -14,6 +14,9 @@
         <h4 class="text-center">Search results for:</h4>
         <p class="text-center"><%= @search_term %></p>
       </div>
+      <% if @recipes.empty? %>
+        <p class="text-center empty-result">There are no recipes found for <%= @search_term %> ...</p>
+      <% end %>
     <% end %>
     <%= render @recipes %>
     <div class="col-xs-12">
