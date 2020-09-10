@@ -14,11 +14,11 @@
     },
     "datePublished": "<%= @recipe.created_at.iso8601 %>",
     "description": "<%= @recipe.short_description %>",
-    // "recipeCuisine": "American",
+    "recipeCuisine": "<%= @recipe.cuisine %>",
     // "prepTime": "PT1m",
     // "cookTime": "PT2M",
     // "totalTime": "PT3M",
-    // "keywords": "non-alcoholic",
+    "keywords": "<%= @recipe.keywords %>",
     "recipeYield": "<%= @recipe.serving %>",
     // "recipeCategory": "Drink",
     // "nutrition": {

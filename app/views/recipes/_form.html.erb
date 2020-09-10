@@ -45,6 +45,16 @@
         </div>
 
         <div class="form-group">
+          <%= f.label :cuisine %>
+          <%= f.text_field :cuisine, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :keywords, "Keywords (separate with comma)" %>
+          <%= f.text_field :keywords, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
           <%= f.label :serving %>
           <%= f.text_field :serving, class: 'form-control' %>
         </div>
@@ -68,7 +78,6 @@
           <%= f.label :original_recipie_author %>
           <%= f.text_field :original_recipie_author, class: 'form-control' %>
         </div>
-
 
         <div class="form-group">
           <%= f.label :original_recipie_url %>
