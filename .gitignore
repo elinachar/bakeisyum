@@ -34,3 +34,7 @@
 
 # Ignore app/images
 /app_images
+
+# Ignore config/local_env.yml
+# Real enviroment variables in production
+/config/local_env.yml
