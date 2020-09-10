@@ -3,11 +3,13 @@
 <div class="container-fluid" id="carousel-index">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <% @recipes.reverse.each do |recipe| %>
-        <li data-target="#carousel-example-generic" data-slide-to="<%= @recipes.index(recipe) %>" <%= 'class = active' if recipe == @recipes.last %>></li>
-      <% end %>
-    </ol>
+    <% if false %>
+      <ol class="carousel-indicators">
+        <% @recipes.reverse.each do |recipe| %>
+          <li data-target="#carousel-example-generic" data-slide-to="<%= @recipes.index(recipe) %>" <%= 'class = active' if recipe == @recipes.last %>></li>
+        <% end %>
+      </ol>
+    <% end %>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner rounded-border" role="listbox">
@@ -16,7 +18,7 @@
           <%= image_tag(recipe.image_url_url.to_s, class: "img-responsive", alt: recipe.name, lazy: false) %>
           <div class="carousel-caption">
             <p><%= recipe.name %></p>
-            <%=link_to "Read more", recipe, class: 'btn-read-more'%>
+            <%=link_to "Read More", recipe, class: 'btn-read-more'%>
           </div>
 
         </div> <!-- end item -->

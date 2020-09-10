@@ -14,29 +14,57 @@
 }
 
 .carousel-caption {
-  font-size: 2.5em;
+  font-size: 3em;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  text-shadow: 0 2px 3px rgba(0,0,0,.6);
 
   p {
     padding-bottom: 20px;
   }
-}
 
-.btn-read-more {
-  font-size: 0.7em;
-  color: $offWhite;
-  border-top: 2px solid $offWhite;
-  border-bottom: 2px solid $offWhite;
-  padding: 10px;
+  .btn-read-more {
+    font-size: 0.75em;
+    color: $offWhite;
+    border-top: 2px solid $offWhite;
+    border-bottom: 2px solid $offWhite;
+    padding: 10px;
+    border-radius: 5px;
+    @include transition(background-color 1s);
+  }
 }
 
 .btn-read-more:hover {
   color: $offWhite;
   background-color: #f2f2f2; //fallback
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(188, 188, 188, 0.7);
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+
+  .glyphicon {
+    opacity: 0;
+    @include transition(opacity 1s);
+  }
+}
+
+.carousel-control.left .glyphicon {
+  left: 30%;
+}
+
+.carousel-control.right .glyphicon {
+  right: 30%;
+}
+
+.carousel-control.left:hover,
+.carousel-control.right:hover {
+  .glyphicon {
+    opacity: 1;
+  }
 }
 
 .recipe-lading-card {
