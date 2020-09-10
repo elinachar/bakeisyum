@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
     if params[:q]
       @search_term = params[:q]
       @recipes = @recipes.search(@search_term).distinct
+
     end
 
     @recipes = @recipes.paginate(:page => params[:page], :per_page => 6).order("id DESC")

@@ -161,7 +161,7 @@ a:-webkit-any-link {
 }
 
 .search-input {
-  padding-right: 0;
+  padding-right: 5px;
 }
 
 .search-form .form-group {
@@ -171,7 +171,10 @@ a:-webkit-any-link {
 
 .search-input .form-control {
   border-color: $mint;
-  // visibility: hidden;
+}
+
+.search-input .form-control:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px rgba(170, 240, 209, 1); //mint
 }
 
 .search-button {
