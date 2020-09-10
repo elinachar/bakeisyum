@@ -12,6 +12,7 @@ class SubscriptionsController < ApplicationController
           format.json { render :show, status: :created, location: @subscription }
           format.js
           UserMailer.subscription_successful(@subscription, Recipe.last(3)).deliver_now
+          UserMailer.new_subscription(@subscription).deliver_now
         else
           subscription_errors
           format.html { redirect_to basic_pages_index_path}

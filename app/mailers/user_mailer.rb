@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
     @phone = phone
     @message = message
     mail( from: email,
-          to: "elinachar@gmail.com",
+          to: "info@bakeisyum.com",
           subject: "A new contact from #{name}")
   end
 
@@ -28,10 +28,25 @@ class UserMailer < ApplicationMailer
           subject: "Thank you for subscribed to #{@appname}!")
   end
 
+  def new_subscription(subscription)
+    @subscription = subscription
+    @appname = "Bake is Yum"
+    mail( to: "info@bakeisyum.com",
+          subject: "New Subscription at #{@appname}")
+  end
+
   def welcome(user)
     @appname = "Bake is Yum"
-    mail( to: user.email,
+    @user = user
+    mail( to: @user.email,
           subject: "Welcome to #{@appname}!")
+  end
+
+  def new_user(user)
+    @appname = "Bake is Yum"
+    @user = user
+    mail( to: "info@bakeisyum.com",
+          subject: "New Sign Up at #{@appname}")
   end
 
 end
