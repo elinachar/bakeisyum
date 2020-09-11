@@ -14,6 +14,11 @@
     <!-- Canonical Tag -->
     <link rel="canonical" href="<%=request.original_url%>"/>
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@bakeisyum" />
+    <meta name="twitter:creator" content="@elinacharalampous" />
+    
     <!-- Facebook meta tags -->
     <% if content_for?(:facebook_meta_tags) %>
       <%= yield(:facebook_meta_tags) %>
