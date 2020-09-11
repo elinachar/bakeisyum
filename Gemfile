@@ -83,6 +83,10 @@ end
 group :production do
   # Gem for mySQL
   gem 'mysql2'
+
+  # Gems for JS for Ruby in Plesk
+  gem 'execjs'
+  gem 'therubyracer', :platforms => :ruby
 end
 
 
