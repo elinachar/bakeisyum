@@ -38,7 +38,23 @@ class SubscriptionsController < ApplicationController
     redirect_to basic_pages_index_path, notice: 'You have successfully unsubscribed from our list.'
   end
 
+  def send_new_recipe_email
+    @recipe = Recipe.find(params[:recipe_id])
+    begin
+      subscriptions = Subscription.all
+      subscriptions.each do |subscription|
+        UserMailer.new_recipe(@recipe, subscription).deliver_now
+      end
+      respond_to do |format|
+        @recipe.new_recipe_email_sent = true
+        @recipe.save
+        format.html{ redirect_to @recipe, notice: "Email with the new recipe was sent successfully to all subscriptions"}
+      end
+    rescue Exception
+      redirect_to( @recipe, notice: "Email with the new recipes was not able to be sent to subscriptions.")
+    end
 
+  end
   private
 
     # Never trust parameters from the scary internet, only allow the white list through.

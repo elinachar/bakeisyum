@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       get :unsubscribe # http://example.com/subscriptions/unsubscribe?token=xxxxxx
     end
   end
+  get :send_new_recipe_email, to: 'subscriptions#send_new_recipe_email', as: :send_new_recipe_email
+
 
   get 'homes/show'
   get 'basic_pages/index'
