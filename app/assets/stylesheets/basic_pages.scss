@@ -15,31 +15,62 @@
 
 .carousel-caption {
   font-size: 3em;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  text-shadow: 0 2px 3px rgba(0,0,0,.6);
+  text-shadow: 0 1px 8px rgba(0,0,0,.6);
+  padding-bottom: 0;
+  bottom: initial;
+  height: 100%;
+  max-height: 500px !important;
+  top: 0;
 
-  p {
-    padding-bottom: 20px;
-  }
-
-  .btn-read-more {
-    font-size: 0.75em;
-    color: $offWhite;
-    border-top: 2px solid $offWhite;
-    border-bottom: 2px solid $offWhite;
-    padding: 10px;
-    border-radius: 5px;
-    @include transition(background-color 1s);
+  a {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
   }
 }
 
-.btn-read-more:hover {
-  color: $offWhite;
-  background-color: #f2f2f2; //fallback
-  background-color: rgba(188, 188, 188, 0.7);
+.carousel-caption a::after,
+.carousel-caption a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+}
+
+.carousel-caption a::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: white;
+  border-right-color: white;
+}
+
+.carousel-caption a::before{
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: white;
+  border-left-color: white;
+}
+
+.carousel-caption a:hover:after,
+.carousel-caption a:hover:before {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-caption a:hover {
+  background-color: rgba(147, 147, 147, 0.2);
+  @include box-shadow(2px 2px 4px 1px #4C4C4C);
 }
 
 .carousel-control.left,
@@ -198,17 +229,13 @@ ol.subsection li {
 // XS Screens
 @media only screen and (max-width: 576px) {
 
-.carousel-caption {
-  font-size: 1.5em;
-  top: 25%;
-  -webkit-transform: translateY(-25%);
-  -ms-transform: translateY(-25%);
-  transform: translateY(-25%);
+  .carousel-caption {
+    font-size: 1.6em;
 
-  p {
-    padding-bottom: 0;
+    a {
+      width: 100%;
+    }
   }
-}
 
 }
 

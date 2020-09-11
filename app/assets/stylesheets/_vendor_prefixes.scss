@@ -1,11 +1,17 @@
 @mixin transition($property) {
   -webkit-transition: $property;
-  -o-transition: $property;
-  transition: $property;
+       -o-transition: $property;
+          transition: $property;
 }
 
 @mixin transform($property) {
   -webkit-transform: $property;
-  -ms-transform: $property;
-  transform: $property;
+      -ms-transform: $property;
+          transform: $property;
+}
+
+@mixin box-shadow($property) {
+  -webkit-box-shadow: $property;
+     -moz-box-shadow: $property;
+          box-shadow: $property;
 }
