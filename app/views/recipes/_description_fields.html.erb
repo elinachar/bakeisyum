@@ -5,12 +5,14 @@
     <%= f.text_area :description, class: 'form-control',size: '5x10' %>
   </div>
 
-  <div class="field form-group">
-    <% if f.index != "new_descriptions" %> <!-- Do not show image if add new puzzle was clicked, else gets the img of the first puzzle of category -->
-      <%= image_tag @recipe.descriptions[f.index.to_f].image_url_url.to_s, alt: @recipe.descriptions[f.index.to_f].image_url.to_s, class: "img-responsive" %>
-    <% end %>
-    <%= f.label :image_url, class: "sr-only" %>
-    <%= f.file_field :image_url %>
+  <div class="field form-group row">
+    <%= f.label :image_url, class: "sr-only" %><br>
+    <div class="col-xs-6" style="padding-left: 0">
+      <%= f.file_field :image_url %>
+    </div>
+    <div class="col-xs-6" style="padding-right: 0">
+      <%= File.basename(@recipe.descriptions[f.index.to_f].image_url_url.to_s)%><br>
+    </div>
   </div>
 
 </div>
