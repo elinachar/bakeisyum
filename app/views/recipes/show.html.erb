@@ -39,7 +39,11 @@
 
   <div class="social-share text-center m-auto rounded-border">
     <h4>Share</h4>
-    <%= social_share_button_tag(@recipe.name, :url => request.original_url, :image => root_url + @recipe.image_url_url.to_s[1..-1], via: "Bake is Yum") %>
+    <% if @recipe.photos_from.empty? %>
+      <%= social_share_button_tag(@recipe.name, :url => request.original_url, :image => root_url + @recipe.image_url_url.to_s[1..-1], via: "Bake is Yum") %>
+    <% else %>
+      <%= social_share_button_tag(@recipe.name, :url => request.original_url, via: "Bake is Yum") %>
+    <% end %>
   </div>
 
   <div class="text-center jump-to-recipe">
