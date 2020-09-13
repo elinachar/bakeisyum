@@ -12,9 +12,21 @@ class RecipesController < ApplicationController
       @recipes = Recipe.where(public: true)
     end
 
+    # Return recipes that have all the terms in the search
+    # F.e. if the user searches for "vegan recipes"
+    # It will return all the recipes that include "vegan" and "recipes"
+    # If I search for "vegan" or "recipes" it will return almost all recipes
+    # becaule all of them have the word "recipe" inside.
+    # Steps for searching:
+    # 1. gets all recipes that are public
+    # 2. from public recipes get the recipes with the first search term
+    # 3. from public recipes with the first search term get the recipes with the second search term
+    # 4. etc for the next search terms
     if params[:q]
-      @search_term = params[:q]
-      @recipes = @recipes.search(@search_term).distinct
+      search_terms = params[:q].split(/\W+/)
+      search_terms.each do |search_term|
+        @recipes = @recipes.search(search_term).distinct
+      end
     end
 
     @recipes = @recipes.paginate(:page => params[:page], :per_page => 6).order("id DESC")

@@ -16,11 +16,7 @@ class Recipe < ApplicationRecord
   mount_uploader :square_image_url, ImageUploader
 
   def self.search(search_term)
-    if Rails.env.production?
-      Recipe.left_outer_joins(:descriptions).left_outer_joins(:ingredients).where('recipes.name ilike :search OR recipes.short_description ilike :search OR recipes.keywords ilike :search OR descriptions.description ilike :search OR ingredients.name ilike :search', search: "%#{search_term}%")
-    else
-      Recipe.left_outer_joins(:descriptions).left_outer_joins(:ingredients).where('recipes.name LIKE :search OR recipes.short_description LIKE :search  OR recipes.keywords LIKE :search OR descriptions.description LIKE :search OR ingredients.name LIKE :search', search: "%#{search_term}%")
-    end
+    Recipe.left_outer_joins(:descriptions).left_outer_joins(:ingredients).where('recipes.name LIKE :search OR recipes.short_description LIKE :search  OR recipes.keywords LIKE :search OR descriptions.description LIKE :search OR ingredients.name LIKE :search', search: "%#{search_term}%")
   end
 
   def to_param
