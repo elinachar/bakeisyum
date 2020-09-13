@@ -5,8 +5,8 @@
     "@type": "Recipe",
     "name": "<%= @recipe.name %>",
     "image": [
-    "<%= @recipe.image_url_url.to_s %>",
-    "<%= @recipe.square_image_url_url.to_s %>"
+    "<%= root_url + @recipe.image_url_url.to_s[1..-1] %>",
+    "<%= root_url + @recipe.square_image_url_url.to_s[1..-1] %>"
     ],
     "author": {
       "@type": "Person",
