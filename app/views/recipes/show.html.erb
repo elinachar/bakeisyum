@@ -70,7 +70,7 @@
               <%=number_with_precision(@rating, precision: 1)%>
             <% end %>
           <% end %>
-          from <%= @recipe.ratings.count %> votes
+          from <%= @recipe.ratings.load.size %> votes
         <% end %>
       </div>
     </div>
@@ -160,13 +160,13 @@
   <div>
     <div class="row comment-title">
       <%=  button_tag 'Leave a comment', class: 'btn btn-default col-xs-offset-5 col-md-offset-8 col-md-2 col-md-push-2', id: 'create-new-comment' %>
-      <% if @comments.select(&:approved).count == 1 %>
+      <% if @comments.select(&:approved).size == 1 %>
         <h4 class="col-md-2 col-md-pull-10 count-approved-comments">1 Comment</h4>
       <% else %>
-        <h4 class="col-md-2 col-md-pull-10 count-approved-comments"><%= @comments.where(:approved => true).count %> Comments</h4>
+        <h4 class="col-md-2 col-md-pull-10 count-approved-comments"><%= @comments.where(:approved => true).size %> Comments</h4>
       <% end %>
       <% if signed_in? && (current_user.admin? || current_user.moderator?) %>
-        <h4 class="col-xs-12 count-not-approved-comments"><%= @comments.where(:approved => false).count %> Not approved comments</h4>
+        <h4 class="col-xs-12 count-not-approved-comments"><%= @comments.where(:approved => false).size %> Not approved comments</h4>
       <% end %>
     </div>
     <%= render "new_comment" %>

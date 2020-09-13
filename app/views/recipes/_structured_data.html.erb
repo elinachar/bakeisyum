@@ -29,7 +29,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "<%= @rating %>",
-        "ratingCount": "<%= @recipe.ratings.count %>"
+        "ratingCount": "<%= @recipe.ratings.load.size %>"
       },
     <% end %>
     "recipeIngredient": [
