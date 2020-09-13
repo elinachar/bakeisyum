@@ -23,9 +23,10 @@ class RecipesController < ApplicationController
     # 3. from public recipes with the first search term get the recipes with the second search term
     # 4. etc for the next search terms
     if params[:q]
-      search_terms = params[:q].split(/\W+/)
-      search_terms.each do |search_term|
-        @recipes = @recipes.search(search_term).distinct
+      @search_term = params[:q]
+      search_terms = @search_term.split(/\W+/)
+      search_terms.each do |term|
+        @recipes = @recipes.search(term).distinct
       end
     end
 
