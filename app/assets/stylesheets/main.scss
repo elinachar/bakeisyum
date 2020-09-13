@@ -324,11 +324,16 @@ footer {
 // XS and SM
 @media (max-width: 767px) {
   footer {
-    height: 90px;
+    height: 140px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 
     .unsplash,
     .copyright {
       text-align: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 0;
     }
   }
 }
