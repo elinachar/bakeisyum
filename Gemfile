@@ -58,9 +58,6 @@ gem 'cocoon'
 # Gem for creating sitemap
 gem 'sitemap_generator'
 
-# Gem for cron jobs
-gem 'whenever', require: false
-
 # Gem for lazy loading
 gem "lazyload-rails"
 
