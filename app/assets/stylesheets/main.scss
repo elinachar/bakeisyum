@@ -312,11 +312,17 @@ footer {
   border-color: $grey;
   border-top-width: 1px;
   margin-top: 20px;
-  padding-top: 20px;
-  height: 60px;
+  padding-top: 10px;
+  height: 70px;
 
   .unsplash {
     text-align: right;
+  }
+
+  p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
   }
 
 }
@@ -331,9 +337,6 @@ footer {
     .unsplash,
     .copyright {
       text-align: center;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      margin-bottom: 0;
     }
   }
 }
