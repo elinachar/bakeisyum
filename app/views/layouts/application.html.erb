@@ -27,9 +27,16 @@
     <link rel="canonical" href="<%=request.original_url%>"/>
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@bakeisyum" />
     <meta name="twitter:creator" content="@elinacharalampous" />
+    <% if content_for?(:twitter_meta_tags) %>
+      <%= yield(:twitter_meta_tags) %>
+    <% else %>
+      <meta name="twitter:title" content="Bake is Yum">
+      <meta name="twitter:description" content="Bake is Yum - Delicious Home Made Dessert Recipes from Elina Charalampous">
+      <meta name="twitter:image" content="https://bakeisyum.com/uploads/recipe/image_url/8/Oatmeal_Cookies.jpg">
+    <% end %>
 
     <!-- Facebook meta tags -->
     <% if content_for?(:facebook_meta_tags) %>
@@ -93,7 +100,8 @@
             "https://bakeisyum.com/uploads/recipe/image_url/4/Chocolate_Brownies.jpg"
           ],
           "sameAs": [
-            "https://www.facebook.com/VenardosPhotography",
+            "https://gr.pinterest.com/bakeisyum/",
+            "https://www.instagram.com/bakeisyum/",
             "https://www.linkedin.com/in/elina-charalampous-4263b915b/"
           ]
           },

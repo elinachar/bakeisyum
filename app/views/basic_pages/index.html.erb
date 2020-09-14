@@ -40,29 +40,8 @@
 <!-- Recipes list starts here -->
 <div class="container">
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-push-9 col-sm-offset-0 subscribe-box text-center rounded-border">
-      <p> Subscribe to receive e-mails with the new recipes!</p>
-      <%= form_with(model: @subscription) do |form| %>
-        <div class="form-group">
-          <%= form.label :email, "Email address*" %>
-          <%= form.text_field :email, class: 'form-control' %>
-          <p class="email-error"></p>
-        </div>
-
-        <div class="privacy_policy">
-          <%= form.label :privacy_policy do %>
-            <%= form.check_box :privacy_policy %>
-            I agree to sign up to receive email updates. We take your privacy seriously. See our <%= link_to 'Privacy Policy', privacy_policy_path %>.
-          <% end %>
-        </div>
-
-        <div class="actions">
-          <%= form.submit 'Subscribe', class: "btn btn-default" %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="col-sm-9 col-sm-pull-3">
+    <!-- <div class="col-sm-9 col-sm-pull-3"> -->
+    <div class="col-sm-9">
       <% @recipes.reverse.each do |recipe| %>
         <% if recipe.name and recipe.image_url_url.to_s %>
           <div class="col-xs-12 recipe-lading-card">
@@ -80,6 +59,47 @@
         <% end %>
       <% end %>
       <%=link_to "Check out all the recipes", recipes_path, :class => 'col-xs-10 col-xs-offset-1 btn btn-get-more-recipes'%>
+    </div>
+
+    <!-- <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-push-9 col-sm-offset-0  text-center"> -->
+    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0 text-center">
+      <div class="about-me-index">
+        <%= image_tag( "Elina_Charalampous.jpg", alt: "Elina Charalampous" , class: "img-responsive" ) %>
+        <h1>Bake is Yum</h1>
+        <p>Hi! I am Elina and I love to bake! I am a chocolate lover and fan of bitter and sour falvors in desserts! Bake is Yum is my blog for sharing my favorite dessert recipes!</p>
+        <%= link_to "more about me", about_path %>
+      </div>
+
+      <div class="follow-me rounded-border">
+        <p>follow me on</p>
+        <div class="follow-me-links">
+          <%= link_to "<i class='fab fa-pinterest'></i>".html_safe, "https://gr.pinterest.com/bakeisyum/",  target: "_blank" %>
+          <%= link_to "<i class='fab fa-instagram'></i>".html_safe, "https://www.instagram.com/bakeisyum/",  target: "_blank" %>
+        </div>
+      </div>
+
+      <div class="subscribe-box rounded-border">
+        <p> Subscribe to receive e-mails with the new recipes!</p>
+        <%= form_with(model: @subscription) do |form| %>
+          <div class="form-group">
+            <%= form.label :email, "Email address*" %>
+            <%= form.text_field :email, class: 'form-control' %>
+            <p class="email-error"></p>
+          </div>
+
+          <div class="privacy_policy">
+            <%= form.label :privacy_policy do %>
+              <%= form.check_box :privacy_policy %>
+              I agree to sign up to receive email updates. We take your privacy seriously. See our <%= link_to 'Privacy Policy', privacy_policy_path %>.
+            <% end %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit 'Subscribe', class: "btn btn-default" %>
+          </div>
+        <% end %>
+      </div>
+
     </div>
 
   </div> <!-- end row -->

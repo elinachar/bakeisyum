@@ -1,0 +1,5 @@
+<%= content_for :twitter_meta_tags do %>
+  <meta name="twitter:title" content="<%= @recipe.name %> - Bake is Yum">
+  <meta name="twitter:description" content="<%= @recipe.short_description %>">
+  <meta name="twitter:image" content="<%= root_url + @recipe.image_url_url.to_s[1..-1] %>">
+<% end %>
