@@ -14,6 +14,8 @@ class Recipe < ApplicationRecord
 
   mount_uploader :image_url, ImageUploader
   mount_uploader :square_image_url, ImageUploader
+  mount_uploader :ingredients_image_url, ImageUploader
+  mount_uploader :ingredients_text_image_url, ImageUploader
 
   def self.search(search_term)
     Recipe.left_outer_joins(:ingredients).where('recipes.name LIKE :search OR recipes.short_description LIKE :search  OR recipes.keywords LIKE :search OR ingredients.name LIKE :search', search: "%#{search_term}%")

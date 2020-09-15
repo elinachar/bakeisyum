@@ -227,6 +227,40 @@ h3 {
       margin: 20px auto;
       width: 80%;
     }
+
+    .imageBox {
+      position: relative;
+      width: 80%;
+      margin: auto;
+      cursor: pointer;
+
+      .hoverImg {
+        position: absolute;
+        top: -20px; //according to margin-top of .descriptions-show img
+        display: none;
+      }
+
+      img {
+        margin-bottom: 0px;
+        width: 100%;
+      }
+
+      p {
+        margin: 20px 0;
+        text-align: right;
+        margin-top: 5px;
+        color: $grey;
+        font-size: 12px;
+      }
+
+      p.touch-screens {
+        display: none;
+      }
+    }
+
+    .imageBox:hover .hoverImg {
+      display: block;
+    }
   }
 
   .ingredients-instructions-notes {
@@ -483,6 +517,19 @@ h3 {
         padding-left: 20px;
       }
 
+    }
+  }
+}
+
+// Touch screens
+@media (hover: none) and (pointer: coarse) {
+  .recipe-show .descriptions-show .imageBox {
+    p.not-touch-screens {
+      display: none;
+    }
+
+    p.touch-screens {
+      display: block;
     }
   }
 }
