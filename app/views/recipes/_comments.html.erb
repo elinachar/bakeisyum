@@ -1,6 +1,6 @@
 <div class="comments">
   <% @comments.each do |comment| %>
-    <% if comment.approved?  || ( signed_in? && (current_user.admin? || current_user.moderator?) ) %>
+    <%# if comment.approved?  || ( signed_in? && (current_user.admin? || current_user.moderator?) ) %>
       <div class="row comments-index">
         <div class="col-xs-12">
           <p>
@@ -18,6 +18,6 @@
           <hr>
         </div>
       </div><!-- end row -->
-    <% end %>
+    <%# end %>
   <% end %>
 </div>
