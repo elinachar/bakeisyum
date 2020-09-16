@@ -94,5 +94,7 @@ Rails.application.configure do
 
   # Dynamic links generate right URLs in emails (after installing devise gem)
   config.action_mailer.default_url_options = { host: 'bakeisyum.com' }
+  # To expose your local environment, so that images can be downloaded in your mail client.
+  config.action_mailer.asset_host = "https://bakeisyum.com/"
 
 end
