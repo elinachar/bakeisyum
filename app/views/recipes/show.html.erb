@@ -184,13 +184,13 @@
     <% if signed_in? && (current_user.admin? || current_user.author?) %>
       <%= link_to '<i class="fa fa-edit"></i> Edit Recipe'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
       <%= link_to '<i class="fa fa-trash-o" ></i> Delete Recipe'.html_safe, @recipe, method: :delete, data: { confirm: 'Are you sure that you want to delete the recipe? You cannot undo this action.' }, class: 'btn btn-default'  %>
+      <% if @recipe.new_recipe_email_sent %>
+        <%= link_to 'Send new recipe email', send_new_recipe_email_path(recipe_id: @recipe.id), class: 'btn btn-default', id: 'send-new-recipe-'+ @recipe.id.to_s, disabled: true %>
+      <% else %>
+        <%= link_to 'Send new recipe email', send_new_recipe_email_path(recipe_id: @recipe.id), class: 'btn btn-default', id: 'send-new-recipe-'+ @recipe.id.to_s%>
+      <% end %>
     <% end %>
     <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to all Recipes'.html_safe, recipes_path, class: 'btn btn-default' %>
-    <% if @recipe.new_recipe_email_sent %>
-      <%= link_to 'Send new recipe email', send_new_recipe_email_path(recipe_id: @recipe.id), class: 'btn btn-default', id: 'send-new-recipe-'+ @recipe.id.to_s, disabled: true %>
-    <% else %>
-      <%= link_to 'Send new recipe email', send_new_recipe_email_path(recipe_id: @recipe.id), class: 'btn btn-default', id: 'send-new-recipe-'+ @recipe.id.to_s%>
-    <% end %>
   </div>
 
 </div> <!-- end container -->
