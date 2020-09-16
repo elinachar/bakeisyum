@@ -11,7 +11,7 @@ class SubscriptionsController < ApplicationController
           format.html { redirect_to basic_pages_index_path, notice: 'You have successfully subscribed to Bake is Yum!' }
           format.json { render :show, status: :created, location: @subscription }
           format.js
-          UserMailer.subscription_successful(@subscription, Recipe.last(3)).deliver_now
+          UserMailer.subscription_successful(@subscription, Recipe.where(public: true).last(3)).deliver_now
           UserMailer.new_subscription(@subscription).deliver_now
         else
           subscription_errors

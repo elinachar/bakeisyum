@@ -21,7 +21,7 @@
     <tr>
       <td style="text-align:center">
         <%= link_to @recipe, :action => 'go', style: "text-decoration:none" do %>
-          <%= image_tag(@recipe.image_url_url.to_s , style: "width:80%;", alt: @recipe.name) %>
+          <%= image_tag(@recipe.image_url_url.to_s , style: "width:80%;", alt: @recipe.name, lazy: false) %>
         <% end %>
       </td>
     </tr>
@@ -32,6 +32,14 @@
       </td>
     </tr>
   </tbody>
+</table>
+<table style="width: 100%;">
+  <tr>
+    <td>
+      <p>Give it a try and let me know if you liked it!</p>
+      <p>I am looking forward for your comments!</p>
+    </td>
+  </tr>
 </table>
 
 <table>
@@ -46,8 +54,9 @@
     <tr>
       <td style="font-size:0.9em;">
         <p><strong>This email is created automatically. Please do not respond to this email.</strong></p>
-        <p>If you need any help, please send to <%= mail_to "info@bakeisyum.com", "info@bakeisyum.com" %>.</p>
+        <p>You received this email because you have subscribed to the newsletter of <a href="https://bakeisyum.com/">Bake is Yum</a></p>
         <p>If you would like to unsubscribe, please click <%= link_to "here", unsubscribe_subscriptions_url(@subscription)%>.</p>
+        <p>If you have any queries, please send to <%= mail_to "info@bakeisyum.com", "info@bakeisyum.com" %>.</p>
       </td>
     </tr>
   </tfoot>

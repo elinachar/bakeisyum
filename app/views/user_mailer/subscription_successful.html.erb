@@ -7,7 +7,8 @@
     <tr>
       <td>
         <p>Thank you! You have successfully subscribed to Bake is Yum!</p>
-        <p>Now you will never miss a new recipe! Check out the latest recipes:</p></td>
+        <p>Now you will never miss a new recipe!</p>
+        <p>Check out the latest recipes:</p></td>
       </tr>
   </thead>
 
@@ -17,7 +18,7 @@
         <td>
           <%= link_to recipe, :action => 'go', style: "text-decoration:none" do %>
             <div style="width:50%; background-color:#aaf0d1">
-              <%= image_tag( recipe.image_url_url.to_s , style: "width:100%;", alt: recipe.name) %>
+              <%= image_tag( recipe.image_url_url.to_s , style: "width:100%;", alt: recipe.name, lazy: false) %>
               <p style="padding-bottom:18px; color:#33483e;"><%= recipe.name %></p>
             </div>
           <% end %>
@@ -38,7 +39,7 @@
       <td style="font-size:0.9em;">
         <p><strong>This email is created automatically. Please do not respond to this email.</strong></p>
         <p>If you need any help, please send to <%= mail_to "info@bakeisyum.com", "info@bakeisyum.com" %>.</p>
-        <p> You received this email because you have subscribed to the newsletter of <a href="https://bakeisyum.herokuapp.com/">Bake is Yum</a>.</p>
+        <p> You received this email because you have subscribed to the newsletter of <a href="https://bakeisyum.com/">Bake is Yum</a>.</p>
         <p>If you would like to unsubscribe, please click <%= link_to "here", unsubscribe_subscriptions_url(@subscription)%>.</p>
       </td>
     </tr>

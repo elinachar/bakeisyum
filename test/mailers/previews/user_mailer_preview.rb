@@ -6,11 +6,11 @@ class UserMailerPreview < ActionMailer::Preview
   end
 
   def new_recipe
-    UserMailer.new_recipe(Recipe.first, Subscription.first)
+    UserMailer.new_recipe(Recipe.where(public: true).last, Subscription.first)
   end
 
   def subscription_successful
-    UserMailer.subscription_successful(Subscription.first, Recipe.last(3))
+    UserMailer.subscription_successful(Subscription.first, Recipe.where(public: true).last(3))
   end
 
   def welcome
