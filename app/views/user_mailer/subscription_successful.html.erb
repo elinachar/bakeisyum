@@ -16,10 +16,10 @@
     <% @recipes.reverse.each do |recipe| %>
       <tr>
         <td>
-          <%= link_to recipe, :action => 'go', style: "text-decoration:none" do %>
+          <%= link_to recipe, :action => 'go' do %>
             <div style="width:50%; background-color:#aaf0d1">
               <%= image_tag( recipe.image_url_url.to_s , style: "width:100%;", alt: recipe.name, lazy: false) %>
-              <p style="padding-bottom:18px; color:#33483e;"><%= recipe.name %></p>
+              <p style="padding-bottom:18px;"><%= recipe.name %></p>
             </div>
           <% end %>
         </td>
@@ -38,8 +38,8 @@
     <tr>
       <td style="font-size:0.9em;">
         <p><strong>This email is created automatically. Please do not respond to this email.</strong></p>
-        <p>If you need any help, please send to <%= mail_to "info@bakeisyum.com", "info@bakeisyum.com" %>.</p>
         <p> You received this email because you have subscribed to the newsletter of <a href="https://bakeisyum.com/">Bake is Yum</a>.</p>
+        <p>If you have any queries, please send to <%= mail_to "info@bakeisyum.com", "info@bakeisyum.com" %>.</p>
         <p>If you would like to unsubscribe, please click <%= link_to "here", unsubscribe_subscriptions_url(@subscription)%>.</p>
       </td>
     </tr>
