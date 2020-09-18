@@ -9,7 +9,7 @@
   padding-top: 20px;
 }
 
-.carousel-inner{
+.carousel-inner {
   max-height: 500px !important;
 }
 
@@ -98,9 +98,13 @@
   }
 }
 
-.recipe-lading-card {
+.recipe-landing-card {
   text-align: center;
   margin-top: 20px;
+
+  h6 {
+    font-size: 15px;
+  }
 }
 
 .btn-get-more-recipes {
@@ -122,6 +126,10 @@
   @include transform(scale(1.1));
 }
 
+.recipe-landing-description {
+  font-size: 17px;
+}
+
 .recipe-landing-description a {
   color: $mint;
 }
@@ -140,6 +148,10 @@
   h1 {
     font-weight: lighter;
     margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 17px;
   }
 
   a {
@@ -185,6 +197,11 @@
 
   margin-top: 40px;
   padding: 10px 10px 10px 10px;
+
+  .subscribe-text,
+  .btn {
+    font-size: 17px;
+  }
 
   #subscription_email.error {
     border-color: #a94442;
@@ -317,6 +334,10 @@ ol.subsection li {
 
 // XL screens
 @media only screen and (min-width: 1200px) {
+  .carousel-inner {
+    max-height: 650px !important;
+  }
+
   .about {
     img {
       width: 23%;

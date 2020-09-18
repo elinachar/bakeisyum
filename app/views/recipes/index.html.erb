@@ -19,7 +19,8 @@
       <% end %>
     <% end %>
     <%= render @recipes %>
-    <div class="col-xs-12">
+    <div class="col-xs-12 text-center show-more-recipes">
+      <%#= link_to 'Show more recipes', recipes_path(recipes_id: @recipes.pluck(:id)), local: true, class: "btn" %>
       <%= will_paginate @recipes %>
     </div>
   </div> <!-- end row -->

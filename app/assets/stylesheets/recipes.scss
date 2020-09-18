@@ -125,6 +125,22 @@ h3 {
   font-style: normal;
 }
 
+.show-more-recipes {
+  .btn {
+    width: 50%;
+    padding: 15px;
+    background-color: white;
+    border-color: $mint;
+    font-size: 17px;
+  }
+
+  .btn:hover {
+    background-color: $lightMint;
+  }
+}
+
+
+
 // Show
 .recipe-show {
   margin-top: 10px;
@@ -481,6 +497,7 @@ h3 {
 
 // XS
 // @media (max-width: 576px) {...}
+
 // XS and SM Devices
 @media (max-width: 767px) {
   .recipe-show {
@@ -517,6 +534,10 @@ h3 {
         padding-left: 20px;
       }
 
+    }
+
+    .comment-title .create-new-comment {
+      text-align: right;
     }
   }
 }

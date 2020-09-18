@@ -163,7 +163,9 @@
 
   <div>
     <div class="row comment-title">
-      <%=  button_tag 'Leave a comment', class: 'btn btn-default col-xs-offset-5 col-md-offset-8 col-md-2 col-md-push-2', id: 'create-new-comment' %>
+      <div class="col-sm-offset-5 col-md-offset-8 col-md-2 col-md-push-2 create-new-comment">
+        <%=  button_tag 'Leave a comment', class: 'btn btn-default', id: 'create-new-comment' %>
+      </div>
       <% if @comments.select(&:approved).size == 1 %>
         <h4 class="col-md-2 col-md-pull-10 count-approved-comments">1 Comment</h4>
       <% else %>
