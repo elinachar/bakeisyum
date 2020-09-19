@@ -74,53 +74,57 @@
       <%= yield(:structured_data) %>
     <% else %>
       <script type='application/ld+json'>
-        {
+      {
         "@context":"https://schema.org",
-        "@graph":
-          [{
-  	      "@type":"Organization",
+        "@graph":[{
+          "@type":"Organization",
           "@id":"https://bakeisyum.com/#organization",
           "name":"Bake is Yum",
           "url":"https://bakeisyum.com/",
           "sameAs":[
-      	     "https://gr.pinterest.com/elinachar/boards/"],
+            "https://www.instagram.com/bakeisyum/",
+            "https://gr.pinterest.com/bakeisyum/_created/",
+            "https://www.linkedin.com/in/elina-charalampous-4263b915b/"],
           "logo":{
-       	    "@type":"ImageObject",
+            "@type":"ImageObject",
             "@id":"https://bakeisyum.com/#logo",
             "inLanguage":"en-US",
             "url":"https://bakeisyum.com/logo.png",
             "width":900,
             "height":300,
             "caption":"Bake is Yum"},
-            "image":{"@id":"https://bakeisyum.com/#logo"
-          },
-          "image":[
-            "https://bakeisyum.com/uploads/recipe/image_url/8/Oatmeal_Cookies.jpg",
-            "https://bakeisyum.com/uploads/recipe/image_url/5/Pancakes.jpg",
-            "https://bakeisyum.com/uploads/recipe/image_url/4/Chocolate_Brownies.jpg"
-          ],
-          "sameAs": [
-            "https://gr.pinterest.com/bakeisyum/",
-            "https://www.instagram.com/bakeisyum/",
-            "https://www.linkedin.com/in/elina-charalampous-4263b915b/"
-          ]
-          },
-
-          {
+          "image":{
+            "@id":"https://bakeisyum.com/#logo"}
+          },{
           "@type":"WebSite",
           "@id":"https://bakeisyum.com/#website",
           "url":"https://bakeisyum.com/",
           "name":"Bake is Yum",
           "description":"Baking Blog and dessert recipes to follow, share and enjoy.",
           "publisher":{
-       	    "@id":"https://bakeisyum.com/#organization"},
+            "@id":"https://bakeisyum.com/#organization"},
           "potentialAction":[{
             "@type":"SearchAction",
-            "target":"https://bakeisyum.com/recipes?utf8=%E2%9C%93&q={search_term_string}=",
+            "target":"https://bakeisyum.com/recipes?utf8=%E2%9C%93&q={search_term_string}=&button=",
             "query-input":"required name=search_term_string"}],
           "inLanguage":"en-US"
-          }]
-        }
+          },{
+          "@type":"CollectionPage",
+          "@id":"https://bakeisyum.com/#webpage",
+          "url":"https://bakeisyum.com/",
+          "name":"The 3 latest baking recipes from Bake is Yum.",
+          "isPartOf":{
+            "@id":"https://bakeisyum.com/#website"},
+          "about":{
+            "@id":"https://bakeisyum.com/#organization"},
+          "description":"Check out the latest 3 recipes from Bake is Yum! Enjoy, comment, rate and share!",
+          "inLanguage":"en-US",
+          "potentialAction":[{
+            "@type":"ReadAction",
+            "target":["https://bakeisyum.com/"]}]
+          }
+        ]
+      }
       </script>
     <% end %>
   </head>
