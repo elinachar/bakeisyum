@@ -74,7 +74,6 @@ $(document).on('turbolinks:load', function() {
   }
 
   function recipesCardHeigt() {
-    console.log("fix height")
     var recipeCardHeights = [], countrecipeCardHeights, finalCardHeight;
     $(".recipes-index .recipe-card p").each(function(){
       recipeCardHeights.push($(this).height());

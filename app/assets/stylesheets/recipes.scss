@@ -496,7 +496,11 @@ h3 {
 }
 
 // XS
-// @media (max-width: 576px) {...}
+@media (max-width: 576px) {
+  .show-more-recipes .btn {
+    width: 70%;
+  }
+}
 
 // XS and SM Devices
 @media (max-width: 767px) {

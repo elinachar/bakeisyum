@@ -50,10 +50,11 @@
         <p class="text-center empty-result">There are no recipes found for <%= @search_term %> ...</p>
       <% end %>
     <% end %>
-    <%= render @recipes %>
+    <div class="recipes-list">
+      <%= render @recipes %>
+    </div>
     <div class="col-xs-12 text-center show-more-recipes">
-      <%#= link_to 'Show more recipes', recipes_path(recipes_id: @recipes.pluck(:id)), local: true, class: "btn" %>
-      <%= will_paginate @recipes %>
+      <%= link_to 'Show more recipes', recipes_path(recipes_id: @recipes.pluck(:id)), remote: true, class: "btn" %>
     </div>
   </div> <!-- end row -->
 </div> <!-- end container -->

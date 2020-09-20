@@ -1,1 +1,17 @@
-console.log("show more recipes");
+// Where the page is currently:
+var cards = $(".recipe-card")
+var cardsCount = cards.length;
+var lastCardRecipe = $(cards[cardsCount-1]);
+var curOffset = lastCardRecipe.offset().top - $(document).scrollTop();
+
+// Load the next recipes
+$(".recipes-list").append("<%= j render @new_recipes %>");
+var new_recipes_count = <%= @new_recipes.size %>;
+if (new_recipes_count == 6) {
+  $(".show-more-recipes .btn").attr("href", "<%= recipes_path(recipes_id: @recipes.pluck(:id)) %>");
+} else {
+  $(".show-more-recipes .btn").hide()
+}
+
+// Keep the document where it was
+$(document).scrollTop(lastCardRecipe.offset().top-curOffset);

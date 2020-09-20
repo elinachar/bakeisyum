@@ -28,20 +28,19 @@ class RecipesController < ApplicationController
         @recipes = @recipes.search(term).distinct
       end
     end
-    # @recipes = @recipes.order("id DESC")
-    # if params[:recipes_id].nil?
-    #   @recipes = @recipes.first(6)
-    # else
-    #   new_recipes = @recipes.where("id < ?", params[:recipes_id][-1]).pluck(:id).first(6)
-    #   @recipes = @recipes.where("id >= ?", new_recipes[-1])
-    #   respond_to do |format|
-    #     format.html
-    #     byebug
-    #     format.js
-    #   end
-    #
-    # end
-    @recipes = @recipes.paginate(:page => params[:page], :per_page => 6).order("id DESC")
+
+    @recipes = @recipes.order("id DESC")
+    if params[:recipes_id].nil?
+      @recipes = @recipes.first(6)
+    else
+      @new_recipes = @recipes.where("id < ?", params[:recipes_id][-1]).first(6)
+      @recipes = @recipes.where("id >= ?", @new_recipes.pluck(:id)[-1])
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    end
+
   end
 
 
