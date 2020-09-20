@@ -66,7 +66,7 @@ $(document).on('turbolinks:load', function() {
   // Resize the recipe Card height in case one of them has two lines title
   // On loading and resizing window
   // Only for MD and up screens
-  if ($(window).width() <= 767) {
+  if ($(window).width() > 767) {
     recipesCardHeigt();
     $(window).on('resize', function() {
       recipesCardHeigt();
@@ -74,6 +74,7 @@ $(document).on('turbolinks:load', function() {
   }
 
   function recipesCardHeigt() {
+    console.log("fix height")
     var recipeCardHeights = [], countrecipeCardHeights, finalCardHeight;
     $(".recipes-index .recipe-card p").each(function(){
       recipeCardHeights.push($(this).height());
