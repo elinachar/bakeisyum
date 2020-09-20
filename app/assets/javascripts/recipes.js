@@ -65,10 +65,13 @@ $(document).on('turbolinks:load', function() {
 
   // Resize the recipe Card height in case one of them has two lines title
   // On loading and resizing window
-  recipesCardHeigt();
-  $(window).on('resize', function() {
+  // Only for MD and up screens
+  if ($(window).width() <= 767) {
     recipesCardHeigt();
-  })
+    $(window).on('resize', function() {
+      recipesCardHeigt();
+    })
+  }
 
   function recipesCardHeigt() {
     var recipeCardHeights = [], countrecipeCardHeights, finalCardHeight;
@@ -80,7 +83,7 @@ $(document).on('turbolinks:load', function() {
     if (countrecipeCardHeights != 1 ){
       finalCardHeight =  Math.max.apply(Math, recipeCardHeights);
     }
-    
+
     $(".recipes-index .recipe-card p").each(function(){
       $(this).css("height", finalCardHeight)
     })
