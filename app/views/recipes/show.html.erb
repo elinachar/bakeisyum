@@ -1,7 +1,10 @@
 <!-- Head  -->
 <% content_for :title, @recipe.name + " - Bake is Yum" %>
+<%= render "html_meta_tags" %>
 <%= render "open_graph_protocol_tags" %>
 <%= render "structured_data" %>
+<%= render "twitter_card" %>
+
 
 <!-- Body -->
 <div class="container recipe-show w-85">

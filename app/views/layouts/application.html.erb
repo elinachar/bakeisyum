@@ -16,9 +16,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Baking blog with dessert recipes of all kind from chocoholic Elina Charalampous with step by step recipes and demonstration pictures.">
-    <meta name="keywords" content="baking blog, desserts, recipes, recipe, chocolate, cookies, brownies, cakes, tarts, smoothies">
-    <meta name="image" content='<%= image_tag( "https://bakeisyum.com/uploads/recipe/image_url/8/Oatmeal_Cookies.jpg" , alt: "Bake is Yum") %>'>
+
+    <% if content_for?(:html_meta_tags) %>
+      <%= yield(:html_meta_tags) %>
+    <% else %>
+      <meta name="description" content="Baking blog with dessert recipes of all kind from chocoholic Elina Charalampous with step by step recipes and demonstration pictures.">
+      <meta name="keywords" content="baking blog, desserts, recipes, recipe, chocolate, cookies, brownies, cakes, tarts, smoothies">
+      <meta name="image" content='<%= image_tag( "https://bakeisyum.com/uploads/recipe/image_url/8/Oatmeal_Cookies.jpg" , alt: "Bake is Yum") %>'>
+    <% end %>
 
     <!-- Favicon Tag -->
     <%= favicon_link_tag asset_path('favicon.png') %>
@@ -82,8 +87,10 @@
           "name":"Bake is Yum",
           "url":"https://bakeisyum.com/",
           "sameAs":[
+            "https://www.facebook.com/bakeisyum/",
             "https://www.instagram.com/bakeisyum/",
             "https://gr.pinterest.com/bakeisyum/_created/",
+            "https://m.youtube.com/channel/UC3_7JIDJOpQkrrsjFEbyH9g",
             "https://www.linkedin.com/in/elina-charalampous-4263b915b/"],
           "logo":{
             "@type":"ImageObject",

@@ -1,0 +1,5 @@
+<%= content_for :html_meta_tags do %>
+  <meta name="description" content="<%= @recipe.short_description %>"/>
+  <meta name="keywords" content="<%= @recipe.keywords %>">
+  <meta name="image" content='<%= root_url + @recipe.image_url_url.to_s[1..-1] %>'/>
+<% end %>
