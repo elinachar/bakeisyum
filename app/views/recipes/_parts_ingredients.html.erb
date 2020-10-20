@@ -3,7 +3,7 @@
   <ul>
     <% part.ingredients.each do |ingredient| %>
       <li><p>
-        <% if ingredient.weight % 1 == 0 %>
+        <% if ingredient.weight && ingredient.weight % 1 == 0 %>
           <%=sprintf("%g",ingredient.weight)%>
         <% else %>
           <% if (['cup', 'tsp','tbsp'].include? ingredient.weight_unit) && (ingredient.weight < 1 ) %>
@@ -19,7 +19,7 @@
         <%= ingredient.weight_unit %>
         <% unless ingredient.weight_optional.nil? %>
           <span>(
-          <% if ingredient.weight_optional % 1 == 0 %>
+          <% if ingredient.weight_optional && ingredient.weight_optional % 1 == 0 %>
             <%=sprintf("%g",ingredient.weight_optional)%>
           <% else %>
             <% if (['cup', 'tsp','tbsp'].include? ingredient.weight_optional_unit) && (ingredient.weight_optional < 1) %>
