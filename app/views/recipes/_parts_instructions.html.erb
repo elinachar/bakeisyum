@@ -1,10 +1,12 @@
 <% @parts.each do |part| %>
-  <h4><%= part.name %></h4>
-  <ul>
-    <% part.instructions.each do |instruction| %>
-      <li><p>
-        <%= instruction.instruction %>
-      </p></li>
-    <% end %>
-  </ul>
+  <% if part.instructions.size > 0 %>
+    <h4><%= part.name %></h4>
+    <ul>
+      <% part.instructions.each do |instruction| %>
+        <li><p>
+          <%= instruction.instruction %>
+        </p></li>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>
