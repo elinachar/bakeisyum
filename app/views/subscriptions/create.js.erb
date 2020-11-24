@@ -1,6 +1,6 @@
 // Successfully subscribed
 if ( <%= @subscription_error.nil? %> && <%= @privacy_policy %> == 1) {
-  $(".subscribe-box").html("<p>You have successfully subscribed to Bake is Yum!</p><p>From now on you will receive emails with the new recipes!</p>")
+  $(".subscribe-box").html("<p class='successfull-subscription'><%= t('subscriptions.successfull_subscription') %></p><p class='successfull-subscription'><%= t('subscriptions.you_will_receive_emails') %></p>")
 
 // Error in subscription
 } else {
@@ -8,13 +8,13 @@ if ( <%= @subscription_error.nil? %> && <%= @privacy_policy %> == 1) {
   if ( <%= !@subscription_error.nil? %> ) {
     var errorMessage;
     if ( <%= @subscription_error == "blank" %> ) {
-        errorMessage = "cannot be blank";
+        errorMessage = "<%= t 'subscriptions.email_cannot_be_blank' %>";
       } else if ( <%= @subscription_error == "invalid" %> ) {
-        errorMessage = "is invalid";
+        errorMessage = "<%= t 'subscriptions.email_is_invalid' %>";
       } else if ( <%= @subscription_error == "taken" %> ) {
-        errorMessage = "has already been taken";
+        errorMessage = "<%= t 'subscriptions.email_has_already_been_taken' %>";
       }
-    $(".email-error").html("Email " + errorMessage).show();
+    $(".email-error").html("<%= t 'subscriptions.the_email' %> " + errorMessage).show();
     $("#subscription_email").addClass("error");
   } else {
     $(".email-error").hide();

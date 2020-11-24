@@ -113,6 +113,11 @@
   margin-bottom: 20px;
 }
 
+.btn-get-more-recipes:lang(el) {
+  font-size: 20px;
+  height: 52px;
+}
+
 .recipe-landing-img {
   overflow: hidden;
 
@@ -154,9 +159,19 @@
     font-size: 17px;
   }
 
+  p:lang(el) {
+    font-size: 19px;
+    font-weight: 300;
+  }
+
   a {
     font-size: 20px;
     color: $mint;
+  }
+
+  a:lang(el) {
+    font-size: 23px;
+    font-weight: 400;
   }
 
   a:hover {
@@ -230,6 +245,31 @@
   }
 }
 
+.subscribe-box:lang(el) {
+  font-weight: 300;
+
+  .subscribe-text,
+  .btn,
+  .successfull-subscription {
+    font-size: 19px;
+  }
+
+  .email,
+  .privacy_policy label {
+    font-size: 16px;
+    font-weight: 500!important;
+  }
+
+  #subscription_email {
+    font-family: 'Raleway', 'serif';
+  }
+
+  .email-error {
+    font-size: 16px;
+  }
+
+}
+
 // About Page
 .about {
   img {
@@ -251,6 +291,11 @@
       color: $mint;
     }
   }
+
+  p:lang(el) {
+    font-size: 20px;
+    font-weight: 300;
+  }
 }
 
 // Contact Page
@@ -264,38 +309,87 @@
 //   padding-right: 10px;
 // }
 
-.contact-form {
-  text-align: center;
-  margin-top: 30px;
+.contact {
+  p {
+    font-size: 16px;
+  }
+
+  .contact-form {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .form-group {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .btn-submit {
+    text-align: center;
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 17px;
+      font-weight: 300;
+      border: none;
+    }
+
+  }
+
+  // Privacy Policy
+  // Terms and Conditions
+  ol.sections {
+    padding-left: 15px;
+  }
+
+  .section {
+    padding-bottom: 30px;
+  }
+
+  ol.subsection li {
+    margin-bottom: 10px;
+  }
 }
 
-.contact .btn {
-  width: 68px;
-  height: 48px;
+.contact:lang(el) {
+  font-weight: 300;
+  p {
+    font-size: 19px;
+  }
+
+  input,
+  textarea {
+    font-size: 17px;
+  }
+
+  .btn-submit {
+    .btn {
+      font-size: 18px;
+    }
+  }
+
 }
 
-.form-group {
-  width: 85%;
-  margin: auto;
-  margin-bottom: 20px;
-}
+// Thank you
+.thank-you {
+  font-size: 16px;
 
-.btn-submit {
-  text-align: center;
+  .btn {
+    border: none;
+    padding: 15px;
+  }
 }
+.thank-you:lang(el) {
+  font-size: 18px;
 
-// Privacy Policy
-// Terms and Conditions
-ol.sections {
-  padding-left: 15px;
-}
-
-.section {
-  padding-bottom: 30px;
-}
-
-ol.subsection li {
-  margin-bottom: 10px;
+  .btn {
+    font-size: 18px;
+    font-weight: 300;
+    span {
+      padding-right: 5px;
+    }
+  }
 }
 
 // XS Screens

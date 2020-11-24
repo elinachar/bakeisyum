@@ -63,11 +63,12 @@ class SubscriptionsController < ApplicationController
     end
 
     def subscription_errors
-      if @subscription.errors.full_messages[0].include?  "blank"
+       # @subscription.errors.details[:email][0] == {:error=>:blank}
+      if (@subscription.errors.full_messages[0].include?  "blank") || (@subscription.errors.full_messages[0].include? "κενό")
         @subscription_error = "blank"
-      elsif  @subscription.errors.full_messages[0].include?  "invalid"
+      elsif  (@subscription.errors.full_messages[0].include?  "invalid") || (@subscription.errors.full_messages[0].include? "άκυρο")
         @subscription_error = "invalid"
-      elsif @subscription.errors.full_messages[0].include?  "taken"
+      elsif (@subscription.errors.full_messages[0].include?  "taken") || (@subscription.errors.full_messages[0].include?  "χρησιμοποιήσει")
         @subscription_error = "taken"
       end
     end

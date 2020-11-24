@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= I18n.locale.to_s %>">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156495058-4"></script>
@@ -20,8 +20,8 @@
     <% if content_for?(:html_meta_tags) %>
       <%= yield(:html_meta_tags) %>
     <% else %>
-      <meta name="description" content="Baking blog with dessert recipes of all kind from chocoholic Elina Charalampous with step by step recipes and demonstration pictures.">
-      <meta name="keywords" content="baking blog, desserts, recipes, recipe, chocolate, cookies, brownies, cakes, tarts, smoothies">
+      <meta name="description" content="<%= t 'head.description' %>">
+      <meta name="keywords" content="<%= t 'head.keywords' %>">
       <meta name="image" content='<%= image_tag( "https://bakeisyum.com/uploads/recipe/image_url/8/Oatmeal_Cookies.jpg" , alt: "Bake is Yum") %>'>
     <% end %>
 
@@ -39,7 +39,7 @@
       <%= yield(:twitter_meta_tags) %>
     <% else %>
       <meta name="twitter:title" content="Bake is Yum">
-      <meta name="twitter:description" content="Bake is Yum - Delicious Home Made Dessert Recipes from Elina Charalampous">
+      <meta name="twitter:description" content="<%= t 'head.twitter_card.description' %>">
       <meta name="twitter:image" content="https://bakeisyum.com/uploads/recipe/image_url/8/Oatmeal_Cookies.jpg">
     <% end %>
 
@@ -52,8 +52,8 @@
       <meta property="og:url" content="http://bakeisyum.com/" />
       <meta property="og:image" content="https://bakeisyum.com/uploads/recipe/image_url/8/Oatmeal_Cookies.jpg">
       <meta property="og:image:alt" content="Bake is Yum" />
-      <meta property="og:description" content="Bake is Yum - Dessert Recipes from Elina Charalampous" />
-      <meta property="og:locale" content="en_US">
+      <meta property="og:description" content="<%= t 'head.facebook_meta_data.description' %>" />
+      <meta property="og:locale" content="<%= t 'head.facebook_meta_data.locale' %>">
       <meta property="og:site_name" content="Bake is Yum">
     <% end %>
 
@@ -70,6 +70,8 @@
 
     <!-- Google Fonts API -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500&family=Comfortaa:wght@300&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -95,7 +97,7 @@
           "logo":{
             "@type":"ImageObject",
             "@id":"https://bakeisyum.com/#logo",
-            "inLanguage":"en-US",
+            "inLanguage":"<%= t 'head.google_structured_data.inlanguage' %>",
             "url":"https://bakeisyum.com/logo.png",
             "width":900,
             "height":300,
@@ -107,25 +109,25 @@
           "@id":"https://bakeisyum.com/#website",
           "url":"https://bakeisyum.com/",
           "name":"Bake is Yum",
-          "description":"Baking Blog and dessert recipes to follow, share and enjoy.",
+          "description":"<%= t 'head.google_structured_data.description' %>",
           "publisher":{
             "@id":"https://bakeisyum.com/#organization"},
           "potentialAction":[{
             "@type":"SearchAction",
             "target":"https://bakeisyum.com/recipes?utf8=%E2%9C%93&q={search_term_string}=&button=",
             "query-input":"required name=search_term_string"}],
-          "inLanguage":"en-US"
+          "inLanguage":"<%= t 'head.google_structured_data.inlanguage' %>"
           },{
           "@type":"CollectionPage",
           "@id":"https://bakeisyum.com/#webpage",
           "url":"https://bakeisyum.com/",
-          "name":"The 3 latest baking recipes from Bake is Yum.",
+          "name":"<%= t 'head.google_structured_data.collection_page.name' %>",
           "isPartOf":{
             "@id":"https://bakeisyum.com/#website"},
           "about":{
             "@id":"https://bakeisyum.com/#organization"},
-          "description":"Check out the latest 3 recipes from Bake is Yum! Enjoy, comment, rate and share!",
-          "inLanguage":"en-US",
+          "description":"<%= t 'head.google_structured_data.collection_page.description' %>",
+          "inLanguage":"<%= t 'head.google_structured_data.inlanguage' %>",
           "potentialAction":[{
             "@type":"ReadAction",
             "target":["https://bakeisyum.com/"]}]
@@ -147,9 +149,9 @@
       <div class="row navigation-bar-main-body">
         <div class="col-md-offset-4 col-md-4 nav-links">
           <ul>
-             <li><%= link_to "About", about_path %></li>
-             <li><%= link_to "Recipes", recipes_path %></li>
-             <li><%= link_to "Contact", contact_path %></li>
+             <li><%= link_to t('navigation_bar.about'), about_path %></li>
+             <li><%= link_to t('navigation_bar.recipes'), recipes_path %></li>
+             <li><%= link_to t('navigation_bar.contact'), contact_path %></li>
           </ul>
         </div>
 
@@ -157,17 +159,17 @@
           <i class="fa fa-user-circle-o login-md"></i>
           <div class="login-collapsed">
             <% if user_signed_in? %>
-              <p>Hi <b><%= current_user.first_name %>!<i class="fa fa-angle-down"></i></p></b>
+              <p><%= t 'navigation_bar.hi' %> <b><%= current_user.first_name %>!<i class="fa fa-angle-down"></i></p></b>
               <ul>
-                <li><%= link_to('My account', user_path(current_user)) %></li>
-                <li><%= link_to('Favorite Recipes', user_favorites_path(current_user)) %></li>
+                <li><%= link_to(t('navigation_bar.my_account'), user_path(current_user)) %></li>
+                <li><%= link_to(t('navigation_bar.favorite_recipes'), user_favorites_path(current_user)) %></li>
                 <% if current_user.admin? %>
-                  <li><%= link_to('Manage users', users_path) %></li>
+                  <li><%= link_to(t('navigation_bar.manage_users'), users_path) %></li>
                 <% end %>
-                <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+                <li><%= link_to(t('navigation_bar.logout'), destroy_user_session_path, method: :delete) %></li>
               </ul>
             <% else %>
-              <%= link_to('<span>Login</span><i class="fa fa-user-circle-o"></i>'.html_safe, new_user_session_path) %>
+              <%= link_to(('<span>' + t("navigation_bar.login_sign_up") + '</span><i class="fa fa-user-circle-o"></i>').html_safe, new_user_session_path) %>
             <% end %>
           </div>
         </div>
@@ -175,7 +177,7 @@
         <%= form_with(url: recipes_path, method: 'get', local: true, class: 'search-form form-horizontal col-md-3 col-md-pull-1') do |form| %>
           <div class="form-group">
             <div class="col-xs-10 search-input">
-              <%= form.text_field :q, id: 'q', value: params[:q], placeholder: "Search...", size: 40, class: 'form-control' %>
+              <%= form.text_field :q, id: 'q', value: params[:q], placeholder: t("navigation_bar.search"), size: 40, class: 'form-control' %>
             </div>
             <%= button_tag(class: 'search-button col-xs-2') do %>
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -191,16 +193,16 @@
           <div class="login-dropdown-box">
             <% if user_signed_in? %>
               <ul>
-                <li><p>Hi <b><%= current_user.first_name %>!</p></b></li>
-                <li><%= link_to('My account', user_path(current_user)) %></li>
-                <li><%= link_to('Favorite Recipes', user_favorites_path(current_user)) %></li>
+                <li><p><%= t 'navigation_bar.hi' %> <b><%= current_user.first_name %>!</p></b></li>
+                <li><%= link_to(t('navigation_bar.my_account'), user_path(current_user)) %></li>
+                <li><%= link_to(t('navigation_bar.favorite_recipes'), user_favorites_path(current_user)) %></li>
                 <% if current_user.admin? %>
-                  <li><%= link_to('Manage users', users_path) %><li>
+                  <li><%= link_to(t('navigation_bar.manage_users'), users_path) %><li>
                 <% end %>
-                <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+                <li><%= link_to(t('navigation_bar.logout'), destroy_user_session_path, method: :delete) %></li>
               </ul>
             <% else %>
-              <%= link_to('Login / Sign up', new_user_session_path) %>
+              <%= link_to(t('navigation_bar.login_sign_up'), new_user_session_path) %>
             <% end %>
           </div>
         </div>
@@ -232,8 +234,13 @@
     <footer>
       <div class="container-fluid">
         <div class="row">
-          <p class="col-sm-6 col-sm-push-6 unsplash">Photos from Elina Charalampous and <%= link_to 'Unsplash', 'https://unsplash.com/', target: :_blank %></p>
-          <p class="col-sm-6 col-sm-pull-6 copyright">&copy; 2018 - <%= Date.today.year %> <%= link_to 'Elina Charalampous', 'https://elinacharalampous.gr', target: :_blank %></p>
+          <div class="col-md-6 col-md-push-6">
+            <div class="row">
+              <p class="col-md-12 unsplash text-right"><%= t  'footer.photos_credit' %> <%= link_to 'Unsplash', 'https://unsplash.com/', target: :_blank %></p>
+              <p class="col-md-12 designed_and_developed text-right"><%= t  'footer.designed_and_developed' %> <%= link_to 'Elina Charalampous', 'https://elinacharalampous.gr', target: :_blank %></p>
+            </div>
+          </div>
+          <p class="col-md-6 col-md-pull-6 copyright">&copy; 2018 - <%= Date.today.year %> <%= link_to 'Elina Charalampous', 'https://elinacharalampous.gr', target: :_blank %></p>
         </div>
       </div> <!-- end container-fluid -->
     </footer>

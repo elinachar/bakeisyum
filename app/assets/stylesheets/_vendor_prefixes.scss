@@ -15,3 +15,8 @@
      -moz-box-shadow: $property;
           box-shadow: $property;
 }
+
+@mixin filter($property) {
+  -webkit-filter: $property;
+          filter: $property;
+}

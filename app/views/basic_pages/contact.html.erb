@@ -1,4 +1,4 @@
-<% content_for :title, "Contact - Bake is Yum" %>
+<% content_for :title, t('basic_pages.contact.title') %>
 <%= content_for :structured_data do %>
   <script type='application/ld+json'>
     {
@@ -8,22 +8,22 @@
       "@id":"https://bakeisyum.com/#website",
       "url":"https://bakeisyum.com/",
       "name":"Bake is Yum",
-      "description":"Baking Blog and dessert recipes to follow, share and enjoy.",
+      "description":"<%= t 'head.google_structured_data.description' %>",
       "publisher":{
         "@id":"https://bakeisyum.com/#organization"},
         "potentialAction":[{
           "@type":"SearchAction",
           "target":"https://bakeisyum.com/recipes?utf8=%E2%9C%93&q={search_term_string}=&button=",
           "query-input":"required name=search_term_string"}],
-        "inLanguage":"en-US"},
+        "inLanguage":"<%= t 'head.google_structured_data.inlanguage' %>"},
       {
       "@type":"ContactPage",
       "@id":"https://bakeisyum.com/contact/#webpage",
       "url":"https://bakeisyum.com/contact/",
       "name":"Contact - Bake is Yum",
       "isPartOf":{"@id":"https://bakeisyum.com/#website"},
-      "description":"I would be glad to hear from you! Contact with Bake is Yum!",
-      "inLanguage":"en-US",
+      "description":"<%= t 'basic_pages.contact.description' %>",
+      "inLanguage":"<%= t 'head.google_structured_data.inlanguage' %>",
       "potentialAction":[{
         "@type":"FillFormAction",
         "target":["https://bakeisyum.com/contact/"]}]}
@@ -31,8 +31,8 @@
   </script>
 <% end %>
 <div class="container contact">
-  <h1>Contact</h1>
-  <p class="text-center">I would be glad to receive a message from you!</p>
+  <h1><%= t "basic_pages.contact.contact" %></h1>
+  <p class="text-center"><%= t "basic_pages.contact.would_be_glad_to_hear_from_you" %></p>
   <!-- <address>
     <h2>Elina Charalampous</h2>
     <p><i class="fa fa-map-marker"></i>Sourgiadaki 8-10, 71306 Heraklion, Crete, Greece</p>
@@ -40,30 +40,30 @@
     <p><i class="fa fa-envelope"></i><a href="mailto:elinachar@gmail.com">elinachar@gmail.com</a></p>
   </address> -->
 
-  <%= form_with(url:"/thank-you", method: "post", local: true) do |form| %>
+  <%= form_with(url: thank_you_path, method: "post", local: true) do |form| %>
     <div class="row">
       <div class="form-group">
         <%= form.label :name, class: "sr-only" %>
-        <%= form.text_field :name, class: "form-control", placeholder: "Name*", required: true %>
+        <%= form.text_field :name, class: "form-control", placeholder: t('basic_pages.contact.name'), required: true %>
       </div>
 
       <div class="form-group">
         <%= form.label :email, class: "sr-only" %>
-        <%= form.text_field :email, class: "form-control", placeholder: "Email *", required: true %>
+        <%= form.text_field :email, class: "form-control", placeholder: t('basic_pages.contact.email'), required: true %>
       </div>
 
       <div class="form-group">
         <%= form.label :phone, class: "sr-only" %>
-        <%= form.telephone_field :phone, class: "form-control", placeholder: "Phone" %>
+        <%= form.telephone_field :phone, class: "form-control", placeholder: t('basic_pages.contact.phone') %>
       </div>
 
       <div class="form-group">
         <%= form.label :message, class: "sr-only"  %>
-        <%= form.text_area :message, class: "form-control", placeholder: "Message *", rows: 5, required: true %>
+        <%= form.text_area :message, class: "form-control", placeholder: t('basic_pages.contact.message'), rows: 5, required: true %>
       </div>
 
       <div class="btn-submit">
-        <%= form.submit "Send", class: "btn btn-default" %>
+        <%= form.submit t("basic_pages.contact.send"), class: "btn btn-default" %>
       </div>
     </div>
   <% end %>

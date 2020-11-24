@@ -1,10 +1,12 @@
-<% content_for :title, "Thank you for contacting - Bake is Yum" %>
-<div class="panel panel-default">
-  <div class="panel-body">
-    <p>Thank you for contacting me! I have received your message and will respond as soon as possible.</p>
-    <br>
-    <p>Till then, lots of greetings,</p>
-    <p>Elina from Bake is Yum</p>
-  </div><!-- / panel-body -->
-</div><!-- / panel -->
-  <%= link_to "<span class='glyphicon glyphicon-arrow-left'></span> Go Back to Bake is Yum".html_safe, root_path, class: 'btn btn-default', style: 'margin-left:20px' %>
+<% content_for :title, t('basic_pages.thank_you.title') %>
+<div class="thank-you">
+  <div class="panel panel-default text-center">
+    <div class="panel-body">
+      <p><%= t 'basic_pages.thank_you.thank_you_for_contacting' %></p>
+      <br>
+      <p><%= t 'basic_pages.thank_you.until_then_greetings' %></p>
+      <p><%= t 'basic_pages.thank_you.elina_from_bake_is_yum' %></p>
+    </div><!-- / panel-body -->
+  </div><!-- / panel -->
+  <%= link_to ("<span class='glyphicon glyphicon-arrow-left'></span> " + t("basic_pages.thank_you.go_back_to_bake_is_yum")).html_safe, root_path, class: 'btn btn-default', style: 'margin-left:20px' %>
+</div>

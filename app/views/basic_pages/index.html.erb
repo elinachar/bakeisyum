@@ -1,4 +1,4 @@
-<% content_for :title, "Bake is Yum - Dessert Recipes from Elina Charalampous" %>
+<% content_for :title, t("basic_pages.index.title") %>
 <!-- Carousel starts here -->
 <div class="container-fluid" id="carousel-index">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -58,7 +58,7 @@
           </div>
         <% end %>
       <% end %>
-      <%=link_to "Check out all the recipes", recipes_path, :class => 'col-xs-10 col-xs-offset-1 btn btn-get-more-recipes'%>
+      <%=link_to t("basic_pages.index.check_out_all_recipes"), recipes_path, :class => 'col-xs-10 col-xs-offset-1 btn btn-get-more-recipes'%>
     </div>
 
     <!-- <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-push-9 col-sm-offset-0  text-center"> -->
@@ -66,12 +66,12 @@
       <div class="about-me-index">
         <%= image_tag( "Elina_Charalampous.jpg", alt: "Elina Charalampous" , class: "img-responsive", lazy: false ) %>
         <h1>Bake is Yum</h1>
-        <p>Hi! I am Elina and I love to bake! I am a chocolate lover and fan of bitter and sour falvors in desserts! Bake is Yum is my blog for sharing my favorite dessert recipes!</p>
-        <%= link_to "more about me", about_path %>
+        <p><%= t "basic_pages.index.about_me" %></p>
+        <%= link_to t("basic_pages.index.more_about_me"), about_path %>
       </div>
 
       <div class="follow-me rounded-border">
-        <p>follow me on</p>
+        <p><%= t 'basic_pages.index.follow_me_on' %></p>
         <div class="follow-me-links">
           <%= link_to "<i class='fab fa-facebook'></i>".html_safe, "https://www.facebook.com/bakeisyum",  target: "_blank" %>
           <%= link_to "<i class='fab fa-pinterest'></i>".html_safe, "https://gr.pinterest.com/bakeisyum/",  target: "_blank" %>
@@ -81,10 +81,10 @@
       </div>
 
       <div class="subscribe-box rounded-border">
-        <p class="subscribe-text"> Subscribe to receive e-mails with the new recipes!</p>
+        <p class="subscribe-text"> <%= t 'basic_pages.index.subscribe_to_receive_emails' %></p>
         <%= form_with(model: @subscription) do |form| %>
           <div class="form-group">
-            <%= form.label :email, "Email address*" %>
+            <%= form.label :email, t('basic_pages.index.email'), class: "email" %>
             <%= form.text_field :email, class: 'form-control' %>
             <p class="email-error"></p>
           </div>
@@ -92,12 +92,12 @@
           <div class="privacy_policy">
             <%= form.label :privacy_policy do %>
               <%= form.check_box :privacy_policy %>
-              I agree to sign up to receive email updates. We take your privacy seriously. See our <%= link_to 'Privacy Policy', privacy_policy_path %>.
+              <%= t "basic_pages.index.aggree_to_subscribe" %><%= link_to t('basic_pages.index.privacy_policy'), privacy_policy_path %>.
             <% end %>
           </div>
 
           <div class="actions">
-            <%= form.submit 'Subscribe', class: "btn btn-default" %>
+            <%= form.submit t('basic_pages.index.subscribe'), class: "btn btn-default" %>
           </div>
         <% end %>
       </div>

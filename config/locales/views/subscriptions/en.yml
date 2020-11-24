@@ -1,0 +1,8 @@
+en:
+  subscriptions:
+    successfull_subscription: "You have successfully subscribed to Bake is Yum!"
+    you_will_receive_emails: "From now on you will receive emails with the new recipes!"
+    the_email: email
+    email_cannot_be_blank: cannot be blank
+    email_is_invalid: is invalid
+    email_has_already_been_taken: has already been taken

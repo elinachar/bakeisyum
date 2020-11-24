@@ -1,0 +1,46 @@
+<table>
+  <thead>
+    <tr>
+      <td><h1 style="color:#aaf0d1; font-size:25px; text-align: center;"><%= @appname %></h1></td>
+    </tr>
+    <tr>
+      <td>
+        <p><%= t('user_mailer.subscription_successful.thank_you_for_subscribed') %></p>
+        <p><%= t 'user_mailer.subscription_successful.you_will_never_miss_recipe' %></p>
+        <p><%= t 'user_mailer.subscription_successful.check_out_latest_recipes' %></p></td>
+      </tr>
+  </thead>
+
+  <tbody style="text-align: center;">
+    <% @recipes.reverse.each do |recipe| %>
+      <tr>
+        <td>
+          <%= link_to recipe, :action => 'go' do %>
+            <div style="width:50%; background-color:#aaf0d1">
+              <%= image_tag( recipe.image_url_url.to_s , style: "width:100%;", alt: recipe.name, lazy: false) %>
+              <p style="padding-bottom:18px;"><%= recipe.name %></p>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td>
+        <p style="margin-bottom:0"><%= t 'user_mailer.enjoy' %></p>
+        <p style="margin-top:2px"><%= t 'user_mailer.elina_from_bake_is_yum' %></p>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="font-size:0.9em;">
+        <p><strong><%= t 'user_mailer.automatically_created_email' %></strong></p>
+        <p><%= t 'user_mailer.you_received_this_email_because_you_succeffully_subscribed' %><a href="https://bakeisyum.com/">Bake is Yum</a>.</p>
+        <p><%= t 'user_mailer.for_any_queries_send_to_mail' %><%= mail_to "info@bakeisyum.com", "info@bakeisyum.com" %>.</p>
+        <p><%= t 'user_mailer.for_unsubscribe' %> <%= link_to t('user_mailer.here'), unsubscribe_subscriptions_url(@subscription)%>.</p>
+      </td>
+    </tr>
+  </tfoot>
+</table>

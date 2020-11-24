@@ -1,0 +1,25 @@
+el:
+  user_mailer:
+    enjoy: "Καλή απόλαυση,"
+    elina_from_bake_is_yum: "Ελίνα από το Bake is Yum"
+    automatically_created_email: "Αυτό το email δημιουργήθηκε αυτόματα. Παρακαλώ μην απαντήσεις σε αυτό το email."
+    you_received_this_email_because_you_succeffully_subscribed: "Έλαβες αυτό το email επείδή γράφτηκες με επιτυχία στο newsletter του "
+    for_any_queries_send_to_mail: "Για οποιαδήποτε απορία παρακαλώ στείλε email στο  "
+    for_unsubscribe: "Εάν επιθυμείς να μην λαμβάνεις πια email από το Bake is Yum, πάτα "
+    here: εδώ
+    subscription_successful:
+      thank_you_for_subscribed: "Ευχαριστώ! Έχεις εγγραφεί με επιτυχία στο newsletter του Bake is Yum!"
+      you_will_never_miss_recipe: "Από εδώ και πέρα δεν θα χάνεις καμία νέα συνταγή!"
+      check_out_latest_recipes: "Ρίξε μια ματιά στις πιο πρόσφατες συνταγές:"
+    welcome:
+      welcome: Καλώς όρισες
+      to: στο
+      thank_you_for_creating_acount: "Ευχαριστώ για την εγγραφή σου στο "
+      hope_that_you_will_enjoy: "Ελπίζω να απολαύσεις όλες τις νόστιμες συνταγές που μοιράζομαι μαζί σου!"
+      save_favorite_recipes: "Τώρα μπορείς να αποθηκεύεις τις αγαπημένες σου συνταγές!"
+      give_them_a_try: "Δοκίμασέ τες και ενημέρωσέ με για το αποτέλεσμα και αν σου άρεσαν!"
+      you_received_this_email_because_you_created_acount: "Έλαβες αυτό το email επειδή μόλις δημιουργήσες έναν λογαριασμό στο "
+    new_recipe:
+      check_out_new_recipe: "Δες τη νέα συνταγή του Bake is Yum:"
+      give_it_a_try: "Δοκίμασέ την και πες μου αν σου άρεσε!"
+      looking_forward_to_comments: "Ανυπομονώ για τα σχόλια σου!"

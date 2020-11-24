@@ -2,31 +2,30 @@
   <tbody>
     <tr>
       <% if @user.first_name.empty? %>
-        <td><h2>Welcome!</h2></td>
+        <td><h2><%= t 'user_mailer.welcome.welcome' %> <%= t 'user_mailer.welcome.to' %> <a href="https://bakeisyum.com/" style="text-decoration:none; color::#aaf0d1">Bake is Yum</a>!</h2></td>
       <% else %>
-        <td><h2>Welcome <%= @user.first_name%>!</h2></td>
+        <td><h2><%= t 'user_mailer.welcome.welcome' %> <%= @user.first_name%> <%= t 'user_mailer.welcome.to' %> <a href="https://bakeisyum.com/" style="text-decoration:none; color::#aaf0d1">Bake is Yum</a>!</h2></td>
       <% end %>
     </tr>
     <tr>
       <td>
-        <p>Thank you for signing up to <a href="https://bakeisyum.com/" style="text-decoration:none; color::#aaf0d1">Bake is Yum</a>!</p>
-        <p>I hope that you will enjoy checking out all the delicious recipes I share with you!</p>
-        <p>Now you can save your favorite recipes!</p>
-        <p>Give them a try and let me know about the rersult and how you liked them!</p>
+        <p><%= t 'user_mailer.welcome.hope_that_you_will_enjoy' %></p>
+        <p><%= t 'user_mailer.welcome.save_favorite_recipes' %></p>
+        <p><%= t 'user_mailer.welcome.give_them_a_try' %></p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>Lots of greetings,</p>
-        <p>Elina from Bake is Yum</p>
+        <p><%= t 'user_mailer.enjoy' %></p>
+        <p><%= t 'user_mailer.elina_from_bake_is_yum' %></p>
       </td>
     </tr>
 
     <tr>
       <td style="font-size:0.9em;">
-        <p><strong>This email is created automatically. Please do not respond to this email.</strong></p>
-        <p>You received this email because you created an account to <a href="https://bakeisyum.com/">Bake is Yum</a></p>
-        <p>If you have any queries, please send to <%= mail_to "info@bakeisyum.com", "info@bakeisyum.com" %>.</p>
+        <p><strong><%= t 'user_mailer.automatically_created_email' %></strong></p>
+        <p><%= t 'user_mailer.welcome.you_received_this_email_because_you_created_acount' %> <a href="https://bakeisyum.com/">Bake is Yum</a></p>
+        <p><%= t 'user_mailer.for_any_queries_send_to_mail' %> <%= mail_to "info@bakeisyum.com", "info@bakeisyum.com" %>.</p>
       </td>
     </tr>
   </tbody>

@@ -1,0 +1,73 @@
+@import 'colors';
+@import 'vendor_prefixes';
+
+html, body {
+ height: 100%;
+ font-family: 'Comic Neue', cursive!important;
+}
+
+body {
+  background-color: $silver!important;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+p {
+  margin-bottom: 0px!important;
+}
+
+.pr-0 {
+  padding-right: 0
+}
+
+.pl-0 {
+  padding-left: 0
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.link-to-homepage {
+  background: $yellow;
+  width: 50px!important;
+  height: 50px;
+  border-radius: 50%;
+  padding-left: 8px;
+  padding-top: 4px;
+  box-shadow: 0 0 0 3px $dark-yellow;
+  z-index: 100;
+
+  a {
+    color: $blue;
+    font-size: 28px;
+  }
+}
+
+
+.box-shadow {
+  @include filter(drop-shadow(5px 5px 5px #222));
+}
+
+.copyright span {
+  font-size: 18px;
+  font-family: "Times New Roman"
+}
+
+.volume {
+  cursor: pointer;
+  i {
+    font-size: 30px;
+    color: $grey;
+  }
+
+  i:hover {
+    color: $dark-grey;
+  }
+
+  .volume-mute {
+    display: none;
+  }
+}

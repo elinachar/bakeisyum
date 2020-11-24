@@ -1,0 +1,32 @@
+en:
+  basic_pages:
+    index:
+      title: "Bake is Yum - Dessert Recipes from Elina Charalampous"
+      check_out_all_recipes: "Check out all the recipes"
+      about_me: "Hi! I am Elina and I love to bake! I am a chocolate lover and fan of bitter and sour falvors in desserts! Bake is Yum is my blog for sharing my favorite dessert recipes!"
+      more_about_me: more about me
+      follow_me_on: follow me on
+      subscribe_to_receive_emails: "Subscribe to receive e-mails with the new recipes!"
+      email: Email address*
+      aggree_to_subscribe: "I agree to sign up to receive email updates. We take your privacy seriously. See our "
+      privacy_policy: Privacy Policy
+      subscribe: Subscribe
+    contact:
+      title: "Contact - Bake is Yum"
+      description: "I would be glad to hear from you! Contact with Bake is Yum!"
+      contact: Contact
+      would_be_glad_to_hear_from_you: I would be glad to receive a message from you!
+      name: Name *
+      email: Email *
+      phone: Phone
+      message: Message *
+      send: Send
+    thank_you:
+      title: "Thank you for contacting - Bake is Yum"
+      thank_you_for_contacting: "Thank you for contacting me! I have received your message and will respond as soon as possible."
+      until_then_greetings: "Until then, lots of greetings,"
+      elina_from_bake_is_yum: "Elina from Bake is Yum"
+      go_back_to_bake_is_yum: Go back to Bake is Yum
+    about:
+      title: "About - Bake is Yum"
+      description: "Hi! I am Elina the creator of Bake is Yum! I love to bake and share my favorite recipes with you!"
