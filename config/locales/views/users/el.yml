@@ -1,0 +1,24 @@
+el:
+  users:
+    first_name: "Όνομα"
+    last_name: "Επώνυμο"
+    subscribed: "Εγγεγραμένος στο newsletter"
+    contact_language: "Γλώσσα Επικοινωνίας"
+    contact_langugage_english: "Αγγλικά"
+    contact_langugage_greek: "Ελληνικά"
+    show_all_users: "Όλοι οι χρήστες"
+    titles:
+      edit_account: "Επεξεργασία Λογαριασμού - Bake is Yum" 
+      manage_users: "Διαχείριση Χρηστών - Bake is Yum"
+      create_new_user: "Δημιουργία Νέου Χρήστη - Bake is Yum"
+      account_details: "Λεπτομέριες Λογαριασμού - Bake is Yum"
+    show:
+      yes_subscribed: "Ναι"
+      no_subscribed: "Όχι"
+      edit_my_account: "Επεξεργασία του λογαριασμού μου"
+      delete_my_account: "Διαγραφή του λογαριασμού μου"
+    edit:
+      editing_account: "Επεξεργασία του Λογαριασμού μου"
+      save_changes: "Αποθήκευση Αλλαγών"
+      go_back_to_my_account: "Πίσω στον λογαριασμό μου"
+      go_back_to_account: "Πίσω στον λογαριασμό"

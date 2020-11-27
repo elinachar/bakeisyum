@@ -1,0 +1,118 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+el:
+  devise:
+    email: Email
+    password: Κωδικός
+    password_size: "(6 ελάχιστοι χαρακτήρες)"
+    password_confirmation: "Επιβεβαίωση κωδικού"
+    first_name: "Όνομα"
+    last_name: "Επώνυμο"
+    confirmations:
+      title: "Αποστολή Ξανά Οδηγιών Επιβεβαίωσης - Bake is Yum"
+      resend_confirmation_instructions: "Αποστολή ξανά οδηγιών επιβεβαίωσης λογαριασμού"
+      confirmed: "Η διευθυνσή του email σου εχει επιβεβαιωθεί με επιτυχία."
+      did_not_receive_confirmation_instructions: "Δεν έλαβες το email με οδηγίες για την επιβεβαίωση του λογαριασμού σου?"
+      send_instructions: "Θα λάβεις ένα email με οδηγίες, σχετικά με το πως θα επιβεβαιώσεις την διεύθυνση του email σου σε λίγα λεπτά."
+      send_paranoid_instructions: "Στην περίπτωση που η διέυθυνση του email σου υπάρχει στην βάση δεδομένων του Bake is Yum, θα λάβεις ένα email με οδηγίες σχετικά με το πως θα επιβεβαιώσεις την διεύθυνση του email σου σε λίγα λεπτά."
+    failure:
+      already_authenticated: "Είστε ήδη συνδεδεμένος."
+      inactive: "Ο λογαριασμός σου δεν έχει ενεργοποιηθεί ακόμα."
+      invalid: "Μη έγκυρο %{authentication_keys} ή μη έγκυρος κωδικός."
+      locked: "Ο λογαριασμός σου είναι κλειδωμένος"
+      last_attempt: "Έχεις μόνο μια ακόμα προσπάθεια πριν κλειδωθεί ο λογαριασμός σου."
+      not_found_in_database: "Μη έγκυρο %{authentication_keys} ή μη έγκυρος κωδικός."
+      timeout: "Η σύνδεσή σου έληξε. Παρακαλώ συνδέσου ξανά για να συνεχίσεις."
+      unauthenticated: "Πρέπει να συνδεθείς για να συνεχίσεις."
+      unconfirmed: "Πρέπει να επιβεβαιώσεις τη διέυθυνση του email σου πριν συνεχίσεις."
+    mailer:
+      hello: "Γειά σου "
+      cheers: "Φιλικά,"
+      elina_from_bake_is_yum: "Ελίνα από το Bake is Yum"
+      confirmation_instructions:
+        welcome: "Καλώς όρισες "
+        to_bake_is_yum: " στο Bake is Yum"
+        subject: "Οδηγίες για επιβεβαίωση λογαριασμού"
+        you_can_confirm_your_account: "Μπορείς να επιβεβαιώσεις τον λογαριασμό σου στο Bake is Yum πατώντας τον ακόλουθο σύνδεσμο:"
+        confirm_my_acount: "Επιβεβαίωση του λογαριασμού μου"
+      reset_password_instructions:
+        someone_request_password_change: "Κάποιος ζήτησε αλλαγή κωδικού στον λογαριασμό σου στο Βake is Yum. Μπορείς να το κάνεις αυτό πατώντας τον ακόλουθο σύνδεσμο."
+        change_my_password: "Αλλαγή του κωδικού μου"
+        you_did_not_request_password_change: "Εάν δεν ζήτησες αλλαγή του κωδικού σου, παρακαλώ αγνόησε αυτό το email."
+        your_passwort_will_not_change_if_not_click_link: "Ο κωδικός σου δεν θα αλλάξει εάν δεν πατήσεις τον παρακάτω σύνδεσμο και ακολούθησεις τις οδηγίες για αλλαγή κωδικού στην ιστοσελίδα του Bake is Yum."
+        subject: "Οδηγίες για ανάκτηση κωδικού"
+      unlock_instructions:
+        your_account_was_locked: "Ο λογαριασμός σου στο Bake is Yum κλειδώθηκε επειδή έγιναν πολλές λανθασμένες απόπειρες σύνδεσης."
+        link_to_unlock_account: "Πάτησε τον ακόλουθο σύνδεσμο για να ξεκλειδώσεις τον λογαριασμό σου στο Bake is Yum:"
+        unlock_my_account: "Ξεκλείδωσε τον λογαριασμό μου"
+        subject: "Οδηγίες για να ξεκλειδώσεις τον λογαριασμό σου."
+      email_changed:
+        your_email_has_been_changed_to: "Επικοινωνούμε μαζί σου για να σε ενημερώσουμε ότι το email σου στον λογαριασμό σου στο Bake is Yum έχει αλλάξει σε "
+        subject: "Το email άλλαξε"
+      password_change:
+        your_password_was_changed: "Επικοινωνούμε μαζί σου για να σε ενημερώσουμε ότι ο κωδικός σου στον λογαριασμό σου στο Bake is Yum άλλαξε."
+        subject: "Ο κωδικός άλλαξε"
+    omniauth_callbacks:
+      failure: "Δεν κατέστη δυνατή η ταυτοποίηση σου από %{kind} εξαιτίας \"%{reason}\"."
+      success: "Επιτυχής ταυτοποίηση από %{kind} λογαριασμό."
+    passwords:
+      title_new: "Νέος Κωδικός - Bake is Yum"
+      title_edit: "Αλλαγή Κωδικού - Bake is Yum"
+      forgot_your_password: "Ξέχασες τον κωδικό σου?"
+      send_me_reset_password_instructions: "Στείλε μου email για ανάκτηση κωδικού"
+      change_your_password: "Αλλαγή κωδικού"
+      new_password: "νέος κωδικός"
+      confirm_new_password:  "Επιβεβαίωση νέου κωδικού"
+      change_my_password: "Αλλαγή κωδικού"
+      no_token: "Δέν μπορείς να έχεις πρόσβαση στη σελίδα εάν δεν προέρχεται από ενα email ανάκτησης κωδικού. Εάν δεν κατέληξες σε αυτή τη σελίδα έπειτα από κλικ σε σύνδεσμο μέσα σε email ανάκτησης κωδικού, παρακαλώ επιβεβαίωσε ότι έχετε πατήσει ολόκληρο τον σύνδεσμο URL που σου στάλθηκε."
+      send_instructions: "Θα λάβεις ένα email με οδηγίες σχετικά με το πως θα ανακτήσεις τον κωδικό σου σε λίγα λεπτά."
+      send_paranoid_instructions: "Εάν η διεύθυνση του email σου υπάρχει στη βάση δεδομένων του Bake is Yum, θα λάβεις ένα email με ένα σύνδεσμο ανάκτησης κωδικού σε λίγα λεπτά."
+      updated: "Ο κωδικός σου έχει αλλάξει με επιτυχία. Τώρα μπορείς να συνδεθείς."
+      updated_not_active: "Ο κωδικός σου έχει αλλάξει με επιτυχία."
+    registrations:
+      title_new: "Εγγραφή - Bake is Yum"
+      title_edit:  "Επεξεργασία Λογαριασμού - Bake is Yum"
+      sign_up: "Εγγραφή"
+      want_subscription: "Θέλω να λαμβάνω email με τις καινούριες συνταγές."
+      agreement_terms_and_conditions_and_privacy_policy: "Συμφωνώ με τους"
+      terms_and_conditions: "Όρους Χρήσης"
+      and: "και την"
+      privacy_policy: "Πολιτική Απορρήτου"
+      of_bake_is_yum: "του Bake is Yum"
+      if_you_already_have_account: ", εάν έχεις ήδη λογαριασμό στο Bake is Yum."
+      edit: "Eπεξεργασία"
+      destroyed: "Αντίο... Ο λογαριασμός σου έχει διαγραφθεί με επιτυχία. Ελπίζω να σε ξαναδούμε σύντομα."
+      signed_up: "Καλως όρισες! Έχεις εγγραφεί με επιτυχία στο Bake is Yum."
+      signed_up_but_inactive: "Έχεις εγγραφεί με επιτυχία στο Bake is Yum. Για να συνδεθείς πρέπει να ενεργοποιήσεις τον λογαριασμό σου πρώτα στο email που θα λαβεις από το Bake is Yum σε λίγα λεπτά."
+      signed_up_but_locked: "Έχεις εγγραφεί με επιτυχία στο Bake is Yum. Ωστόσο δεν έχεις συνδεθεί γιατί ο λογαριασμός σου είναι κλειδωμένος."
+      signed_up_but_unconfirmed: "Ένα μήνυμα με ένα σύνδεσμο επιβεβαίωσης έχει σταλεί στο email σου. Παρακαλώ πάτα τον σύνδεσμο στο email που θα λάβεις σε λίγα λεπτά και ακολούθησε τις οδηγίες για να ενεργοποιήσεις τον λογαριασμό σου."
+      update_needs_confirmation: "Έχεις ανανεώσει με επιτυχία τον λογαριασμό σου, αλλά η διεύθυνση του email σου χρειάζεται επιβεβαίωση. Σε λίγα λεπτά θα λάβεις ένα email με ένα σύνδεσμο για να επιβεβαιώσεις τη διεύθυνση του email σου."
+      updated: "Έχεις ανανεώσει με επιτυχία τον λογαριασμό σου."
+    sessions:
+      title_new: "Σύνδεση - Bake is Yum"
+      log_in: "Σύνδεση"
+      remember_me: "Να με θυμάσαι"
+      forgot_your_password: "Ξέχασες των κωδικό σου?"
+      have_not_account_yet: "Δεν έχεις λογαριασμό ακόμα? Κάνε"
+      sign_up: "εγγραφή"
+      for_free: "δωρεάν."
+      signed_in: "Έχεις συνδεθεί με επιτυχία."
+      signed_out: "Αποσυνδέθηκες με επιτυχία."
+      already_signed_out: "Έχεις αποσυνδεθεί με επιτυχία."
+    unlocks:
+      title: "Αποστολή Ξανά Οδηγιών για Ξεκλείδωμα Λογαριασμού - Bake is Yum"
+      did_not_receive_unlock_instructions: "Δέν έλαβες email με οδηγίες για το ξεκλείδωμα του λογαριασμού σου?"
+      submit_unlock_instructions: "Αποστολή Ξανά Οδηγιών για Ξεκλείδωμα Λογαριασμού"
+      send_instructions: "Σε λίγα λεπτά θα λάβεις ένα email με οδηγίες σχετικά με το πως θα ξεκλειδώσεις τον λογαριασμό σου."
+      send_paranoid_instructions: "Εάν ο λογαρισμός σου υπάρχει στη βάση δεδομένων του Bake is Yum, σε λίγα λεπτά θα λάβεις ένα email με οδηγίες σχετικά με το πως θα ξεκλειδώσεις τον λογαριασμό σου."
+      unlocked: "Ο λογαριασμός σου έχει ξεκλειδωθεί με επιτυχία. Πρέπει να συνδεθείς για να συνεχίσεις."
+  errors:
+    messages:
+      already_confirmed: "έχει ήδη επιβεβαιωθεί, παρακαλώ προσπάθησε να συνδεθείς"
+      confirmation_period_expired: "πρέπει να επιβεβαιωθεί μέσα σε %{period}, παρακαλώ ζητήστε εκ νέου επιβεβαίωση λογαριασμού"
+      expired: "έχει λήξει, παρακαλώ ζητήστε νέο"
+      not_found: "δεν βρέθηκε"
+      not_locked: "δεν είναι κλειδωμένος"
+      not_saved:
+        one: "εξαιτίας ενός λάθους δεν μπορεί ο/η/το %{resource} να αποθηκευτεί:"
+        other: "εξαιτίας %{count} λαθών δεν μπορεί ο/η/το %{resource} να αποθηκευτεί:"

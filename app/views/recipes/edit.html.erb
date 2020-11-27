@@ -1,10 +1,34 @@
 <% content_for :title, "Editing " + @recipe.name + " - Bake is Yum" %>
 <div class="container-fluid">
-  <h1>Editing Recipe</h1>
-
-  <%= render 'form', recipe: @recipe %>
-
-  <div class="cancel-editing text-center">
-    <%= link_to 'Cancel Editing Recipe'.html_safe, @recipe, class: 'btn w-85 m-auto' %>
+  <!-- Tab links -->
+  <div class="tab">
+    <button class="tablinks active" id="show-en-tab">English</button>
+    <button class="tablinks el-font" id="show-el-tab">Ελληνικά</button>
   </div>
+
+  <!-- Tab content -->
+  <div id="en-tab" class="tabcontent">
+    <h1>Editing Recipe</h1>
+    <% I18n.with_locale(:en) do %>
+      <%= render 'form', recipe: @recipe %>
+    <% end %>
+    <div class="row cancel-editing text-center">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= link_to 'Cancel Editing Recipe'.html_safe, @recipe, class: 'btn w-100 m-auto' %>
+      </div>
+    </div>
+  </div>
+
+  <div id="el-tab" class="tabcontent el-font">
+    <h1>Επεξεργασία Συνταγής</h1>
+    <% I18n.with_locale(:el) do %>
+      <%= render 'form', recipe: @recipe %>
+    <% end %>
+    <div class="row cancel-editing text-center">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= link_to 'Ακύρωση Επεξεργασίας Συνταγής'.html_safe, @recipe, class: 'btn w-100 m-auto' %>
+      </div>
+    </div>
+  </div>
+
 </div>

@@ -8,9 +8,11 @@ el:
     facebook_meta_data:
       description: "Bake is Yum - Συνταγές ζαχαροπλαστικής από την Ελίνα Χαραλάμπους"
       locale: "el"
+      person: "Ελίνα Χαραλάμπους"
     google_structured_data:
       description: "Blog ζαχαροπλαστικής και συνταγές ζαχαροπλαστικής. Δοκιμάστε, απολαύστε, και κάντε share τις συνταγές!"
       inlanguage: "el"
+      person: "Ελίνα Χαραλάμπους"
       collection_page:
         name: "Οι 3 πιο πρόσφατες συνταγές του Bake is Yum"
         description: "Δείτε τις 3 πιο πρόσφατες συνταγές του Bake is Yum! Δοκιμάστε, απολαύστε, σχολιάστε, βαθμολογήστε και μοιράστείτε τις συνταγές!"
@@ -28,3 +30,6 @@ el:
   footer:
     designed_and_developed: "Σχεδιασμός και κατασκευή ιστοσελίδας από την "
     photos_credit: "Φωτογραφίες από την Ελίνα Χαραλάμπους και από το "
+  date:
+    formats:
+      recipe: "%d-%m-%Y"

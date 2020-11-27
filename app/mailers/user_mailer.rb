@@ -15,8 +15,10 @@ class UserMailer < ApplicationMailer
     @recipe = recipe
     @appname = "Bake is Yum"
     @subscription = subscription
-    mail( to: @subscription.email,
-          subject: "New recipe: " + @recipe.name)
+    I18n.with_locale(@subscription.language) do
+      mail( to: @subscription.email,
+            subject: t('mailers.new_recipe') + @recipe.name)
+    end
   end
 
 
@@ -24,8 +26,10 @@ class UserMailer < ApplicationMailer
     @subscription = subscription
     @recipes = recipes
     @appname = "Bake is Yum"
-    mail( to: @subscription.email,
-          subject: "Thank you for subscribed to #{@appname}!")
+    I18n.with_locale(@subscription.language) do
+      mail( to: @subscription.email,
+            subject: t('mailers.thank_you_for_subscribed') + @appname + "!")
+    end
   end
 
   def new_subscription(subscription)
@@ -38,8 +42,10 @@ class UserMailer < ApplicationMailer
   def welcome(user)
     @appname = "Bake is Yum"
     @user = user
-    mail( to: @user.email,
-          subject: "Welcome to #{@appname}!")
+    I18n.with_locale(@user.language) do
+      mail( to: @user.email,
+            subject: t('mailers.welcome_to') + @appname + "!")
+    end
   end
 
   def new_user(user)

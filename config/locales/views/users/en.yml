@@ -1,0 +1,24 @@
+en:
+  users:
+    first_name: "First name"
+    last_name: "Last name"
+    subscribed: "Subscribed"
+    contact_language: "Contact Language"
+    contact_langugage_english: "English"
+    contact_langugage_greek: "Greek"
+    show_all_users: "Show all users"
+    titles:
+      edit_account: "Editing Account - Bake is Yum" 
+      manage_users: "Manage Users - Bake is Yum"
+      create_new_user: "Create New User - Bake is Yum"
+      account_details: "Account Details - Bake is Yum"
+    show:
+      yes_subscribed: "Yes"
+      no_subscribed: "No"
+      edit_my_account: "Edit my account"
+      delete_my_account: "Delete my account"
+    edit:
+      editing_account: "Editing my Account"
+      save_changes: "Save"
+      go_back_to_my_account: "Go back to my account"
+      go_back_to_account: "Go back to account"

@@ -10,7 +10,7 @@
     ],
     "author": {
       "@type": "Person",
-      "name": "Elina Charalampous"
+      "name": "<%= t('recipes.show.head.structured_data.person') %>"
     },
     "datePublished": "<%= @recipe.created_at.iso8601 %>",
     "description": "<%= @recipe.short_description %>",
@@ -52,18 +52,6 @@
           },
         <% end %>
       <% end %>
-      {
-        "@type": "HowToStep",
-        "text": "Blend 2 cups of pineapple juice and 5/8 cup cream of coconut until smooth."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Fill a glass with ice."
-      },
-      {
-        "@type": "HowToStep",
-        "text": "Pour the pineapple juice and coconut mixture over ice."
-      }
     ]
   }
   </script>

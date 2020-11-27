@@ -71,7 +71,13 @@ Rails.application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
-  config.i18n.fallbacks = true
+  # config.i18n.fallbacks = true
+  # Fallbacks for empty translations (Globalize)
+  # For version 1.1.0 and above of the `i18n` gem:
+  config.i18n.fallbacks = [I18n.default_locale]
+  # Below version 1.1.0 of the `i18n` gem:
+  # config.i18n.fallbacks = true
+
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify

@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="row">
-    <div class="col-xs-12 recipe-form">
+    <div class="col-xs-10 col-xs-offset-1 recipe-form">
       <div class="recipe-fields">
         <div class="form-group">
           <%= f.label :name %>
@@ -127,7 +127,7 @@
           <%= render 'description_fields', f: description %>
         <% end %>
         <div class="links text-center">
-          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Description".html_safe, f, :descriptions, class: "btn btn-nested-fields w-85 m-auto" %>
+          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Description".html_safe, f, :descriptions, class: "btn btn-nested-fields w-100 m-auto" %>
         </div>
       </div> <!-- end descriptions-fields -->
       <hr>
@@ -137,7 +137,7 @@
           <%= render 'part_fields', f: part %>
         <% end %>
         <div class="links text-center">
-          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Part".html_safe, f, :parts, class: "btn btn-nested-fields w-85 m-auto" %>
+          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Part".html_safe, f, :parts, class: "btn btn-nested-fields w-100 m-auto" %>
         </div>
       </div> <!-- end parts-fields -->
       <hr>
@@ -147,7 +147,7 @@
           <%= render 'note_fields', f: note %>
         <% end %>
         <div class="links text-center">
-          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Note".html_safe, f, :notes, class: "btn btn-nested-fields w-85 m-auto" %>
+          <%= link_to_add_association "<i class='fa fa-plus'></i> Add Note".html_safe, f, :notes, class: "btn btn-nested-fields w-100 m-auto" %>
         </div>
       </div> <!-- end notes-fields-->
       <hr>
@@ -158,7 +158,7 @@
       </div>
 
       <div class="actions btn-submit">
-        <%= f.submit class: 'btn w-85 m-auto' %>
+        <%= f.submit class: 'btn w-100 m-auto' %>
       </div>
 
     </div>

@@ -13,16 +13,30 @@
 
   </br>
   <div class="field">
-    <%= form.label :first_name %>
+    <%= form.label t('users.first_name') %>
     <%= form.text_field :first_name, required: true %>
   </div></br>
 
   <div class="field">
-    <%= form.label :last_name %>
+    <%= form.label t('users.last_name') %>
     <%= form.text_field :last_name %>
   </div></br>
 
+  <div class="field">
+    <%= form.label t('users.contact_language') %>
+    <% if user.language == "en" %>
+      <%= form.select :language, options_for_select([[t('users.contact_langugage_english'), 'en'], [t('users.contact_langugage_greek'), 'el']]) %>
+    <% else %>
+      <%= form.select :language, options_for_select([[t('users.contact_langugage_greek'), 'el'], [t('users.contact_langugage_english'), 'en']]) %>
+    <% end %>
+  </div></br>
+
+  <div class="field">
+    <%= form.check_box :subscribed %>
+    <%= form.label t('users.subscribed') %>
+  </div></br>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('users.edit.save_changes'), class: "btn btn-default" %>
   </div></br>
 <% end %>

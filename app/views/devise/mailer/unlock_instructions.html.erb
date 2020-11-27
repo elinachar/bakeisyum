@@ -1,7 +1,10 @@
-<p>Hello <%= @resource.email %>!</p>
+<p><%= t('devise.mailers.hello') +  @resource.email %>!</p>
 
-<p>Your account has been locked due to an excessive number of unsuccessful sign in attempts.</p>
+<p><%= t('devise.mailers.unlock_instructions.your_account_was_locked') %></p>
 
-<p>Click the link below to unlock your account:</p>
+<p><%= t('devise.mailers.unlock_instructions.link_to_unlock_account') %></p>
 
-<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+<p><%= link_to t('devise.mailers.unlock_instructions.unlock_my_account'), unlock_url(@resource, unlock_token: @token) %></p>
+
+<p><%= t('devise.mailers.cheers') %></p>
+<p><%= t('devise.mailers.elina_from_bake_is_yum') %></p>

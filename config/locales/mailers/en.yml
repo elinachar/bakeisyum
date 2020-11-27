@@ -1,0 +1,5 @@
+en:
+  mailers:
+    new_recipe: "New recipe: "
+    thank_you_for_subscribed: "Thank you for subscribed to "
+    welcome_to: "Welcome to "

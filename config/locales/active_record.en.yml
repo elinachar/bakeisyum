@@ -1,0 +1,27 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        current_password: Current Password
+        email: email
+        password: password
+        password_confirmation: Password confirmation
+        remember_me: Remember me
+    models:
+      user: User
+        # attributes:
+        #   email: email
+        #   password: password
+    errors:
+      models:
+        user:
+          email: email
+          password: password
+          attributes:
+            email: email
+            password: password
+  helpers:
+    label:
+      user:
+        email: email
+        password: password

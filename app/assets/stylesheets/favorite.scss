@@ -2,8 +2,12 @@
   h1 {
     margin-bottom: 30px;
   }
-  
+
   p {
     font-size: 17px;
+  }
+
+  p:lang(el) {
+    font-size: 20px;
   }
 }

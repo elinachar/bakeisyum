@@ -8,34 +8,34 @@
       "@id":"https://bakeisyum.com/#website",
       "url":"https://bakeisyum.com/",
       "name":"Bake is Yum",
-      "description":"Baking Blog and dessert recipes to follow, share and enjoy.",
+      "description":"<%= t 'head.google_structured_data.description' %>",
       "publisher":{
         "@id":"https://bakeisyum.com/#organization"},
         "potentialAction":[{
           "@type":"SearchAction",
           "target":"https://bakeisyum.com/recipes?utf8=%E2%9C%93&q={search_term_string}=&button=",
           "query-input":"required name=search_term_string"}],
-        "inLanguage":"en-US"},
+        "inLanguage":"<%= t 'head.google_structured_data.inlanguage' %>"},
       {
       "@type":"CollectionPage",
       "@id":"https://bakeisyum.com/recipes/#webpage",
       "url":"https://bakeisyum.com/recipes/",
-      "name":"Recipes - Bake is Yum",
+      "name":"<%= t 'recipes.index.head.name' %>",
       "isPartOf":{"@id":"https://bakeisyum.com/#website"},
-      "description":"Browse of delicious baking recipes! Enjoy, comment, rate and share!",
+      "description":"<%= t 'recipes.index.head.description' %>",
       "breadcrumb":{"@id":"https://bakeisyum.com/recipes/#breadcrumb"},
-      "inLanguage":"en-US",
+      "inLanguage":"<%= t 'head.google_structured_data.inlanguage' %>",
       "potentialAction":[{
         "@type":"ReadAction",
         "target":["https://bakeisyum.com/recipes/"]}]}
     ]}
   </script>
 <% end %>
-<h1>Recipes</h1>
+<h1><%= t('recipes.index.recipes') %></h1>
 
 <% if signed_in? && (current_user.admin? || current_user.author?) %>
   <div class="row btn-new-recipe">
-    <%= link_to '<span class="glyphicon glyphicon-plus-sign"></span> Add New Recipe'.html_safe, new_recipe_path, class: 'btn btn-default col-xs-12 col-md-3 col-md-offset-9' %>
+    <%= link_to ('<span class="glyphicon glyphicon-plus-sign"></span>'.html_safe + t('recipes.index.add_new_recipe')), new_recipe_path, class: 'btn btn-default col-xs-12 col-md-3 col-md-offset-9' %>
   </div><!-- end row -->
 <% end %>
 
@@ -43,18 +43,18 @@
   <div class="row">
     <% if @search_term && !@search_term.empty? %>
       <div class="col-xs-12 search-results">
-        <h4 class="text-center">Search results for:</h4>
+        <h4 class="text-center"><%= t('recipes.index.search_results_for') %></h4>
         <p class="text-center"><%= @search_term %></p>
       </div>
       <% if @recipes.empty? %>
-        <p class="text-center empty-result">There are no recipes found for <%= @search_term %> ...</p>
+        <p class="text-center empty-result"><%= t('recipes.index.no_recipes_found_from_search') %> <%= @search_term %> ...</p>
       <% end %>
     <% end %>
     <div class="recipes-list">
       <%= render @recipes %>
     </div>
     <div class="col-xs-12 text-center show-more-recipes">
-      <%= link_to 'Show more recipes', recipes_path(recipes_id: @recipes.pluck(:id)), remote: true, class: "btn" %>
+      <%= link_to t('recipes.index.show_more_recipes'), recipes_path(recipes_id: @recipes.pluck(:id)), remote: true, class: "btn" %>
     </div>
   </div> <!-- end row -->
 </div> <!-- end container -->

@@ -1,5 +1,8 @@
-<p>Welcome <%= @email %>!</p>
+<p> <%= t('devise.mailer.confirmation_instructions.welcome') +  @email + t('devise.mailer.confirmation_instructions.to_bake_is_yum') %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p><%= t('devise.mailer.confirmation_instructions.you_can_confirm_your_account') %></p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to t('devise.confirmation_instructions.confirm_my_acount'), confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p><%= t('devise.mailers.cheers') %></p>
+<p><%= t('devise.mailers.elina_from_bake_is_yum') %></p>

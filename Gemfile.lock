@@ -262,6 +262,7 @@ DEPENDENCIES
   devise
   execjs
   fog-aws
+  friendly_id (~> 5.4.0)
   friendly_id-globalize
   globalize (~> 5.3.0)
   jbuilder (~> 2.5)

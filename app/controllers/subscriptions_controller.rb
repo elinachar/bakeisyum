@@ -3,6 +3,7 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions.json
   def create
     @subscription = Subscription.new(subscription_params)
+    @subscription.language = params[:locale]
     @privacy_policy = params[:subscription][:privacy_policy].to_i
 
     respond_to do |format|
@@ -59,7 +60,7 @@ class SubscriptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subscription_params
-      params.require(:subscription).permit(:email)
+      params.require(:subscription).permit(:email, :language)
     end
 
     def subscription_errors

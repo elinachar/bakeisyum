@@ -1,4 +1,8 @@
 class Recipe < ApplicationRecord
+  translates :name, :slug, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :cuisine, :keywords, fallbacks_for_empty_translations: true
+  extend FriendlyId
+  # friendly_id :name, :use => :slugged
+  friendly_id :name, :use => :globalize
   has_many :descriptions, dependent: :destroy, inverse_of: :recipe
   has_many :ratings
   has_many :favorites
@@ -23,6 +27,10 @@ class Recipe < ApplicationRecord
 
   def to_param
     name.parameterize
+  end
+
+  def should_generate_new_friendly_id?
+    slug.blank? || name_changed?
   end
 
 end

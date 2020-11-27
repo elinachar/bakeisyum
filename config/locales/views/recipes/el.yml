@@ -1,0 +1,49 @@
+el:
+  recipes:
+    index:
+      head:
+        name: "Συνταγές - Bake is Yum"
+        description: "Όλες οι συνταγές του Bake is Yum! Δοκιμάστε, απολάυστε, σχολιάστε και μοιραστείτε τις συνταγές!"
+      recipes: Συνταγές
+      add_new_recipe: " Νέα Συνταγή"
+      show_more_recipes: "Περισσότερες Συνταγές"
+      search_results_for: "Αποτελέσματα αναζήτησης για:"
+      no_recipes_found_from_search: "Δεν βρέθηκαν συνταγές για την αναζήτηση με "
+    show:
+      head:
+        structured_data:
+          person: "Ελίνα Χαραλάμπους"
+      posted_on: "Αναρτήθηκε στις %{date}"
+      borrowed_from: "Πρωτότυπη συνταγή από "
+      and_modified: ""
+      photos_from: "Φωτογραφίες από "
+      share: "Μοιραστείτε τη συνταγή"
+      jump_to_recipe: "Κατευθείαν στη Συνταγή"
+      preparation_time: "Χρόνος Προετοιμασίας"
+      waiting_time: "Χρόνος Αναμονής"
+      cooking_time: "Χρόνος Μαγειρέματος"
+      servings: "Μερίδες"
+      votes_from: "από "
+      votes: " ψήφους"
+      ingredients: "Υλικά"
+      instructions: "Οδηγίες"
+      notes: "Σημειώσεις"
+      comments: "Σχόλια"
+      comment: "Σχόλιο"
+      not_approved_comments: "Μη εγκεκριμένα σχόλια"
+      leave_a_comment: "Αφήστε το σχόλιο σας"
+      add_a_comment: "Προσθέστε ένα σχόλιο"
+      your_name: "Το όνομα σας"
+      your_comments_on_the_recipe: "Το σχόλιο σας για τη συνταγή..."
+      send_comment: "Αποστολή"
+      comment_successfully_created: "Το σχόλιο σας στάλθηκε με επιτυχία!"
+      comment_was_not_created: "Δεν ήταν δυνατόν να αποσταλεί το σχόλιο σας. Παρακαλώ πληκτρολογήστε το όνομα σας και ένα σχόλιο για τη συνταγή."
+      comment_submitted_ago: "πριν από %{time_comment_submitted}"
+      approve: Έγκριση
+      approved: Εγκεκριμένο
+      comment_approved: "To σχόλιο εγκρίθηκε."
+      comment__not_approved: "To σχόλιο δεν εγκρίθηκε."
+      edit_recipe: "Επεξεργασία Συνταγής"
+      delete_recipe: "Διαγραφή Συνταγής"
+      send_new_recipe_email: "Αποστολή email με νέα συνταγή"
+      go_back_to_all_recipes: "Πίσω σε όλες τις Συνταγές"

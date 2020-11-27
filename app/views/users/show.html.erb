@@ -1,22 +1,53 @@
-<% content_for :title, "Account Details - Bake is Yum" %>
+<% content_for :title, t('users.titles.account_details')%>
 <div class="container user-card text-center">
-  <p class="first-name">
-    <strong>First name:</strong>
-    <%= @user.first_name %>
-  </p>
+  <div class="row">
+    <p class="col-xs-6 first-name user-label text-right">
+      <%= t('users.first_name') %>:
+    </p>
+    <p class="col-xs-6 text-left">
+      <%= @user.first_name %>
+    </p>
+  </div>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= @user.last_name %>
-  </p>
+  <div class="row">
+    <p class="col-xs-6 last-name user-label text-right">
+      <%= t('users.last_name') %>:
+    </p>
+    <p class="col-xs-6 text-left">
+      <%= @user.last_name %>
+    </p>
+  </div>
 
+  <div class="row">
+    <p class="col-xs-6 user-label text-right">
+      <%= t('users.contact_language') %>:
+    </p>
+    <p class="col-xs-6 text-left">
+      <% if @user.language == "en" %>
+        <%= t('users.contact_langugage_english') %>
+      <% else %>
+        <%= t('users.contact_langugage_greek') %>
+      <% end %>
+    </p>
+  </div>
+
+  <div class="row">
+    <p class="col-xs-6 subscribed user-label text-right">
+      <%= t('users.subscribed') %>:
+    </p>
+    <p class="col-xs-6 text-left">
+      <% if @user.subscribed %>
+        <%= t('users.show.yes_subscribed') %>
+      <% else %>
+        <%= t('users.show.no_subscribed') %>
+      <% end %>
+    </p>
+  </div>
+
+  <%= link_to t('users.show.edit_my_account'), edit_user_path(@user), class: 'btn btn-default' %>
+  <%= link_to t('users.show.delete_my_account'), @user, method: :delete, data: { confirm: 'Are you sure that you want to delele your account?' }, class: 'btn btn-default btn-red' %>
   <% if signed_in? && current_user.admin? %>
-    <%= link_to 'Edit account', edit_user_path(@user), class: 'btn btn-default' %>
-    <%= link_to 'Delete account', @user, method: :delete, data: { confirm: 'Are you sure that you want to delele your account?' }, class: 'btn btn-default btn-red' %>
-    <%= link_to 'Show all users', users_path, class: 'btn btn-default' %>
-  <% else %>
-    <%= link_to 'Edit your account', edit_user_path(@user), class: 'btn btn-default' %>
-    <%= link_to 'Delete your account', @user, method: :delete, data: { confirm: 'Are you sure that you want to delele your account?' }, class: 'btn btn-default btn-red' %>
+    <%= link_to t('users.show_all_users'), users_path, class: 'btn btn-default' %>
   <% end %>
 
 </div>

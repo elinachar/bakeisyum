@@ -1,0 +1,22 @@
+el:
+  activerecord:
+    attributes:
+      user:
+        current_password: Τρέχων κωδικός
+        email: email
+        password: Κωδικός
+        password_confirmation: Επιβεβαίωση κωδικού
+        remember_me: Να με θυμάσαι
+    models:
+      user: Χρήστης
+    errors:
+      models:
+        user:
+          attributes:
+            email: email
+            password: κωδικός
+  helpers:
+    label:
+      user:
+        email: email
+        password: κωδικός

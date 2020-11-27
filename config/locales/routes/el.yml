@@ -1,0 +1,14 @@
+el:
+  routes:
+    about: "gia-emena"
+    contact: "epikoinwnia"
+    login: "sundesh"
+    sign_up: "eggrafh"
+    terms_and_conditions: "terms-and-conditions"
+    privacy_policy: "privacy-policy"
+    recipes: syntages
+    password: kwdikos
+    new: new
+    edit: edit
+    users: users
+    favorites: agaphmena

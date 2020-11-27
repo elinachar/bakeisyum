@@ -6,7 +6,7 @@
   </div>
 
   <div class="ingredients-fields">
-    <div class="row w-85 m-auto">
+    <div class="row m-auto">
       <div class="col-xs-3" style="padding-left:0px">Name</div>
       <div class="col-xs-2">Weight</div>
       <div class="col-xs-2">Unit</div>
@@ -18,7 +18,7 @@
       <%= render 'ingredient_fields', f: ingredient %>
     <% end %>
     <div class="links text-center">
-      <%= link_to_add_association "<i class='fa fa-plus'></i> Add Ingredient".html_safe, f, :ingredients, class: "btn btn-nested-fields w-85 m-auto" %>
+      <%= link_to_add_association "<i class='fa fa-plus'></i> Add Ingredient".html_safe, f, :ingredients, class: "btn btn-nested-fields w-100 m-auto" %>
     </div>
   </div> <!-- end ingredients-fields -->
 
@@ -27,9 +27,9 @@
       <%= render 'instruction_fields', f: instruction %>
     <% end %>
     <div class="links text-center">
-      <%= link_to_add_association "<i class='fa fa-plus'></i> Add Instruction".html_safe, f, :instructions, class: "btn btn-nested-fields w-85 m-auto" %>
+      <%= link_to_add_association "<i class='fa fa-plus'></i> Add Instruction".html_safe, f, :instructions, class: "btn btn-nested-fields w-100 m-auto" %>
     </div>
   </div> <!-- end instructions-fields -->
-  <hr class="w-85">
+  <hr class="w-100">
 
 </div>

@@ -8,6 +8,10 @@ h1 {
   margin-bottom: 30px;
 }
 
+h1:lang(el) {
+  font-weight: 300;
+}
+
 h2,
 h6 {
   text-align: center;
@@ -18,8 +22,31 @@ h3 {
   font-weight: 400;
 }
 
+h2:lang(el),
+h6:lang(el) {
+  font-weight: 300;
+}
+
+// h2:lang(el) {
+//   font-size: 30px;
+// }
+
 .btn-new-recipe {
   margin: 0px 20px 20px 20px;
+}
+
+.btn-new-recipe:lang(el) {
+
+  .btn {
+    padding: 10px;
+    font-size: 16px;
+
+    span {
+      font-size: 14px;
+      margin-right: 5px;
+    }
+  }
+
 }
 
 .search-results {
@@ -40,6 +67,11 @@ h3 {
   margin-bottom: 20px;
   background-color: $mint;
   overflow: hidden;
+}
+
+.recipe-card:lang(el) {
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .recipe-card:hover img {
@@ -130,8 +162,13 @@ h3 {
     width: 50%;
     padding: 15px;
     background-color: white;
-    border-color: $mint;
+    border: 1px solid $mint;
     font-size: 17px;
+  }
+
+  .btn:lang(el) {
+    font-weight: 300;
+    font-size: 18px;
   }
 
   .btn:hover {
@@ -150,10 +187,22 @@ h3 {
     font-size: 17px;
   }
 
+  p:lang(el),
+  li:lang(el) {
+    // font-size: 18px;
+    font-weight: 300;
+  }
+
   h6 {
     color: $mint;
     font-size: 16px;
   }
+
+
+h6:lang(el) {
+  font-weight: 400;
+  font-size: 16px;
+}
 
   h6,
   .borrowed-recipe-photos,
@@ -181,6 +230,10 @@ h3 {
     border-width: 1px;
     margin-bottom: 30px;
     width: 90%;
+  }
+
+  .social-share h4:lang(el) {
+    font-size: 19px;
   }
 
   .social-share-button {
@@ -233,8 +286,11 @@ h3 {
     margin-bottom: 30px;
 
     a {
-      padding-top: 12px;
-      height: 47px;
+      padding: 15px 20px;
+    }
+
+    a:lang(el) {
+      font-size: 16px;
     }
   }
 
@@ -318,6 +374,10 @@ h3 {
         color: $grey;
         font-weight: 200;
       }
+
+      .rating-count:lang(el) {
+        font-size: 14px;
+      }
     }
 
     .like {
@@ -369,6 +429,10 @@ h3 {
           color: $grey;
           font-weight: 200;
         }
+
+        // .information-description:lang(el) {
+        //   // font-size: 17px;
+        // }
       }
     }
 
@@ -386,6 +450,10 @@ h3 {
       h3 {
         margin-bottom: 10px;
       }
+
+      // h3:lang(el) {
+      //   font-size: 25px;
+      // }
 
       h4 {
         margin: 20px 0 15px 0;
@@ -419,8 +487,18 @@ h3 {
   margin-top: 30px;
 
   #create-new-comment {
-    height: 47px;
+    padding: 15px 20px;
     margin-bottom: 20px;
+  }
+
+  // #create-new-comment:lang(el) {
+  //   font-size: 17px;
+  // }
+
+  .count-approved-comments:lang(el),
+  .count-not-approved-comments:lang(el) {
+    font-weight: 400;
+    // font-size: 20px;
   }
 }
 
@@ -428,14 +506,35 @@ h3 {
   display: none;
 
   .btn {
-    height: 47px;
-    width: 100px;
+    padding: 12px 20px;
+    font-size: 15px;
   }
 }
 
 .new-comment h4,
 .commentator {
   margin-bottom: 0;
+}
+
+.new-comment:lang(el) {
+  font-weight: 300;
+  h4 {
+    // font-size: 20px;
+    font-weight: 400;
+  }
+
+  input.your-name-comment,
+  textarea {
+    // font-size: 18px;
+  }
+
+  input.your-name-comment {
+    height: 35px;
+  }
+
+  .btn {
+    // font-size: 17px;
+  }
 }
 
 .commentator .form-control {
@@ -456,6 +555,20 @@ h3 {
 
 .recipe-links-show {
   clear: both;
+
+  a {
+    padding: 12px 20px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+
+  a:lang(el) {
+    font-size: 16px;
+  }
+
+  .glyphicon-arrow-left {
+    margin-right: 2px;
+  }
 }
 
 #go-top {
@@ -476,8 +589,52 @@ h3 {
 
 
 //New - Update
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+#el-tab {
+  display: none;
+}
+
 .recipe-form {
   margin-bottom: 10px;
+
+  .form-group.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
 }
 

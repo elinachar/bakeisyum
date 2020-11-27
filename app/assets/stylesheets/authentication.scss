@@ -3,9 +3,8 @@
 .authentication {
   background-color: $mint;
   margin-top: 20px;
-  width: 60%;
+  // width: 60%;
   padding-bottom: 20px;
-
 
   h2 {
     padding-bottom: 15px;
@@ -15,12 +14,38 @@
     margin-top: 40px;
   }
 
+  label {
+    font-weight: 500;
+  }
+
+  input,
+  select {
+    font-size: 16px;
+    height: 40px;
+    width: 200px;
+  }
+
+  select {
+    width: 100px
+  }
+
+  input#user_remember_me,
+  input#user_subscribed,
+  input#user_agreement_terms {
+    height: auto;
+    width: auto;
+  }
+
   .btn {
     background-color: $offWhite;
+    padding: 13px 20px;
+    height: auto;
+    width: auto;
   }
 
  .btn:hover {
    background-color: #e5e5e5;
+   background-color: $lightMint;
   }
 
   .field_with_errors {
@@ -34,5 +59,45 @@
 
   .error-message {
     color: red;
+  }
+
+  #error_explanation {
+    h2 {
+      display: none;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+  }
+
+  .shared-links {
+    a {
+      font-size: 18px;
+    }
+  }
+}
+
+.authentication:lang(el) {
+  font-size: 18px;
+
+  h4 {
+    font-size: 20px;
+  }
+
+  input {
+    font-size: 17px;
+    font-weight: 300;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .shared-links {
+    a {
+      font-size: 20px;
+    }
   }
 }

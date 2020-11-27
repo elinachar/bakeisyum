@@ -6,7 +6,8 @@ Rails.application.routes.draw do
       resources :favorites
     end
 
-    resources :recipes, param: :name do
+    # resources :recipes, param: :name do
+    resources :recipes do
       resources :ratings
       resources :comments do
         put :approve
@@ -20,8 +21,6 @@ Rails.application.routes.draw do
     end
     get :send_new_recipe_email, to: 'subscriptions#send_new_recipe_email', as: :send_new_recipe_email
 
-
-    get 'homes/show'
     get 'basic_pages/index'
     get 'about', to: 'basic_pages#about'
     get 'contact', to: 'basic_pages#contact'

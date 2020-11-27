@@ -1,0 +1,10 @@
+el:
+  favorites:
+    my_favorite_recipes: "Οι Αγαπημένες μου Συνταγές"
+    none_favorite_recipes: "Δεν έχω καμία αγαπημένη συνταγή ακόμα..."
+    add_to_favorite_recipes: "Προσθήκη %{recipe} στις αγαπημένες μου συνταγές."
+    added_to_favorite_recipes: "%{recipe} προστέθηκε στις αγαπημένες μου συνταγές!"
+    remove_from_favorite_recipes: "Αφαίρεση %{recipe} από τις αγαπημένες μου συνταγές"
+    removed_from_favorite_recipes: "%{recipe} αφαιρέθηκε από τις αγαπημένες μου συνταγές!"
+    should_login_to_favorite_html: "Πρέπει να %{login} πρώτα για να διαχειριστείτε τις αγαπημένες σας συνταγές."
+    login_in_href: συνδεθείτε

@@ -4,13 +4,13 @@
       <div class="row comments-index">
         <div class="col-xs-12">
           <p>
-            <%= comment.cοmmentator %> <small class="review-dt-uploaded"><%= "&#8729; #{time_ago_in_words(comment.created_at)} ago".html_safe %></small>
+            <%= comment.cοmmentator %> <small class="review-dt-uploaded"><%= ("&#8729; ".html_safe) + t('recipes.show.comment_submitted_ago', time_comment_submitted: time_ago_in_words(comment.created_at)) %></small>
             <% if signed_in? && (current_user.admin? || current_user.moderator?) %>
               <%= link_to ('<span class="glyphicon glyphicon-remove" style="color:#b20000"></span>').html_safe, recipe_comment_path(comment.recipe, comment), method: :delete, data: { confirm: 'Are you sure?', toggle: 'tooltip', placement: 'bottom', original_title: 'Delete the comment' } %>
               <% if comment.approved? %>
-                <%= link_to 'Approved', recipe_comment_approve_path(comment.recipe, comment), method: :put, class: "btn btn-default disabled" %>
+                <%= link_to t('recipes.show.approved'), recipe_comment_approve_path(comment.recipe, comment), method: :put, class: "btn btn-default disabled" %>
               <% else %>
-                <%= link_to 'Approve', recipe_comment_approve_path(comment.recipe, comment), method: :put, remote: true, class: "btn btn-default", id: dom_id(comment) %>
+                <%= link_to t('recipes.show.approve'), recipe_comment_approve_path(comment.recipe, comment), method: :put, remote: true, class: "btn btn-default", id: dom_id(comment) %>
               <% end %>
             <% end %>
           </p>

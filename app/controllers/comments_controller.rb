@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @recipe, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @recipe, notice: t('recipes.show.comment_successfully_created') }
         format.json { render :show, status: :created, location: @recipe }
       else
-        format.html { redirect_to @recipe, alert: 'Comment was not saved successfully. Please enter your name and a comment on the recipe.' }
+        format.html { redirect_to @recipe, alert: t('recipes.show.comment_was_not_created') }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -29,11 +29,11 @@ class CommentsController < ApplicationController
       if @comment.save
         @approved_comments = recipe.comments.where(:approved => true).size
         @not_approved_comments = recipe.comments.where(:approved => false).size
-        format.html { redirect_to recipe, notice: 'Comment was approved.' }
+        format.html { redirect_to recipe, notice: t('recipes.show.comment_approved') }
         format.json { render :show, status: :created, location: @recipe }
         format.js
       else
-        format.html { redirect_to recipe, alert: 'Comment was not approved.' }
+        format.html { redirect_to recipe, alert: t('recipes.show.comment_not_approved') }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

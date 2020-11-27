@@ -1,4 +1,5 @@
 class Part < ApplicationRecord
+  translates :name, fallbacks_for_empty_translations: true
   belongs_to :recipe
   has_many :ingredients, dependent: :destroy, inverse_of: :part
   has_many :instructions, dependent: :destroy, inverse_of: :part

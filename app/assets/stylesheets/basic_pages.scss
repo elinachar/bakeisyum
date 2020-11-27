@@ -102,8 +102,17 @@
   text-align: center;
   margin-top: 20px;
 
-  h6 {
+  h6:lang(en) {
     font-size: 15px;
+  }
+
+  h6:lang(el) {
+    font-size: 15px;
+  }
+
+  p:lang(el) {
+    font-size: 19px;
+    font-weight: 300;
   }
 }
 
@@ -114,8 +123,9 @@
 }
 
 .btn-get-more-recipes:lang(el) {
-  font-size: 20px;
-  height: 52px;
+  font-size: 17px;
+  font-weight: 300;
+  height: 50px;
 }
 
 .recipe-landing-img {
@@ -160,17 +170,17 @@
   }
 
   p:lang(el) {
-    font-size: 19px;
+    // font-size: 18px;
     font-weight: 300;
   }
 
   a {
-    font-size: 20px;
+    font-size: 18px;
     color: $mint;
   }
 
   a:lang(el) {
-    font-size: 23px;
+    // font-size: 20px;
     font-weight: 400;
   }
 
@@ -251,12 +261,12 @@
   .subscribe-text,
   .btn,
   .successfull-subscription {
-    font-size: 19px;
+    // font-size: 17px;
   }
 
   .email,
   .privacy_policy label {
-    font-size: 16px;
+    // font-size: 16px;
     font-weight: 500!important;
   }
 
@@ -265,7 +275,7 @@
   }
 
   .email-error {
-    font-size: 16px;
+    // font-size: 16px;
   }
 
 }
@@ -292,9 +302,21 @@
     }
   }
 
+  .follow-me p {
+    font-size: 19px;
+  }
+
+  h1:lang(el) {
+    font-size: 29px;
+  }
+
   p:lang(el) {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 300;
+  }
+
+  .follow-me p:lang(el) {
+    font-size: 19px;
   }
 }
 
@@ -354,8 +376,9 @@
 
 .contact:lang(el) {
   font-weight: 300;
+
   p {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   input,

@@ -1,17 +1,18 @@
 // Set empty heart and update hover text to add to favorite
+var locale = document.getElementsByTagName("html")[0].getAttribute("lang");
 var recipeName = "<%= "#{@recipe.name}" %>";
 var userId = "<%= "#{current_user.id}" %>";
 var recipeId = "<%= "#{@recipe.id}" %>";
-var favoriteHref = "/users/" + userId + "/favorites?recipe_id=" + recipeId;
+var favoriteHref = "/" + locale + "/users/" + userId + "/favorites?recipe_id=" + recipeId;
 $(".like i").removeClass("fas").addClass("far clicked");
 $(".like a").attr({"data-method": "post", "href": favoriteHref});
 updateLikeInfoUserText(".like-info-user");
 
 function updateLikeInfoUserText(element) {
-  $(element + " p").html(recipeName + " removed from your favorite recipes!")
+  $(element + " p").html("<%= escape_javascript(t('favorites.removed_from_favorite_recipes', recipe: @recipe.name)) %>")
   setTimeout(function() {
     setTimeout(function() {
-      $(element + " p").html("Add " + recipeName + " to your favorite recipes.");  // runs secod after 4000
+      $(element + " p").html("<%= escape_javascript(t('favorites.add_to_favorite_recipes', recipe: @recipe.name)) %>");  // runs secod after 4000
     }, 1000)
     $(element).slideUp("slow"); // runs first after 3000
   }, 3000)

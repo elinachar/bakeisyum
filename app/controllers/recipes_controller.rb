@@ -23,7 +23,8 @@ class RecipesController < ApplicationController
     # 4. etc for the next search terms
     if params[:q]
       @search_term = params[:q]
-      search_terms = @search_term.split(/\W+/)
+      # search_terms = @search_term.split(/\W+/)
+      search_terms = @search_term.split(" ")
       search_terms.each do |term|
         @recipes = @recipes.search(term).distinct
       end
@@ -112,12 +113,13 @@ class RecipesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
-      @recipe = Recipe.find_by(name: params[:name].tr("-"," ").titleize)
+      I18n.locale = params[:locale]
+      @recipe = Recipe.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :original_recipie_url, :photos_from, :photos_from_url, :image_url, :square_image_url, :public, :cuisine, :keywords, :new_recipe_email_sent, :ingredients_image_url, :ingredients_text_image_url, :video_url,
+      params.require(:recipe).permit(:name, :slug, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :original_recipie_url, :photos_from, :photos_from_url, :image_url, :square_image_url, :public, :cuisine, :keywords, :new_recipe_email_sent, :ingredients_image_url, :ingredients_text_image_url, :video_url,
       descriptions_attributes: [:id, :description, :image_url, :_destroy],
       parts_attributes: [:id, :name, :_destroy,
       ingredients_attributes: [:id, :name, :weight, :weight_unit, :weight_optional, :weight_optional_unit, :_destroy],

@@ -9,14 +9,25 @@
   border-width: 1px;
   border-color: $mint;
   margin-top: 20px;
+  padding: 20px 0;
+
+  .user-label,
+  label {
+    font-weight: 500;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
+  select {
+    padding: 4px;
+  }
 }
 
 .user-card .btn {
-  margin-bottom: 10px;
-}
-
-.user-card .first-name {
-  margin-top: 10px;
+  padding: 12px 20px;
+  margin: 20px 5px 10px 5px;
 }
 
 .index-user table {
@@ -25,4 +36,12 @@
 
 .index-user th {
   font-size: 18px;
+}
+
+.user-card:lang(el) {
+  font-size: 17px;
+
+  .btn {
+    font-size: 15px;
+  }
 }

@@ -7,9 +7,9 @@
   <meta property="og:image:width" content="1920"/>
   <meta property="og:image:height" content="1080"/>
   <meta property="og:description" content="<%= @recipe.short_description %>" />
-  <meta property="og:locale" content="en_US"/>
+  <meta property="og:locale" content="<%= t 'head.facebook_meta_data.locale' %>"/>
   <meta property="og:site_name" content="Bake is Yum"/>
-  <meta property="article:publisher" content="Elina Charalampous">
-  <meta property="article:author" content="Elina Charalampous"/>
+  <meta property="article:publisher" content="<%= t 'head.facebook_meta_data.person' %>">
+  <meta property="article:author" content="<%= t 'head.facebook_meta_data.person' %>"/>
   <meta property="article:published_time" content="<%= @recipe.created_at.iso8601 %>"/>
 <% end %>

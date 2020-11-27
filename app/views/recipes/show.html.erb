@@ -15,33 +15,32 @@
 
     <div class="recipe-introduction col-sm-12">
       <h2><%= @recipe.name %></h2>
-      <% t = @recipe.created_at %>
-      <h6>Posted on <%= t.strftime("%B") + " " + t.strftime("%d") + ", " + t.strftime("%Y")%></h6>
+      <h6><%= t('recipes.show.posted_on', date: l( @recipe.created_at, format: t('date.formats.recipe'))) %></h6>
       <% unless @recipe.original_recipie_author.empty? %>
-        <p class="borrowed-recipe-photos text-center">Recipe borrowed from
+        <p class="borrowed-recipe-photos text-center"><%= t('recipes.show.borrowed_from') %>
         <% unless @recipe.original_recipie_url.empty?%>
            <%= link_to @recipe.original_recipie_author, @recipe.original_recipie_url, target: "_blank" %>
         <% else %>
           <%= @recipe.original_recipie_author %>
         <% end %>
-        and modified.</p>
+        <%= t('recipes.show.and_modified') %></p>
       <% end %>
 
       <% unless @recipe.photos_from.empty? %>
-        <p class="borrowed-recipe-photos text-center">Photos from
+        <p class="borrowed-recipe-photos text-center"><%= t('recipes.show.photos_from') %>
         <% unless @recipe.photos_from_url.empty?%>
            <%= link_to @recipe.photos_from, @recipe.photos_from_url, target: "_blank" %>
         <% else %>
           <%= @recipe.photos_from %>
         <% end %>
-        and modified.</p>
+        <%= t('recipes.show.and_modified') %></p>
       <% end %>
       <p><%= @recipe.short_description.html_safe %></p>
     </div>
   </div> <!-- end row -->
 
   <div class="social-share text-center m-auto rounded-border">
-    <h4>Share</h4>
+    <h4><%= t('recipes.show.share') %></h4>
     <% if @recipe.photos_from.empty? %>
       <%= social_share_button_tag(@recipe.name, :url => request.original_url, :image => root_url + @recipe.image_url_url.to_s[1..-1], via: "Bake is Yum") %>
     <% else %>
@@ -50,7 +49,7 @@
   </div>
 
   <div class="text-center jump-to-recipe">
-    <%= link_to "<i class='fas fa-arrow-alt-circle-down'></i> Jump to Recipe".html_safe, "#recipe-ingredients-instructions-notes", class: 'btn' %>
+    <%= link_to ("<i class='fas fa-arrow-alt-circle-down'></i> ".html_safe + t('recipes.show.jump_to_recipe')), "#recipe-ingredients-instructions-notes", class: 'btn' %>
   </div>
 
   <div class="descriptions-show">
@@ -77,7 +76,7 @@
               <%=number_with_precision(@rating, precision: 1)%>
             <% end %>
           <% end %>
-          from <%= @recipe.ratings.load.size %> votes
+          <%= t('recipes.show.votes_from') %> <%= @recipe.ratings.load.size %> <%= t('recipes.show.votes') %>
         <% end %>
       </div>
     </div>
@@ -87,69 +86,70 @@
           <%= link_to "<i class='fas fa-heart'></i>".html_safe, user_favorite_path(id: @favorite.id, user_id: @favorite.user_id), method: :delete, remote: true %>
           <div class="like-info-user">
             <div class="arrow-up"></div>
-            <p class="remove-favorite m-auto">Remove <%= @recipe.name %> from your favorite recipes.</p>
+            <p class="add-favorite m-auto"><%= t('favorites.remove_from_favorite_recipes', recipe: @recipe.name) %></p>
           </div>
         <% else %>
           <%= link_to "<i class='far fa-heart'></i>".html_safe, user_favorites_path(current_user, recipe_id: @recipe.id), method: :post, remote: true %>
           <div class="like-info-user">
             <div class="arrow-up"></div>
-            <p class="add-favorite m-auto">Add <%= @recipe.name %> to your favorite recipes.</p>
+            <p class="add-favorite m-auto"><%= t('favorites.add_to_favorite_recipes', recipe: @recipe.name) %></p>
           </div>
         <% end %>
       <% else %>
         <i class='far fa-heart not-logged-in-user'></i>
         <div class="like-info-user">
           <div class="arrow-up"></div>
-          <p class="m-auto">You should <%= link_to "login".html_safe, new_user_session_path %> first in order to add the recipe to your favorites.</p>
+          <!-- <p class="m-auto">You should <%#= link_to t('devise.sessions.log_in'), new_user_session_path %> first in order to add the recipe to your favorites.</p> -->
+          <p class="m-auto"><%= t('favorites.should_login_to_favorite_html', login: link_to( t('favorites.login_in_href'), new_user_session_path) ) %> </p>
         </div>
 
       <% end %>
     </div>
 
     <div class="recipe-information row text-center">
-      <% if @recipe.waiting_time.empty? %>
+      <% if @recipe.waiting_time.nil? %>
         <div class="col-sm-4 information-group">
       <% else %>
         <div class="col-sm-3 information-group">
       <% end %>
         <i class='far fa-clock'></i><br>
         <p class="information-input"><%=@recipe.preparation_time%></p>
-        <p class="information-description">Preparation Time</p>
+        <p class="information-description"><%= t('recipes.show.preparation_time') %></p>
       </div>
-      <% unless @recipe.waiting_time.empty? %>
+      <% unless @recipe.waiting_time.nil? %>
         <div class="col-sm-3 information-group">
           <i class="fa fa-hourglass-o"></i><br>
           <p class="information-input"><%=@recipe.waiting_time%></p>
-          <p class="information-description">Waiting Time</p>
+          <p class="information-description"><%= t('recipes.show.waiting_time') %></p>
         </div>
       <% end %>
-      <% if @recipe.waiting_time.empty? %>
+      <% if @recipe.waiting_time.nil? %>
         <div class="col-sm-4 information-group">
       <% else %>
         <div class="col-sm-3 information-group">
       <% end %>
         <i class='far fa-clock'></i><br>
         <p class="information-input"><%=@recipe.cooking_time%></p>
-        <p class="information-description">Cooking Time</p>
+        <p class="information-description"><%= t('recipes.show.cooking_time') %></p>
       </div>
-      <% if @recipe.waiting_time.empty? %>
+      <% if @recipe.waiting_time.nil? %>
         <div class="col-sm-4 information-group">
       <% else %>
         <div class="col-sm-3 information-group">
       <% end %>
         <i class="fas fa-utensils"></i><br>
         <p class="information-input"><%=@recipe.serving%></p>
-        <p class="information-description">Servings</p>
+        <p class="information-description"><%= t('recipes.show.servings') %></p>
       </div>
     </div>
 
     <div class="ingredients-instructions">
       <div class="ingredients">
-        <h3>Ingredients</h3>
+        <h3><%= t('recipes.show.ingredients') %></h3>
         <%= render 'parts_ingredients' %>
       </div>
       <div class="instructions">
-        <h3>Instructions</h3>
+        <h3><%= t('recipes.show.instructions') %></h3>
         <%= render 'parts_instructions' %>
       </div>
     </div>
@@ -173,15 +173,15 @@
   <div>
     <div class="row comment-title">
       <div class="col-sm-offset-5 col-md-offset-8 col-md-2 col-md-push-2 create-new-comment">
-        <%=  button_tag 'Leave a comment', class: 'btn btn-default', id: 'create-new-comment' %>
+        <%=  button_tag t('recipes.show.leave_a_comment'), class: 'btn btn-default', id: 'create-new-comment' %>
       </div>
       <% if @comments.select(&:approved).size == 1 %>
-        <h4 class="col-md-2 col-md-pull-10 count-approved-comments">1 Comment</h4>
+        <h4 class="col-md-2 col-md-pull-10 count-approved-comments">1 <%= t('recipes.show.comment') %></h4>
       <% else %>
-        <h4 class="col-md-2 col-md-pull-10 count-approved-comments"><%= @comments.where(:approved => true).size %> Comments</h4>
+        <h4 class="col-md-2 col-md-pull-10 count-approved-comments"><%= @comments.where(:approved => true).size %> <%= t('recipes.show.comments') %></h4>
       <% end %>
       <% if signed_in? && (current_user.admin? || current_user.moderator?) %>
-        <h4 class="col-xs-12 count-not-approved-comments"><%= @comments.where(:approved => false).size %> Not approved comments</h4>
+        <h4 class="col-xs-12 count-not-approved-comments"><%= @comments.where(:approved => false).size %> <%= t('recipes.show.not_approved_comments') %></h4>
       <% end %>
     </div>
     <%= render "new_comment" %>
@@ -193,15 +193,15 @@
 
   <div class="recipe-links-show">
     <% if signed_in? && (current_user.admin? || current_user.author?) %>
-      <%= link_to '<i class="fa fa-edit"></i> Edit Recipe'.html_safe, edit_recipe_path(@recipe), class: 'btn btn-default' %>
-      <%= link_to '<i class="fa fa-trash-o" ></i> Delete Recipe'.html_safe, @recipe, method: :delete, data: { confirm: 'Are you sure that you want to delete the recipe? You cannot undo this action.' }, class: 'btn btn-default'  %>
+      <%= link_to '<i class="fa fa-edit"></i> '.html_safe + t('recipes.show.edit_recipe'), edit_recipe_path(@recipe), class: 'btn btn-default' %>
+      <%= link_to '<i class="fa fa-trash-o" ></i> '.html_safe + t('recipes.show.delete_recipe'), @recipe, method: :delete, data: { confirm: 'Are you sure that you want to delete the recipe? You cannot undo this action.' }, class: 'btn btn-default'  %>
       <% if @recipe.new_recipe_email_sent %>
-        <%= link_to 'Send new recipe email', send_new_recipe_email_path(recipe_id: @recipe.id), class: 'btn btn-default', id: 'send-new-recipe-'+ @recipe.id.to_s, disabled: true %>
+        <%= link_to t('recipes.show.send_new_recipe_email'), send_new_recipe_email_path(recipe_id: @recipe.id), class: 'btn btn-default', id: 'send-new-recipe-'+ @recipe.id.to_s, disabled: true %>
       <% else %>
-        <%= link_to 'Send new recipe email', send_new_recipe_email_path(recipe_id: @recipe.id), class: 'btn btn-default', id: 'send-new-recipe-'+ @recipe.id.to_s%>
+        <%= link_to t('recipes.show.send_new_recipe_email'), send_new_recipe_email_path(recipe_id: @recipe.id), class: 'btn btn-default', id: 'send-new-recipe-'+ @recipe.id.to_s%>
       <% end %>
     <% end %>
-    <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> Go Back to all Recipes'.html_safe, recipes_path, class: 'btn btn-default' %>
+    <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span> '.html_safe + t('recipes.show.go_back_to_all_recipes'), recipes_path, class: 'btn btn-default' %>
   </div>
 
 </div> <!-- end container -->

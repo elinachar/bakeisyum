@@ -1,8 +1,8 @@
 <% content_for :title, "Favorite Recipes - Bake is Yum" %>
 <div class="container favorites-index">
-  <h1>Your Favorite Recipes</h1>
+  <h1><%= t('favorites.my_favorite_recipes') %></h1>
   <% if @recipes.empty? %>
-    <p class="text-center">You do not have any favorite recipes...</p>
+    <p class="text-center"><%= t('favorites.none_favorite_recipes') %></p>
   <% else %>
     <%= render @recipes %>
   <% end %>

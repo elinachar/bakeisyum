@@ -89,4 +89,26 @@ $(document).on('turbolinks:load', function() {
     })
   }
 
+  // Hide/Show respectively clicked tab
+  $(".tablinks").click(function() {
+    if ( $(this).attr("id") == "show-el-tab" ) {
+      localeTabShow("el");
+      localeTabHide("en");
+    } else {
+      localeTabShow("en");
+      localeTabHide("el");
+    }
+  });
+
+  // Functions for hiding and showing tab in creating new category
+  function localeTabShow(locale) {
+    $("#" + locale + "-tab").show();
+    $("#show-" + locale + "-tab").addClass("active");
+  }
+
+  function localeTabHide(locale) {
+    $("#" + locale + "-tab").hide();
+    $("#show-" + locale + "-tab").removeClass("active");
+  }
+
 })

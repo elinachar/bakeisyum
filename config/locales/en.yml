@@ -8,9 +8,11 @@ en:
     facebook_meta_data:
       description: "Bake is Yum - Dessert Recipes from Elina Charalampous"
       locale: "en_US"
+      person: "Elina Charalampous"
     google_structured_data:
       description: "Baking Blog and dessert recipes to follow, share and enjoy."
       inlanguage: "en-US"
+      person: "Elina Charalampous"
       collection_page:
         name: "The 3 latest baking recipes from Bake is Yum."
         description: "Check out the latest 3 recipes from Bake is Yum! Enjoy, comment, rate and share!"
@@ -28,3 +30,6 @@ en:
   footer:
     designed_and_developed: "Designed and developed by "
     photos_credit: "Photos from Elina Charalampous and "
+  date:
+    formats:
+      recipe: "%B %d, %Y"

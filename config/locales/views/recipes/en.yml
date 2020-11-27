@@ -1,0 +1,49 @@
+en:
+  recipes:
+    index:
+      head:
+        name: "Recipes - Bake is Yum"
+        description: "All the delicious baking recipes! Enjoy, comment, rate and share!"
+      recipes: Recipes
+      add_new_recipe: " Add New Recipe"
+      show_more_recipes: "Show More Recipes"
+      search_results_for: "Search results for:"
+      no_recipes_found_from_search: "There are no recipes found for "
+    show:
+      head:
+        structured_data:
+          person: "Elina Charalampous"
+      posted_on: "Posted on %{date}"
+      borrowed_from: "Recipe borrowed from "
+      and_modified: " and modified."
+      photos_from: "Photos from"
+      share: Share
+      jump_to_recipe: "Jump to Recipe"
+      preparation_time: "Preparation Time"
+      waiting_time: "Waiting Time"
+      cooking_time: "Cooking Time"
+      servings: "Servings"
+      votes_from: "from "
+      votes: " votes"
+      ingredients: "Ingredients"
+      instructions: "Instructions"
+      notes: "Notes"
+      comments: "Comments"
+      comment: "Comment"
+      not_approved_comments: "Not approved comments"
+      leave_a_comment: "Leave a Comment"
+      add_a_comment: "Add a comment"
+      your_name: "Your Name"
+      your_comments_on_the_recipe: "Your comments on the recipe..."
+      send_comment: "Send comment"
+      comment_successfully_created: "Comment was successfully created."
+      comment_was_not_created: "Comment was not saved successfully. Please enter your name and a comment on the recipe."
+      comment_submitted_ago: "%{time_comment_submitted} ago"
+      approve: Approve
+      approved: Approved
+      comment_approved: "Comment was approved."
+      comment__not_approved: "Comment was not approved."
+      edit_recipe: "Edit Recipe"
+      delete_recipe: "Delete Recipe"
+      send_new_recipe_email: "Send new recipe email"
+      go_back_to_all_recipes: "Go Back to all Recipes"

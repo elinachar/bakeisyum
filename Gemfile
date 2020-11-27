@@ -68,6 +68,7 @@ gem 'rails-i18n'
 gem 'route_translator'
 
 # Gem for translating slugs in the models
+gem 'friendly_id', '~> 5.4.0'
 gem 'friendly_id-globalize'
 
 # Gem for locazling dynamic contect (models)

@@ -1,0 +1,10 @@
+en:
+  favorites:
+    my_favorite_recipes: "My Favorite Recipes"
+    none_favorite_recipes: "Ι do not have any favorite recipes yet..."
+    add_to_favorite_recipes: "Add %{recipe} to my favorite recipes."
+    added_to_favorite_recipe: "%{recipe} added to my favorite recipes!"
+    remove_from_favorite_recipes: "Remove %{recipe} from my favorite recipes."
+    removed_from_favorite_recipes: "%{recipe} removed from my favorite recipes!"
+    should_login_to_favorite_html: "You should %{login} first in order to manage your favorites."
+    login_in_href: login

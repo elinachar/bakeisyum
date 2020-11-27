@@ -2,8 +2,17 @@
 
 en:
   devise:
+    email: Email
+    password: Password
+    password_size: "(6 characters minimum)"
+    password_confirmation: "Password confirmation"
+    first_name: "First name"
+    last_name: "Last name"
     confirmations:
+      title: "Resend Confirmation Instructions - Bake is Yum"
+      resend_confirmation_instructions: "Resend confirmation instructions"
       confirmed: "Your email address has been successfully confirmed."
+      did_not_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
@@ -17,26 +26,61 @@ en:
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
+      hello: "Hello "
+      cheers: "Cheers,"
+      elina_from_bake_is_yum: "Elina from Bake is Yum"
       confirmation_instructions:
+        welcome: "Welcome "
+        to_bake_is_yum: " to Bake is Yum"
+        you_can_confirm_your_account: "You can confirm your account email through the link below:"
+        confirm_my_acount: "Confirm my account"
         subject: "Confirmation instructions"
       reset_password_instructions:
+        someone_request_password_change: "Someone has requested a link to change your password. You can do this through the link below."
+        change_my_password: "Change my password"
+        you_did_not_request_password_change: "If you didn't request this, please ignore this email."
+        your_passwort_will_not_change_if_not_click_link: "Your password won't change until you access the link above and create a new one."
         subject: "Reset password instructions"
       unlock_instructions:
+        your_account_was_locked: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        link_to_unlock_account: "Click the link below to unlock your account:"
+        unlock_my_account: "Unlock my account"
         subject: "Unlock instructions"
       email_changed:
+        your_email_has_been_changed_to: "We're contacting you to notify you that your email is being changed to "
         subject: "Email Changed"
       password_change:
+        your_password_was_changed: "We're contacting you to notify you that your password has been changed."
         subject: "Password Changed"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
+      title_new: "Forgot Password - Bake is Yum"
+      title_edit: "Change Password - Bake is Yum"
+      forgot_your_password: "Forgot your password?"
+      send_me_reset_password_instructions: "Send me reset password instructions"
+      change_your_password: "Change your password"
+      new_password: "New password"
+      confirm_new_password:  "Confirm new password"
+      change_my_password: "Change my password"
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
+      title_new: "Sign Up - Bake is Yum"
+      title_edit:  "Edit Account - Bake is Yum"
+      sign_up: "Sign up"
+      want_subscription: "I would like to receive emails with the new recipes."
+      agreement_terms_and_conditions_and_privacy_policy: "I agree to the Bake Is Yum"
+      terms_and_conditions: "Terms and Conditions"
+      and: "and"
+      privacy_policy: "Privacy Policy"
+      of_bake_is_yum: ""
+      if_you_already_have_account: " if you already have an account."
+      edit: "Edit"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -45,10 +89,20 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
+      title_new: "Log in - Bake is Yum"
+      log_in: "Log in"
+      remember_me: "Remember me"
+      forgot_your_password: "Forgot your password?"
+      have_not_account_yet: "Don't you have an account yet?"
+      sign_up: "Sign up"
+      for_free: "for free."
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
     unlocks:
+      title: "Resend Unlock Instructions - Bake is Yum"
+      did_not_receive_unlock_instructions: "Didn't receive unlock instructions?"
+      submit_unlock_instructions: "Resend unlock instructions"
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
