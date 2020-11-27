@@ -12,7 +12,11 @@
   </div>
 
   <!-- Tab content -->
-  <div id="en-tab" class="tabcontent">
+  <% if I18n.locale.to_s == "en" %>
+    <div id="en-tab" class="tabcontent">
+  <% else %>
+    <div id="en-tab" class="tabcontent d-none">
+  <% end %>
     <h1>Editing Recipe</h1>
     <% I18n.with_locale(:en) do %>
       <%= render 'form', recipe: @recipe %>
@@ -24,7 +28,11 @@
     </div>
   </div>
 
-  <div id="el-tab" class="tabcontent el-font">
+  <% if I18n.locale.to_s == "en" %>
+    <div id="el-tab" class="tabcontent el-font d-none">
+  <% else %>
+    <div id="el-tab" class="tabcontent el-font">
+  <% end %>
     <h1>Επεξεργασία Συνταγής</h1>
     <% I18n.with_locale(:el) do %>
       <%= render 'form', recipe: @recipe %>
