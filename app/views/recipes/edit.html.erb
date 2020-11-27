@@ -1,9 +1,14 @@
 <% content_for :title, "Editing " + @recipe.name + " - Bake is Yum" %>
-<div class="container-fluid">
+<div class="container-fluid new-edit-recipe">
   <!-- Tab links -->
   <div class="tab">
-    <button class="tablinks active" id="show-en-tab">English</button>
-    <button class="tablinks el-font" id="show-el-tab">Ελληνικά</button>
+    <% if I18n.locale.to_s == "en" %>
+      <button class="tablinks active" id="show-en-tab">English</button>
+      <button class="tablinks el-font" id="show-el-tab">Ελληνικά</button>
+    <% else %>
+      <button class="tablinks" id="show-en-tab">English</button>
+      <button class="tablinks active el-font" id="show-el-tab">Ελληνικά</button>
+    <% end %>
   </div>
 
   <!-- Tab content -->

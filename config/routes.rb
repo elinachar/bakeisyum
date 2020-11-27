@@ -27,9 +27,9 @@ Rails.application.routes.draw do
     post 'thank-you', to: 'basic_pages#thank_you'
     get 'privacy-policy', to: 'basic_pages#privacy_policy'
     get 'terms-and-conditions', to: 'basic_pages#terms_and_conditions'
-    root 'basic_pages#index'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
+  root 'basic_pages#index'
 
 
 end

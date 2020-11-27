@@ -1,0 +1,24 @@
+<div class="switch-language text-center">
+  <%= link_to request.params.merge( locale: 'en' ) do %>
+    <% if I18n.locale.to_s == 'en' %>
+      <div class="link-to-language active" id="link-to-en">EN</div>
+    <% else %>
+      <div class="link-to-language" id="link-to-en">EN</div>
+    <% end %>
+  <% end %>
+  <%= link_to request.params.merge( locale: 'el' ) do %>
+    <% if I18n.locale.to_s == 'el' %>
+      <div class="link-to-language active" id="link-to-el">GR</div>
+    <% else %>
+      <div class="link-to-language" id="link-to-el">GR</div>
+    <% end %>
+  <% end %>
+</div>
+<%= url_for(locale: locale.to_s, only_path: true) %>
+<%#= link_to url_for(locale: 'en'), hreflang: 'en', rel: 'alternate' %>
+<%#= link_to url_for(locale: 'el'), hreflang: 'el', rel: 'alternate' %>
+<%= I18n.with_locale("el") { link_to "GR", root_path, rel: 'alternate', hreflang: 'el' } %>
+<p>Current Locale</p>
+<%= I18n.locale.to_s %>
+<%= link_to 'English', root_path(locale: :en) %>
+<%= link_to 'Greek', root_path(locale: :el) %>

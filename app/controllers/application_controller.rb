@@ -8,13 +8,15 @@ class ApplicationController < ActionController::Base
 
 
   def default_url_options(options={})
-    { locale: I18n.locale }
+    # { locale: I18n.locale }
+    (I18n.locale.to_sym.eql?(I18n.default_locale.to_sym) ? {} : {locale: I18n.locale}).merge options
   end
 
   private
 
   def set_locale
-    I18n.locale = extract_locale || I18n.default_locale
+    # I18n.locale = extract_locale || I18n.default_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def extract_locale

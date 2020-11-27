@@ -22,7 +22,6 @@ body:lang(en) {
   font-family: 'Raleway', 'serif';
 }
 
-
 html:lang(el),
 body:lang(el) {
   font-family: 'Alegreya Sans', sans-serif;
@@ -92,6 +91,37 @@ a:-webkit-any-link {
 
 .rounded-border {
   border-radius: 4px;
+}
+
+.d-none {
+  display: none;
+}
+
+/* Switch Language */
+.switch-language {
+  // width: 50px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 100;
+
+  a {
+    display: inline-block;
+
+    .link-to-language {
+      color: $mint;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .link-to-language.active {
+      color: $darkMint;
+    }
+
+    .link-to-language:hover {
+      color: $darkMint
+    }
+  }
 }
 
 /* Navigation Bar */
