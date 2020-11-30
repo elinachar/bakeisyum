@@ -295,6 +295,13 @@ h6:lang(el) {
   }
 
   .descriptions-show {
+    br {
+      content: "";
+      margin: 2em;
+      display: block;
+      font-size: 24%;
+    }
+    
     img {
       margin: 20px auto;
       width: 80%;

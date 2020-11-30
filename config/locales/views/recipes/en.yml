@@ -19,6 +19,8 @@ en:
       photos_from: "Photos from"
       share: Share
       jump_to_recipe: "Jump to Recipe"
+      hover_over_image_to_see_ingredients: "Hover over the image to see the ingredients"
+      tap_on_image_to_see_ingredients: "Tap on the image to see the ingredients"
       preparation_time: "Preparation Time"
       waiting_time: "Waiting Time"
       cooking_time: "Cooking Time"

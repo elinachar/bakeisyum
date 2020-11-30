@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_115018) do
+ActiveRecord::Schema.define(version: 2020_11_30_075510) do
 
   create_table "comments", force: :cascade do |t|
     t.string "cοmmentator"
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_115018) do
     t.string "cuisine"
     t.string "keywords"
     t.string "slug"
+    t.string "ingredients_text_image_url"
     t.index ["locale"], name: "index_recipe_translations_on_locale"
     t.index ["recipe_id"], name: "index_recipe_translations_on_recipe_id"
   end

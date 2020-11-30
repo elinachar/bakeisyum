@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  translates :name, :slug, :short_description, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :cuisine, :keywords, fallbacks_for_empty_translations: true
+  translates :name, :slug, :short_description, :ingredients_text_image_url, :serving, :preparation_time, :cooking_time, :waiting_time, :original_recipie_author, :cuisine, :keywords, fallbacks_for_empty_translations: true
   extend FriendlyId
   friendly_id :name, :use => :globalize
   has_many :descriptions, dependent: :destroy, inverse_of: :recipe

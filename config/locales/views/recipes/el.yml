@@ -19,6 +19,8 @@ el:
       photos_from: "Φωτογραφίες από "
       share: "Μοιραστείτε τη συνταγή"
       jump_to_recipe: "Κατευθείαν στη Συνταγή"
+      hover_over_image_to_see_ingredients: "Περάστε το ποντίκι πάνω από την εικόνα για να δείτε τα υλικά"
+      tap_on_image_to_see_ingredients: "Πατήστε πάνω στην εικόνα για να δείτε τα υλικά"
       preparation_time: "Χρόνος Προετοιμασίας"
       waiting_time: "Χρόνος Αναμονής"
       cooking_time: "Χρόνος Μαγειρέματος"

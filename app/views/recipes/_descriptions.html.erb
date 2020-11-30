@@ -11,8 +11,8 @@
         <div class="hoverImg">
           <%= image_tag( @recipe.ingredients_text_image_url_url.to_s, alt: File.basename(@recipe.ingredients_text_image_url_url.to_s) , class: "img-responsive", lazy: false) %>
         </div>
-        <p class="not-touch-screens">Hover over the image to see the ingredients</p>
-        <p class="touch-screens">Tap on the image to see the ingredients</p>
+        <p class="not-touch-screens"><%= t('recipes.show.hover_over_image_to_see_ingredients') %></p>
+        <p class="touch-screens"><%= t('recipes.show.tap_on_image_to_see_ingredients') %></p>
       </div>
     <% else %>
       <%= image_tag( description.image_url_url.to_s, alt: File.basename(description.image_url_url.to_s) , class: "img-responsive" ) %>
