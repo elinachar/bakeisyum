@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
       end
     end
 
-    @recipes = @recipes.order("id DESC")
+    @recipes = @recipes.order('"recipes"."id" DESC')
     if params[:recipes_id].nil?
       @recipes = @recipes.first(6)
     else
