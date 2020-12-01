@@ -30,7 +30,11 @@ class RecipesController < ApplicationController
       end
     end
 
-    @recipes = @recipes.order('"recipes"."id" DESC')
+    if Rails.env.production?
+      @recipes = @recipes.order("id DESC")
+    else
+      @recipes = @recipes.order('"recipes"."id" DESC')
+    end
     if params[:recipes_id].nil?
       @recipes = @recipes.first(6)
     else
