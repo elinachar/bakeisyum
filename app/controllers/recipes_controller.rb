@@ -31,15 +31,15 @@ class RecipesController < ApplicationController
     end
 
     if Rails.env.production?
-      @recipes = @recipes.order("id DESC")
+      @recipes_index = @recipes.order("id DESC")
     else
-      @recipes = @recipes.order('"recipes"."id" DESC')
+      @recipes_index = @recipes.order('"recipes"."id" DESC')
     end
     if params[:recipes_id].nil?
-      @recipes = @recipes.first(6)
+      @recipes = @recipes_index.first(6)
     else
-      @new_recipes = @recipes.where("id < ?", params[:recipes_id][-1]).first(6)
-      @recipes = @recipes.where("id >= ?", @new_recipes.pluck(:id)[-1])
+      @new_recipes = @recipes_index.where("id < ?", params[:recipes_id][-1]).first(6)
+      @recipes = @recipes_index.where("id >= ?", @new_recipes.pluck(:id)[-1])
       respond_to do |format|
         format.html
         format.js

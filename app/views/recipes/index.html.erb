@@ -54,7 +54,7 @@
       <%= render @recipes %>
     </div>
 
-    <% if @recipes.size > 6 %>
+    <% if @recipes_index.size > 6 %>
       <div class="col-xs-12 text-center show-more-recipes">
         <%= link_to t('recipes.index.show_more_recipes'), recipes_path(recipes_id: @recipes.pluck(:id)), remote: true, class: "btn" %>
       </div>
