@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale.to_s %>">
   <head>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156495058-4"></script>
     <script>
@@ -139,80 +140,125 @@
 
   <body>
     <!-- Start navbar here -->
-    <div class="container-fluid navigation-bar">
-      <div class="row">
-        <%= link_to "Bake is Yum", root_path, { :class=>"logo" }%>
-        <i class="fa fa-bars navigation-bar-bars"></i>
-        <hr class="navigation-bar-hr-collapse">
-      </div>
+    <div id="wrapper">
+      <% if false %>
+      <div class="christmas">
+          <% if true %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-1", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-2", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-3", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-4", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-5", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-6", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-7", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-8", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-9", alt: 'candy-cane') %>
 
-      <%#= render "layouts/switch_language" %>
-
-      <div class="row navigation-bar-main-body">
-        <div class="col-md-offset-4 col-md-4 nav-links">
-          <ul>
-             <li><%= link_to t('navigation_bar.about'), about_path %></li>
-             <li><%= link_to t('navigation_bar.recipes'), recipes_path %></li>
-             <li><%= link_to t('navigation_bar.contact'), contact_path %></li>
-          </ul>
-        </div>
-
-        <div class="col-md-1 col-md-push-3 login">
-          <i class="fa fa-user-circle-o login-md"></i>
-          <div class="login-collapsed">
-            <% if user_signed_in? %>
-              <p><%= t 'navigation_bar.hi' %> <b><%= current_user.first_name %>!<i class="fa fa-angle-down"></i></p></b>
-              <ul>
-                <li><%= link_to(t('navigation_bar.my_account'), user_path(current_user)) %></li>
-                <li><%= link_to(t('navigation_bar.favorite_recipes'), user_favorites_path(current_user)) %></li>
-                <% if current_user.admin? %>
-                  <li><%= link_to(t('navigation_bar.manage_users'), users_path) %></li>
-                <% end %>
-                <li><%= link_to(t('navigation_bar.logout'), destroy_user_session_path, method: :delete) %></li>
-              </ul>
-            <% else %>
-              <%= link_to(('<span>' + t("navigation_bar.login_sign_up") + '</span><i class="fa fa-user-circle-o"></i>').html_safe, new_user_session_path) %>
-            <% end %>
-          </div>
-        </div>
-
-        <%= form_with(url: recipes_path, method: 'get', local: true, class: 'search-form form-horizontal col-md-3 col-md-pull-1') do |form| %>
-          <div class="form-group">
-            <div class="col-xs-10 search-input">
-              <%= form.text_field :q, id: 'q', value: params[:q], placeholder: t("navigation_bar.search"), size: 40, class: 'form-control' %>
-            </div>
-            <%= button_tag(class: 'search-button col-xs-2') do %>
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            <% end %>
-          </div>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-10", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-11", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-12", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-13", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-14", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-15", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-16", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-17", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-18", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-19", alt: 'candy-cane') %>
+          <%#= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-20", alt: 'candy-cane') %>
+          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-21", alt: 'candy-cane') %>
         <% end %>
-      </div><!-- end row -->
-
-      <div class="row">
-        <div class="col-md-10"></div>
-        <div class="col-md-2 login-dropdown">
-          <div class="arrow-up"></div>
-          <div class="login-dropdown-box">
-            <% if user_signed_in? %>
-              <ul>
-                <li><p><%= t 'navigation_bar.hi' %> <b><%= current_user.first_name %>!</p></b></li>
-                <li><%= link_to(t('navigation_bar.my_account'), user_path(current_user)) %></li>
-                <li><%= link_to(t('navigation_bar.favorite_recipes'), user_favorites_path(current_user)) %></li>
-                <% if current_user.admin? %>
-                  <li><%= link_to(t('navigation_bar.manage_users'), users_path) %><li>
-                <% end %>
-                <li><%= link_to(t('navigation_bar.logout'), destroy_user_session_path, method: :delete) %></li>
-              </ul>
-            <% else %>
-              <%= link_to(t('navigation_bar.login_sign_up'), new_user_session_path) %>
-            <% end %>
+      </div>
+      <% end %>
+      <div class="container-fluid navigation-bar">
+        <div class="row for-christmas">
+          <%= link_to "Bake is Yum", locale_root_path(locale: I18n.locale.to_s), { :class=>"logo" }%>
+          <% if false %>
+          <div class="christmas-tree d-md-none">
+            <%= image_tag( 'christmas-tree.png' , class: "img-responsive tree", alt: 'christmas tree') %>
+            <%= image_tag( 'christmas-ornaments.png' , class: "img-responsive ornaments", alt: 'christmas tree') %>
           </div>
+          <% end %>
+          <i class="fa fa-bars navigation-bar-bars"></i>
+          <hr class="navigation-bar-hr-collapse">
         </div>
-      </div><!-- end row -->
 
+        <div class='d-none d-lg-block'>
+          <%= render "layouts/switch_language" %>
+        </div>
 
+        <div class="row navigation-bar-main-body">
+          <% if false %>
+          <div class="christmas-tree d-xs-none col-md-2 col-md-offset-1">
+            <%= image_tag( 'christmas-tree.png' , class: "img-responsive tree", alt: 'christmas tree') %>
+            <%= image_tag( 'christmas-ornaments.png' , class: "img-responsive ornaments", alt: 'christmas tree') %>
+          </div>
+          <div class="col-md-offset-1 col-md-4 nav-links">
+          <% end %>
+          <div class="col-md-offset-4 col-md-4 nav-links">
+            <ul>
+              <div class='d-none d-lg-none'>
+                <%= render "layouts/switch_language" %>
+              </div>
+               <li><%= link_to t('navigation_bar.about'), about_path %></li>
+               <li><%= link_to t('navigation_bar.recipes'), recipes_path %></li>
+               <li><%= link_to t('navigation_bar.contact'), contact_path %></li>
+            </ul>
+          </div>
 
-    </div> <!-- end container-fluid -->
+          <div class="col-md-1 col-md-push-3 login">
+            <i class="fa fa-user-circle-o login-md"></i>
+            <div class="login-collapsed">
+              <% if user_signed_in? %>
+                <p><%= t 'navigation_bar.hi' %> <b><%= current_user.first_name %>!<i class="fa fa-angle-down"></i></p></b>
+                <ul>
+                  <li><%= link_to(t('navigation_bar.my_account'), user_path(current_user)) %></li>
+                  <li><%= link_to(t('navigation_bar.favorite_recipes'), user_favorites_path(current_user)) %></li>
+                  <% if current_user.admin? %>
+                    <li><%= link_to(t('navigation_bar.manage_users'), users_path) %></li>
+                  <% end %>
+                  <li><%= link_to(t('navigation_bar.logout'), destroy_user_session_path, method: :delete) %></li>
+                </ul>
+              <% else %>
+                <%= link_to(('<span>' + t("navigation_bar.login_sign_up") + '</span><i class="fa fa-user-circle-o"></i>').html_safe, new_user_session_path) %>
+              <% end %>
+            </div>
+          </div>
+
+          <%= form_with(url: recipes_path, method: 'get', local: true, class: 'search-form form-horizontal col-md-3 col-md-pull-1') do |form| %>
+            <div class="form-group">
+              <div class="col-xs-10 search-input">
+                <%= form.text_field :q, id: 'q', value: params[:q], placeholder: t("navigation_bar.search"), size: 40, class: 'form-control' %>
+              </div>
+              <%= button_tag(class: 'search-button col-xs-2') do %>
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              <% end %>
+            </div>
+          <% end %>
+        </div><!-- end row -->
+
+        <div class="row">
+          <div class="col-md-10"></div>
+          <div class="col-md-2 login-dropdown">
+            <div class="arrow-up"></div>
+            <div class="login-dropdown-box">
+              <% if user_signed_in? %>
+                <ul>
+                  <li><p><%= t 'navigation_bar.hi' %> <b><%= current_user.first_name %>!</p></b></li>
+                  <li><%= link_to(t('navigation_bar.my_account'), user_path(current_user)) %></li>
+                  <li><%= link_to(t('navigation_bar.favorite_recipes'), user_favorites_path(current_user)) %></li>
+                  <% if current_user.admin? %>
+                    <li><%= link_to(t('navigation_bar.manage_users'), users_path) %><li>
+                  <% end %>
+                  <li><%= link_to(t('navigation_bar.logout'), destroy_user_session_path, method: :delete) %></li>
+                </ul>
+              <% else %>
+                <%= link_to(t('navigation_bar.login_sign_up'), new_user_session_path) %>
+              <% end %>
+            </div>
+          </div>
+        </div><!-- end row -->
+      </div> <!-- end container-fluid -->
+    </div> <!-- end wrapper -->
     <!-- End navbar here -->
 
     <!-- main body here -->

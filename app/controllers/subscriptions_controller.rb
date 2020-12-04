@@ -9,7 +9,7 @@ class SubscriptionsController < ApplicationController
     respond_to do |format|
       if @privacy_policy == 1
         if @subscription.save
-          format.html { redirect_to basic_pages_index_path, notice: 'You have successfully subscribed to Bake is Yum!' }
+          format.html { redirect_to basic_pages_index_path, notice:  t('subscriptions.successfull_subscription') }
           format.json { render :show, status: :created, location: @subscription }
           format.js
           UserMailer.subscription_successful(@subscription, Recipe.where(public: true).last(3)).deliver_now
@@ -36,7 +36,7 @@ class SubscriptionsController < ApplicationController
   def unsubscribe
     @subscription = Subscription.find(params[:format])
     @subscription.destroy
-    redirect_to basic_pages_index_path, notice: 'You have successfully unsubscribed from our list.'
+    redirect_to basic_pages_index_path, notice: t('subscriptions.unsubscribe_successful')
   end
 
   def send_new_recipe_email

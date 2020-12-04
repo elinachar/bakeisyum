@@ -6,3 +6,4 @@ en:
     email_cannot_be_blank: cannot be blank
     email_is_invalid: is invalid
     email_has_already_been_taken: has already been taken
+    unsubscribe_successful: 'You have successfully unsubscribed from our list.'

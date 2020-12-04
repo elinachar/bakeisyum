@@ -1,4 +1,7 @@
 <% content_for :title, t("basic_pages.index.title") %>
+<% content_for :switch_path_en, url_for(locale_root_path(locale: "en")) %>
+<% content_for :switch_path_el, url_for(locale_root_path(locale: "el")) %>
+
 <!-- Carousel starts here -->
 <div class="container-fluid" id="carousel-index">
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

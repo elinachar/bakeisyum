@@ -45,7 +45,7 @@
   </div>
 
   <%= link_to t('users.show.edit_my_account'), edit_user_path(@user), class: 'btn btn-default' %>
-  <%= link_to t('users.show.delete_my_account'), @user, method: :delete, data: { confirm: 'Are you sure that you want to delele your account?' }, class: 'btn btn-default btn-red' %>
+  <%= link_to t('users.show.delete_my_account'), @user, method: :delete, data: { confirm: t('users.show.are_your_sure_to_delete_your_account') }, class: 'btn btn-default btn-red' %>
   <% if signed_in? && current_user.admin? %>
     <%= link_to t('users.show_all_users'), users_path, class: 'btn btn-default' %>
   <% end %>

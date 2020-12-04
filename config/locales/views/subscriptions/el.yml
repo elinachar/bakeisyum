@@ -1,8 +1,9 @@
 el:
   subscriptions:
-    successfull_subscription: "Έχετε εγγραφεί επιτυχώς στο Bake is Yum!"
+    successfull_subscription: "Έχεις εγγραφεί επιτυχώς στο newsletter του Bake is Yum!"
     you_will_receive_emails: "Από εδώ και στο εξής θα λαμβάνετε email με τις νέες μας συνταγές!"
     the_email: το email
     email_cannot_be_blank: δεν μπορεί να είναι άδειο
     email_is_invalid: είναι άκυρο
     email_has_already_been_taken: υπάρχει ήδη
+    unsubscribe_successful: 'Έχεις διαγραφεί με επιτυχία από το newsletter του Bake is Yum.'

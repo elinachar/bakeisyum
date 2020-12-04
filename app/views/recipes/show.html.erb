@@ -4,7 +4,8 @@
 <%= render "open_graph_protocol_tags" %>
 <%= render "structured_data" %>
 <%= render "twitter_card" %>
-
+<% content_for :switch_path_en, I18n.with_locale("en") {url_for(@recipe) } %>
+<% content_for :switch_path_el, I18n.with_locale("el") {url_for(@recipe) } %>
 
 <!-- Body -->
 <div class="container recipe-show w-85">

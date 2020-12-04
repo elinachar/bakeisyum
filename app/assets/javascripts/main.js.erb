@@ -1,4 +1,10 @@
 $(document).on('turbolinks:load', function() {
+  // Switch locale on html tag
+  $(".link-to-language.diactivated").click(function() {
+    var locale = $(this).data("locale");
+    window.document.documentElement.lang = locale;
+  })
+
   // Enable Lazy loading
   $("img").lazyload({
     threshold : 200,

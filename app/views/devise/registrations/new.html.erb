@@ -42,7 +42,11 @@
 
         <div class="field">
           <%= f.label t('users.contact_language') %>
-          <%= f.select :language, options_for_select([[t('users.contact_langugage_english'), 'en'], [t('users.contact_langugage_greek'), 'el']]) %>
+          <% if I18n.locale.to_s == "en" %>
+            <%= f.select :language, options_for_select([[t('users.contact_langugage_english'), 'en'], [t('users.contact_langugage_greek'), 'el']]) %>
+          <% else %>
+            <%= f.select :language, options_for_select([[t('users.contact_langugage_greek'), 'el'], [t('users.contact_langugage_english'), 'en']]) %>
+          <% end %>
         </div><br />
 
         <div class="field">

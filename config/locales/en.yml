@@ -1,4 +1,5 @@
 en:
+  locale: "en"
   title: "Bake is Yum"
   head:
     description: "Baking blog with dessert recipes of all kind from chocoholic Elina Charalampous with step by step recipes and demonstration pictures."

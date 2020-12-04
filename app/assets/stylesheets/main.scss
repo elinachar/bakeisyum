@@ -97,6 +97,15 @@ a:-webkit-any-link {
   display: none;
 }
 
+.d-lg-block {
+  display: block;
+}
+
+.d-lg-none {
+  display: none;
+}
+
+
 /* Switch Language */
 .switch-language {
   // width: 50px;
@@ -124,13 +133,268 @@ a:-webkit-any-link {
   }
 }
 
+.christmas {
+  // display: none;
+  height: 134px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  img {
+    width: 18px;
+    position: absolute;
+  }
+
+  img.hidden-on-load {
+    opacity: 0;
+    transition: opacity 4s;
+  }
+
+  img.hidden-on-load.appear {
+    opacity: 1;
+  }
+
+  #candy-1 {
+    top: 10px;
+    left: 3%;
+  }
+
+  #candy-2 {
+    top: 85px;
+    left: 1.5%;
+  }
+
+  #candy-3 {
+    top: 55px;
+    left: 6%;
+  }
+
+  #candy-4 {
+    top: 10px;
+    left: 21%;
+  }
+
+  #candy-5 {
+    top: 85px;
+    left: 19.5%;
+  }
+
+  #candy-6 {
+    top: 55px;
+    left: 25%;
+  }
+
+  #candy-7 {
+    top: 10px;
+    left: 31.5%;
+  }
+
+  #candy-8 {
+    top: 85px;
+    left: 30%;
+  }
+
+  #candy-9 {
+    top: 55px;
+    left: 34.5%;
+  }
+
+  #candy-10 {
+    top: 10px;
+    left: 62%;
+  }
+
+  #candy-11 {
+    top: 85px;
+    left: 60.5%;
+  }
+
+  #candy-12 {
+    top: 55px;
+    left: 65%;
+  }
+
+  #candy-13 {
+    top: 10px;
+    left: 72.5%;
+  }
+
+  #candy-14 {
+    top: 85px;
+    left: 71%;
+  }
+
+  #candy-15 {
+    top: 55px;
+    left: 75.5%;
+  }
+
+  #candy-16 {
+    top: 10px;
+    left: 83%;
+  }
+
+  #candy-17 {
+    top: 85px;
+    left: 81.5%;
+  }
+
+  #candy-18 {
+    top: 55px;
+    left: 86%;
+  }
+  #candy-19 {
+    top: 10px;
+    left: 93.5%;
+  }
+
+  #candy-20 {
+    // display: none;
+    top: 85px;
+    left: 92%;
+  }
+
+  #candy-21 {
+    top: 55px;
+    left: 96.5%;
+  }
+}
+
+#wrapper{
+  position: relative;
+  // height: 134px;
+}
+
+.shake-top {
+-webkit-animation: shake-top 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+      animation: shake-top 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes shake-top { //for christams
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+@keyframes shake-top {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+
+
+
 /* Navigation Bar */
 .navigation-bar {
+  z-index: 1;
   text-align: center;
   border-bottom: solid;
   border-color: $mint;
   border-width: 0.5px;
-  background-color: $offWhite;
+  // background-color: $offWhite; //redo after delete christmas
+  // height: 134px; //for christmas-tree
+  position: relative; // for-christmas
+  z-index: 100; // for christmas
+  overflow-y: hidden; // for christmas
+
+  .christmas-tree.d-md-none {
+    display: none;
+  }
+
+  .christmas-tree.d-xs-none {
+    display: block;
+    margin-top: -50px;
+
+    img {
+      width: 110px;
+    }
+
+    .ornaments {
+      margin-top: -110px;
+    }
+  }
+
+  .christmas-tree.d-xs-none.hidden-on-load {
+    margin-top: 60px;
+    transition:  margin-top 3s linear;
+
+    img {
+      background-image: none !important;
+    }
+
+    .ornaments  {
+      margin-top: -60px;
+    }
+
+  }
+
+  .christmas-tree.d-xs-none.hidden-on-load.appear {
+    margin-top: -50px;
+
+    .ornaments {
+      margin-top: -110px;
+    }
+  }
+
+  .candy {
+    width: 20px;
+  }
 }
 
 .logo {
@@ -443,6 +707,72 @@ footer:lang(el) {
 
 /* XS, SM and MD */
 @media only screen and (max-width: 991px) {
+  .d-lg-block {
+    display: none;
+  }
+
+  .d-lg-none {
+    display: block;
+  }
+  .christmas,
+  .navigation-bar,
+  #wrapper {
+    height: auto;
+  }
+
+  .for-christmas {
+    height: 68px;
+    overflow-y: hidden;
+  }
+
+  .christmas {
+    // display: none;
+    img {
+      display: none!important;
+    }
+  }
+
+  .switch-language {
+    position: static;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 14px;
+
+    a .link-to-language {
+      font-size: 17px;
+    }
+  }
+
+  .navigation-bar {
+    .christmas-tree.d-xs-none {
+      display: none;
+    }
+
+    .christmas-tree.d-md-none {
+      display: inline-block;
+      float: left;
+      margin-left : 20px;
+      margin-top: 10px;
+
+      img {
+        width: 60px;
+      }
+
+      .ornaments  {
+        margin-top: -60px;
+      }
+    }
+
+    .christmas-tree.d-md-none.hidden-on-load {
+      margin-top: 65px;
+      transition:  margin-top 3s linear;
+    }
+
+    .christmas-tree.d-md-none.hidden-on-load.appear {
+      margin-top: 10px;
+    }
+  }
+
   .logo {
     float: left;
     margin-left: 15px;

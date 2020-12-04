@@ -1,4 +1,7 @@
 <% content_for :title, "Editing " + @recipe.name + " - Bake is Yum" %>
+<% content_for :switch_path_en, I18n.with_locale("en") {url_for(edit_recipe_path(@recipe)) } %>
+<% content_for :switch_path_el, I18n.with_locale("el") {url_for(edit_recipe_path(@recipe)) } %>
+
 <div class="container-fluid new-edit-recipe">
   <!-- Tab links -->
   <div class="tab">
