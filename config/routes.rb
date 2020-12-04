@@ -7,7 +7,6 @@ Rails.application.routes.draw do
         resources :favorites
       end
 
-      # resources :recipes, param: :name do
       resources :recipes do
         resources :ratings
         resources :comments do
