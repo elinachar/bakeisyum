@@ -141,8 +141,8 @@
   <body>
     <!-- Start navbar here -->
     <div id="wrapper">
-      <% if false %>
-      <div class="christmas">
+      <% if true %>
+      <div class="christmas candies">
           <% if true %>
         <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-1", alt: 'candy-cane') %>
         <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-2", alt: 'candy-cane') %>
@@ -153,26 +153,25 @@
         <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-7", alt: 'candy-cane') %>
         <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-8", alt: 'candy-cane') %>
         <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-9", alt: 'candy-cane') %>
-
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-10", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-11", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-12", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-13", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-14", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-15", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-16", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-17", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-18", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-19", alt: 'candy-cane') %>
-          <%#= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-20", alt: 'candy-cane') %>
-          <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-21", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-10", alt: 'candy-cane') %>
+        <%#= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-11", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-12", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-13", alt: 'candy-cane') %>
+        <%#= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-14", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-15", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-16", alt: 'candy-cane') %>
+        <%#= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-17", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-18", alt: 'candy-cane') %>
+        <%#= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-19", alt: 'candy-cane') %>
+        <%#= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-20", alt: 'candy-cane') %>
+        <%= image_tag( 'candy-cane.png' , class: "img-responsive candy", id: "candy-21", alt: 'candy-cane') %>
         <% end %>
       </div>
       <% end %>
       <div class="container-fluid navigation-bar">
         <div class="row for-christmas">
           <%= link_to "Bake is Yum", locale_root_path(locale: I18n.locale.to_s), { :class=>"logo" }%>
-          <% if false %>
+          <% if true %>
           <div class="christmas-tree d-md-none">
             <%= image_tag( 'christmas-tree.png' , class: "img-responsive tree", alt: 'christmas tree') %>
             <%= image_tag( 'christmas-ornaments.png' , class: "img-responsive ornaments", alt: 'christmas tree') %>
@@ -187,14 +186,14 @@
         </div>
 
         <div class="row navigation-bar-main-body">
-          <% if false %>
+          <% if true %>
           <div class="christmas-tree d-xs-none col-md-2 col-md-offset-1">
             <%= image_tag( 'christmas-tree.png' , class: "img-responsive tree", alt: 'christmas tree') %>
             <%= image_tag( 'christmas-ornaments.png' , class: "img-responsive ornaments", alt: 'christmas tree') %>
           </div>
           <div class="col-md-offset-1 col-md-4 nav-links">
           <% end %>
-          <div class="col-md-offset-4 col-md-4 nav-links">
+          <!-- <div class="col-md-offset-4 col-md-4 nav-links"> -->
             <ul>
               <div class='d-none d-lg-none'>
                 <%= render "layouts/switch_language" %>

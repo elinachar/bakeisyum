@@ -92,7 +92,7 @@
         <%= f.hidden_field :rating, value: 5 %>
       <% end %>
       <div class="rating-count">
-        <% unless @recipe.ratings.empty? %>
+        <% unless @recipe.ratings.empty? || @rating.nil?%>
           <% if @rating % 1 == 0 %>
             <%=sprintf("%g", @rating)%>
           <% else %>

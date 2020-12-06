@@ -140,19 +140,22 @@ a:-webkit-any-link {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -100;
+  // z-index: -100;
   img {
     width: 18px;
     position: absolute;
+    z-index: 100;
   }
 
   img.hidden-on-load {
     opacity: 0;
     transition: opacity 4s;
+    z-index: 100;
   }
 
   img.hidden-on-load.appear {
     opacity: 1;
+    z-index: 100;
   }
 
   #candy-1 {
@@ -263,7 +266,7 @@ a:-webkit-any-link {
 
 #wrapper{
   position: relative;
-  // height: 134px;
+  height: 134px;
 }
 
 .shake-top {
@@ -347,10 +350,10 @@ a:-webkit-any-link {
   border-bottom: solid;
   border-color: $mint;
   border-width: 0.5px;
-  // background-color: $offWhite; //redo after delete christmas
-  // height: 134px; //for christmas-tree
+  background-color: $offWhite; //redo after delete christmas
+  height: 134px; //for christmas-tree
   position: relative; // for-christmas
-  z-index: 100; // for christmas
+  // z-index: 100; // for christmas
   overflow-y: hidden; // for christmas
 
   .christmas-tree.d-md-none {

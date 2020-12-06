@@ -11,10 +11,15 @@ $(document).on('turbolinks:load', function() {
     if ($(window).width() > 991) {
       if (x.css("display") == "none") {
         x.slideDown();
+        // For christmas tree
+        $(".navigation-bar").css("height", "auto");
       } else {
         x.slideUp();
+        // For christmas tree
+        $(".navigation-bar").css("height", "134px");
       };
     };
+
   };
 
   $(".login i").click(slideLoginDropdownMdLg).mouseover(slideLoginDropdownMdLg);
