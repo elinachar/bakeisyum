@@ -61,11 +61,36 @@
     <%= image_tag( @recipe.square_image_url_url(:show_thumb).to_s , class: "img-responsive", alt: @recipe.name) %>
     <h2><%= @recipe.name %></h2>
     <div class="rating text-center" data-rating="<%= @recipe.ratings.average(:rating)%>">
-      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 1, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-1" %>
-      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 2, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-2" %>
-      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 3, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-3" %>
-      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 4, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-4" %>
-      <%= link_to "<i class='far fa-star'></i>".html_safe, recipe_ratings_path(@recipe, rating: 5, recipe_id: @recipe.id), method: :post, remote: true, id: "rating-star-5" %>
+      <%= form_with(model: [@recipe, @recipe.ratings.build], remote: true, class: "form-rating") do |f| %>
+        <%= button_tag type: 'submit', class: "rating-star", id: "rating-star-1" do %>
+          <i class="far fa-star" aria-hidden="true"></i>
+        <% end %>
+        <%= f.hidden_field :rating, value: 1 %>
+      <% end %>
+      <%= form_with(model: [@recipe, @recipe.ratings.build], remote: true, class: "form-rating") do |f| %>
+        <%= button_tag type: 'submit', class: "rating-star", id: "rating-star-2" do %>
+          <i class="far fa-star" aria-hidden="true"></i>
+        <% end %>
+        <%= f.hidden_field :rating, value: 2 %>
+      <% end %>
+      <%= form_with(model: [@recipe, @recipe.ratings.build], remote: true, class: "form-rating") do |f| %>
+        <%= button_tag type: 'submit', class: "rating-star", id: "rating-star-3" do %>
+          <i class="far fa-star" aria-hidden="true"></i>
+        <% end %>
+        <%= f.hidden_field :rating, value: 3 %>
+      <% end %>
+      <%= form_with(model: [@recipe, @recipe.ratings.build], remote: true, class: "form-rating") do |f| %>
+        <%= button_tag type: 'submit', class: "rating-star", id: "rating-star-4" do %>
+          <i class="far fa-star" aria-hidden="true"></i>
+        <% end %>
+        <%= f.hidden_field :rating, value: 4 %>
+      <% end %>
+      <%= form_with(model: [@recipe, @recipe.ratings.build], remote: true, class: "form-rating") do |f| %>
+        <%= button_tag type: 'submit', class: "rating-star", id: "rating-star-5" do %>
+          <i class="far fa-star" aria-hidden="true"></i>
+        <% end %>
+        <%= f.hidden_field :rating, value: 5 %>
+      <% end %>
       <div class="rating-count">
         <% unless @recipe.ratings.empty? %>
           <% if @rating % 1 == 0 %>
@@ -77,7 +102,7 @@
               <%=number_with_precision(@rating, precision: 1)%>
             <% end %>
           <% end %>
-          <%= t('recipes.show.votes_from') %> <%= @recipe.ratings.load.size %> <%= t('recipes.show.votes') %>
+          <%= t('recipes.show.votes_from') %> <%= @recipe.ratings.count %> <%= t('recipes.show.votes') %>  <!-- do not use .load.size because total number is not updatededin ajax  -->
         <% end %>
       </div>
     </div>

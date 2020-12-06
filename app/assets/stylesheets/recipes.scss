@@ -301,7 +301,7 @@ h6:lang(el) {
       display: block;
       font-size: 24%;
     }
-    
+
     img {
       margin: 20px auto;
       width: 80%;
@@ -373,8 +373,23 @@ h6:lang(el) {
     .rating {
       margin-bottom: 10px;
 
-      i:hover {
-        color: $mint;
+      .form-rating {
+        display: inline-block!important;
+
+        button.rating-star {
+          background-color: white;
+          border: none;
+          padding: 0;
+        }
+
+        button.rating-star:focus,
+        button.rating-star:active {
+          outline: none;
+        }
+
+        i:hover {
+          color: $mint;
+        }
       }
 
       .rating-count {

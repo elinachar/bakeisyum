@@ -24,8 +24,9 @@ class RatingsController < ApplicationController
   # POST /ratings
   # POST /ratings.json
   def create
-    @rating = Rating.new(rating: params[:rating], recipe_id: params[:recipe_id])
-    @recipe = @rating.recipe
+    rating_value =  params[:rating][:rating]
+    @recipe =  Recipe.friendly.find(params[:recipe_id])
+    @rating = Rating.new(rating: params[:rating][:rating], recipe_id: @recipe.id)
     respond_to do |format|
       if @rating.save
         format.html { redirect_to @recipe, notice: 'Rating was successfully created.' }
