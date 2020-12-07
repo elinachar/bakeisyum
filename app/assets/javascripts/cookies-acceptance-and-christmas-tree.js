@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function() {
       $(".cookies-acceptance").addClass("slide-in-bottom ");
       sessionStorage.viewedAcceptCookies=1;
     } else {
-      $(".cookies-acceptance").show();
+      $(".cookies-acceptance").css({"opacity": "1", "display": "block"});
     };
 
   }
