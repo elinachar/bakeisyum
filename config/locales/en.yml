@@ -34,3 +34,8 @@ en:
   date:
     formats:
       recipe: "%B %d, %Y"
+  accept_cookies:
+    accept_cookies_info: "Bake is Yum uses cookies to improve your online experience and enable certain functionallity. By using Bake is Yum you agree to its use of cookies. Bake is Yum protects your data. You can learn more "
+    here: here
+    accept: Accept
+    accept_html: "Accept  <i class='fas fa-cookie'></i> <i class='fas fa-cookie-bite'></i>"

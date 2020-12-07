@@ -34,3 +34,7 @@ el:
   date:
     formats:
       recipe: "%d-%m-%Y"
+  accept_cookies:
+    accept_cookies_info: "Το Bake is Yum χρησιμοποιεί cookies για την καλύτερη online εμπειρία για εσάς και για να εξασφαλίσει συγκεκριμένές λειτουργίες. Με την επίσκεψή σας στο Bake is Yum συμφωνείτε στη χρήση των cookies που κάνει. Το Bake is Yum σέβεται και προστατεύει τα προσωπικά σας δεδομένα. Μπορείτε να δείτε περισσότερες πληροφορίες "
+    here: εδώ
+    accept_html: "Αποδοχή  <i class='fas fa-cookie'></i> <i class='fas fa-cookie-bite'></i>"

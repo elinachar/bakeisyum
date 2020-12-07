@@ -1,16 +1,10 @@
 $(document).on('turbolinks:load', function() {
-  // setTimeout(appearChristmasTree, 500);
-  // setTimeout(shakeOrnaments, 3600);
-  // setTimeout(appearCandies, 800);
-
-
-  if (!sessionStorage.viewed){
-    console.log("no session vied")
+  if (!sessionStorage.viewedTree){
     $(".christmas img, .christmas-tree").addClass("hidden-on-load");
     setTimeout(appearChristmasTree, 500);
     setTimeout(shakeOrnaments, 3600);
     setTimeout(appearCandies, 800);
-    sessionStorage.viewed=1;
+    sessionStorage.viewedTree=1;
   } else {
     $(".christmas img").addClass("hidden-on-load");
     setTimeout(appearCandies, 300);
@@ -18,7 +12,7 @@ $(document).on('turbolinks:load', function() {
   };
 
   $(window).bind('beforeunload',function(){
-    sessionStorage.removeItem('viewed');
+    sessionStorage.removeItem('viewedTree');
   });
 
   function appearChristmasTree() {

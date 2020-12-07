@@ -292,5 +292,12 @@
       </div> <!-- end container-fluid -->
     </footer>
     <!-- End footer here -->
+
+    <!-- Start cookies acceptance -->
+    <div class="cookies-acceptance text-center">
+      <p><%= t('accept_cookies.accept_cookies_info') %> <%= link_to t('accept_cookies.here'), privacy_policy_path%>.</p>
+      <%= button_tag t('accept_cookies.accept_html'), class: "btn", id: "accept-cookies" %>
+    </div>
+    <!-- End cookies acceptance -->
   </body>
 </html>
