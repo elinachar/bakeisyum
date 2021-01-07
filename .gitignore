@@ -38,3 +38,6 @@
 # Ignore config/local_env.yml
 # Real enviroment variables in production
 /config/local_env.yml
+
+#Ignore public uploads
+/public/uploads
