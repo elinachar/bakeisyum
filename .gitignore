@@ -41,3 +41,6 @@
 
 #Ignore public uploads
 /public/uploads
+
+#Ignore sitemap
+/public/public/sitemap.xml.gz
