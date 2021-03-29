@@ -24,8 +24,8 @@ body:lang(en) {
 
 html:lang(el),
 body:lang(el) {
-  font-family: 'Alegreya Sans', sans-serif;
-  // font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 .el-font {
@@ -577,7 +577,7 @@ a:-webkit-any-link {
 .login-dropdown-box:lang(el),
 .login-dropdown-box a:lang(el) {
   color: white;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 300;
 }
 
@@ -616,8 +616,9 @@ a:-webkit-any-link {
   text-align: left;
 }
 
+
 .login-collapsed p:lang(el) {
-  font-size: 19px;
+  // font-size: 17px;
   font-weight: 300;
 }
 
