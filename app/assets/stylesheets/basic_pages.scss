@@ -30,6 +30,10 @@
     @include transform(translate(-50%, -50%));
     padding: 20px;
   }
+
+  a:lang(el) {
+    font-weight: 300;
+  }
 }
 
 .carousel-caption a::after,
@@ -142,7 +146,12 @@
 }
 
 .recipe-landing-description {
+  margin-top: 15px;
   font-size: 17px;
+}
+
+.recipe-landing-description:lang(el) {
+  font-size: 18px;
 }
 
 .recipe-landing-description a {

@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   end
   root 'basic_pages#index'
 
+  get 'char', to: 'basic_pages#char'
+
   scope "/:locale" do
     get "/", to: "basic_pages#index", as: :locale_root
   end

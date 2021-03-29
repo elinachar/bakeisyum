@@ -182,6 +182,10 @@ h6:lang(el) {
 .recipe-show {
   margin-top: 10px;
 
+  h2:lang(el) {
+    font-weight: 400;
+  }
+
   p,
   li {
     font-size: 17px;
@@ -189,9 +193,14 @@ h6:lang(el) {
 
   p:lang(el),
   li:lang(el) {
-    // font-size: 18px;
-    font-weight: 300;
+    font-size: 18px;
+    // font-weight: 300;
   }
+
+  .borrowed-recipe-photos:lang(el) {
+    font-size: 16px;
+  }
+
 
   h6 {
     color: $mint;
@@ -199,15 +208,21 @@ h6:lang(el) {
   }
 
 
-h6:lang(el) {
-  font-weight: 400;
-  font-size: 16px;
-}
+  h6:lang(el) {
+    font-weight: 400;
+    font-size: 16px;
+  }
 
   h6,
   .borrowed-recipe-photos,
   .notes li {
     font-style: italic;
+  }
+
+  .borrowed-recipe-photos:lang(el),
+  .notes li:lang(el) {
+    font-style: normal;
+    font-weight: 300;
   }
 
   .recipe-introduction,
