@@ -1,4 +1,4 @@
 <h3><%= t('recipes.show.notes') %></h3>
 <% @notes.each do |note| %>
-  <li><p><%= simple_format(note.note) %></p></li>
+  <li><p><%= note.note %></p></li>
 <% end %>
