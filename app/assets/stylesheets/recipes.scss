@@ -214,15 +214,9 @@ h6:lang(el) {
   }
 
   h6,
-  // .borrowed-recipe-photos,
+  .borrowed-recipe-photos,
   .notes li {
     font-style: italic;
-  }
-
-  .borrowed-recipe-photos:lang(el),
-  .notes li:lang(el) {
-    // font-style: normal;
-    // font-weight: 300;
   }
 
   .recipe-introduction,
@@ -763,6 +757,17 @@ h6:lang(el) {
 
     p.touch-screens {
       display: block;
+    }
+  }
+
+  .recipe-show {
+    .borrowed-recipe-photos:lang(el),
+    .notes li:lang(el) {
+      font-style: normal;
+    }
+
+    .borrowed-recipe-photos:lang(el) {
+      font-size: 15px;
     }
   }
 }
