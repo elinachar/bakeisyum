@@ -19,13 +19,13 @@
       <h2><%= @recipe.name %></h2>
       <h6><%= t('recipes.show.posted_on', date: l( @recipe.created_at, format: t('date.formats.recipe'))) %></h6>
       <% unless @recipe.original_recipie_author.nil? %>
-        <p class="borrowed-recipe-photos text-center"><%= t('recipes.show.borrowed_from') %>
+        <p class="borrowed-recipe-photos text-center"><i><%= t('recipes.show.borrowed_from') %>
         <% unless @recipe.original_recipie_url.empty?%>
            <%= link_to @recipe.original_recipie_author, @recipe.original_recipie_url, target: "_blank" %>
         <% else %>
           <%= @recipe.original_recipie_author %>
         <% end %>
-        <%= t('recipes.show.and_modified') %></p>
+        <%= t('recipes.show.and_modified') %></i></p>
       <% end %>
 
       <% unless @recipe.photos_from.empty? %>
