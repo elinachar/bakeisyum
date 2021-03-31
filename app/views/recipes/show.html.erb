@@ -14,6 +14,7 @@
       <%= image_tag( @recipe.image_url_url.to_s , class: "img-responsive", alt: @recipe.name, lazy: false) %>
     </div>
 
+    <!-- <div class="recipe-introduction col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0"> -->
     <div class="recipe-introduction col-sm-12">
       <h2><%= @recipe.name %></h2>
       <h6><%= t('recipes.show.posted_on', date: l( @recipe.created_at, format: t('date.formats.recipe'))) %></h6>
@@ -36,7 +37,7 @@
         <% end %>
         <%= t('recipes.show.and_modified') %></p>
       <% end %>
-      <p><%= @recipe.short_description.html_safe %></p>
+      <p class="short-description"><%= @recipe.short_description.html_safe %></p>
     </div>
   </div> <!-- end row -->
 

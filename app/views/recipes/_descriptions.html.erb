@@ -1,6 +1,6 @@
 <% @descriptions.each do |description| %>
   <% unless description.description.nil? %>
-    <p><%= description.description.html_safe %></p>
+    <p class="recipe-description"><%= description.description.html_safe %></p>
   <% end %>
   <% unless description.image_url_url.nil? %>
     <%if !@recipe.ingredients_image_url.nil? && (File.basename(@recipe.ingredients_image_url_url.to_s) == File.basename(description.image_url_url.to_s)) %>

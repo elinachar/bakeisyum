@@ -695,6 +695,15 @@ h6:lang(el) {
   .show-more-recipes .btn {
     width: 70%;
   }
+
+  .recipe-show {
+    .short-description,
+    .recipe-description {
+      width: 90%;
+      margin: auto;
+      text-align: justify;
+    }
+  }
 }
 
 // XS and SM Devices
