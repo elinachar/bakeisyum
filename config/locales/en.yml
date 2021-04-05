@@ -26,6 +26,7 @@ en:
     hi: Hi
     my_account: "My account"
     favorite_recipes: "Favorite Recipes"
+    manage_instagram_posts: "Manage Instagram Posts"
     manage_users: "Manage users"
     logout: "Logout"
   footer:

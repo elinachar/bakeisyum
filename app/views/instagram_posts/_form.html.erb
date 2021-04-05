@@ -1,0 +1,41 @@
+<%= form_with(model: instagram_post, local: true) do |f| %>
+  <% if instagram_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(instagram_post.errors.count, "error") %> prohibited this instagram_post from being saved:</h2>
+
+      <ul>
+      <% instagram_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1 recipe-form">
+      <div class="form-group">
+        <%= f.label :recipe_title %>
+        <%= f.text_field :recipe_title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :recipe_href %>
+        <%= f.text_field :recipe_href, class: 'form-control' %>
+      </div>
+
+      <div class="form-group row">
+        <%= f.label :image_url %><br>
+        <div class="col-xs-6" style="padding-left: 0">
+          <%= f.file_field :image_url %>
+        </div>
+        <div class="col-xs-6" style="padding-right: 0">
+          <%= File.basename(@instagram_post.image_url_url.to_s)%><br>
+        </div>
+      </div>
+
+      <div class="actions btn-submit">
+        <%= f.submit class: 'btn w-100 m-auto' %>
+      </div>
+    </div>
+  </div>
+<% end %>

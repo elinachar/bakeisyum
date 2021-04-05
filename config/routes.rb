@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       end
       get :send_new_recipe_email, to: 'subscriptions#send_new_recipe_email', as: :send_new_recipe_email
 
+      resources "instagram-posts", :controller => :instagram_posts, :as => :instagram_posts
+
       get 'basic_pages/index'
       get 'about', to: 'basic_pages#about'
       get 'contact', to: 'basic_pages#contact'
@@ -31,8 +33,6 @@ Rails.application.routes.draw do
     # end
   end
   root 'basic_pages#index'
-
-  get 'char', to: 'basic_pages#char'
 
   scope "/:locale" do
     get "/", to: "basic_pages#index", as: :locale_root

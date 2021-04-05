@@ -1,0 +1,20 @@
+<% if instagram_post.recipe_title and instagram_post.image_url_url %>
+  <div class="col-xs-4 instagram-card">
+    <%= link_to instagram_post.recipe_href.to_s, :action => 'go', target: "_blank" do %>
+      <div class="recipe-card">
+        <div class="recipe-img">
+          <%= image_tag( instagram_post.image_url.url.to_s , class: "img-responsive", alt: instagram_post.recipe_title, lazy: true) %>
+        </div>
+        <!-- <p><%#= instagram_post.recipe_title %></p> -->
+        <% if false %>
+        <% if signed_in? && (current_user.admin? || current_user.author?) %>
+          <div class ="recipe-links-index">
+            <%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_instagram_post_path(instagram_post) %>
+            <%= link_to '<i class="fa fa-trash-o" ></i>'.html_safe, instagram_post, method: :delete, data: { confirm: 'Are you sure that you want to delete this Instagram Post? You cannot undo this action.' } %>
+          </div> <!-- end recipe-links-index -->
+        <% end %>
+        <% end %>
+      </div> <!-- end recipe-card -->
+    <% end %>
+  </div>
+<% end %>

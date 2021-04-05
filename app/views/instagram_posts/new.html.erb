@@ -1,0 +1,46 @@
+<% content_for :title, "Create New Instagram Post - Bake is Yum" %>
+<div class="container-fluid new-edit-recipe">
+  <div class="tab">
+    <% if I18n.locale.to_s == "en" %>
+      <button class="tablinks active" id="show-en-tab">English</button>
+      <button class="tablinks el-font" id="show-el-tab">Ελληνικά</button>
+    <% else %>
+      <button class="tablinks" id="show-en-tab">English</button>
+      <button class="tablinks active el-font" id="show-el-tab">Ελληνικά</button>
+    <% end %>
+  </div>
+
+  <!-- Tab content -->
+  <% if I18n.locale.to_s == "en" %>
+    <div id="en-tab" class="tabcontent">
+  <% else %>
+    <div id="en-tab" class="tabcontent d-none">
+  <% end %>
+    <h1>New Link for Instagram Post</h1>
+    <% I18n.with_locale(:en) do %>
+      <%= render 'form', instagram_post: @instagram_post %>
+    <% end %>
+    <div class="row cancel-editing text-center">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= link_to 'Cancel Creating New Instagram Post'.html_safe, instagram_posts_path, class: 'btn w-100 m-auto' %>
+      </div>
+    </div>
+  </div>
+
+  <% if I18n.locale.to_s == "en" %>
+    <div id="el-tab" class="tabcontent el-font d-none">
+  <% else %>
+    <div id="el-tab" class="tabcontent el-font">
+  <% end %>
+    <h1>Νέος Σύνδεσμος για Instagram Post</h1>
+    <% I18n.with_locale(:el) do %>
+      <%= render 'form', instagram_post: @instagram_post %>
+    <% end %>
+    <div class="row cancel-editing text-center">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= link_to 'Ακύρωση Δημιουργίας Νέου Συνδέσμου Instagram Post'.html_safe, @instagram_post, class: 'btn w-100 m-auto' %>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end container -->

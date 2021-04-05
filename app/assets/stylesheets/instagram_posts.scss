@@ -1,0 +1,23 @@
+.instagram-posts-index {
+  .btn-new-instagram-post {
+    padding-top: 20px;
+  }
+
+  h1 {
+    font-size: 30px!important;
+  }
+}
+
+
+// XS and SM Devices
+@media (max-width: 767px) {
+  .instagram-posts-index {
+    h1 {
+      font-size: 25px!important;
+    }
+    .instagram-card {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+}

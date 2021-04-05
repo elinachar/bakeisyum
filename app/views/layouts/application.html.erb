@@ -246,6 +246,7 @@
                   <li><%= link_to(t('navigation_bar.my_account'), user_path(current_user)) %></li>
                   <li><%= link_to(t('navigation_bar.favorite_recipes'), user_favorites_path(current_user)) %></li>
                   <% if current_user.admin? %>
+                    <li><%= link_to(t('navigation_bar.manage_instagram_posts'), instagram_posts_path) %></li>
                     <li><%= link_to(t('navigation_bar.manage_users'), users_path) %><li>
                   <% end %>
                   <li><%= link_to(t('navigation_bar.logout'), destroy_user_session_path, method: :delete) %></li>

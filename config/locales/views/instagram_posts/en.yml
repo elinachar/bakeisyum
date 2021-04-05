@@ -1,0 +1,13 @@
+en:
+  instagram_posts:
+    index:
+      links_to_recipes: "Links to Recipes from Instagram Posts"
+      title: "Get the recipe of your favorite Instagram Post!"
+      add_new_instagram_post: "Add New Instagram Post"
+      head:
+        name: "Linking Instagram Posts to Bake is Yum's recipes"
+        description: "Collection Page with links to Bake is Yum's recipes for each Instagram post."
+    show:
+      edit_instagram_post: Edit Instagram Post
+      delete_instagram_post: Delete Instagram Post
+      go_back_to_all_instagram_posts: Go Back to All Instagram Posts

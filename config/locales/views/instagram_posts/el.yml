@@ -1,0 +1,13 @@
+el:
+  instagram_posts:
+    index:
+      links_to_recipes: "Σύνδεσμοι για Συνταγές από τις Δημοσιέυσεις στο Instagram"
+      title: "Δες τη συνταγή της αγαπημένης σου ανάρτησης στο Instagram!"
+      add_new_instagram_post: "Προσθήκη νέου Instagram Post"
+      head:
+        name: "Σύνδεσμοι για τις συνταγές του Bake is Yum από τις αναρτήσεις στο Instagram"
+        description: "Σελίδα με συλλογή από συνδέσμους για τις συνταγές του Bake is Yum βάση των αναρτήσεων στο Instagram"
+    show:
+      edit_instagram_post: Επεξεργασία Instagram Post
+      delete_instagram_post: Διαγραφή Instagram Post
+      go_back_to_all_instagram_posts: Πίσω σε όλα τα Instagram Posts

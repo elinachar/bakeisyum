@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_075510) do
+ActiveRecord::Schema.define(version: 2021_04_05_122925) do
 
   create_table "comments", force: :cascade do |t|
     t.string "cοmmentator"
@@ -87,6 +87,25 @@ ActiveRecord::Schema.define(version: 2020_11_30_075510) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["part_id"], name: "index_ingredients_on_part_id"
+  end
+
+  create_table "instagram_post_translations", force: :cascade do |t|
+    t.integer "instagram_post_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "recipe_title"
+    t.string "recipe_href"
+    t.index ["instagram_post_id"], name: "index_instagram_post_translations_on_instagram_post_id"
+    t.index ["locale"], name: "index_instagram_post_translations_on_locale"
+  end
+
+  create_table "instagram_posts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_url"
+    t.string "recipe_title"
+    t.string "recipe_href"
   end
 
   create_table "instruction_translations", force: :cascade do |t|

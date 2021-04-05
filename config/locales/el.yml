@@ -26,6 +26,7 @@ el:
     hi: "Γειά σου"
     my_account: "Ο λογαριασμός μου"
     favorite_recipes: "Αγαπημένες μου Συνταγές"
+    manage_instagram_posts: "Διαχείρηση Instagram Posts"
     manage_users: "Διαχείριση Χρηστών"
     logout: "Αποσύνδεση"
   footer:
