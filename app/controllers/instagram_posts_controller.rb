@@ -5,11 +5,15 @@ class InstagramPostsController < ApplicationController
   # GET /instagram_posts
   # GET /instagram_posts.json
   def index
-    @instagram_posts = InstagramPost.all
+    @instagram_posts = InstagramPost.paginate(page: params[:page], per_page: 6)
     if Rails.env.production?
       @instagram_posts = @instagram_posts.order("id DESC")
     else
       @instagram_posts = @instagram_posts.order('"instagram_posts"."id" DESC')
+    end
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

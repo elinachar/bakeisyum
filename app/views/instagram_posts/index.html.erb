@@ -42,8 +42,12 @@
 
   <h1><%= t('instagram_posts.index.title') %></h1>
   <div class="row">
-    <div class="recipes-list col-xs-12 col-md-10 col-md-offset-1">
+    <div class="recipes-list col-xs-12 col-md-10 col-md-offset-1" id="instagram-posts">
       <%= render @instagram_posts %>
+    </div>
+
+    <div id="infinite-scrolling" class="sr-only">
+      <%= will_paginate %>
     </div>
   </div> <!-- end row -->
 </div> <!-- end container -->

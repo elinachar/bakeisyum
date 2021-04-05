@@ -1,0 +1,7 @@
+$('#instagram-posts').append('<%= j render @instagram_posts %>');
+<% if @instagram_posts.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @instagram_posts %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

@@ -3,7 +3,7 @@
     <%= link_to instagram_post.recipe_href.to_s, :action => 'go', target: "_blank" do %>
       <div class="recipe-card">
         <div class="recipe-img">
-          <%= image_tag( instagram_post.image_url.url.to_s , class: "img-responsive", alt: instagram_post.recipe_title, lazy: true) %>
+          <%= image_tag( instagram_post.image_url.url.to_s , class: "img-responsive", alt: instagram_post.recipe_title, lazy: false) %>
         </div>
         <!-- <p><%#= instagram_post.recipe_title %></p> -->
         <% if signed_in? && (current_user.admin? || current_user.author?) %>
