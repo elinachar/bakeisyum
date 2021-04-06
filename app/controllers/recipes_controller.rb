@@ -23,10 +23,10 @@ class RecipesController < ApplicationController
     # 4. etc for the next search terms
     if params[:q]
       @search_term = params[:q]
-      # search_terms = @search_term.split(/\W+/)
       search_terms = @search_term.split(" ")
+      locale = I18n.locale
       search_terms.each do |term|
-        @recipes = @recipes.search(term).distinct
+        @recipes = @recipes.search(term, locale).distinct
       end
     end
 

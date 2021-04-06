@@ -20,10 +20,12 @@ class Recipe < ApplicationRecord
   mount_uploader :ingredients_image_url, ImageUploader
   mount_uploader :ingredients_text_image_url, ImageUploader
 
-  def self.search(search_term)
-    # Recipe.left_outer_joins(:ingredients).where('recipes.name LIKE :search OR recipes.short_description LIKE :search  OR recipes.keywords LIKE :search OR ingredients.name LIKE :search', search: "%#{search_term}%")
-    Recipe.left_outer_joins(:ingredients).where('recipes.name LIKE :search OR recipes.keywords LIKE :search OR ingredients.name LIKE :search', search: "%#{search_term}%")
+  def self.search(search_term,locale)
+    # It works on production also for greek but not on development even search is in lower case
+    Recipe.with_translations(locale).where('recipe_translations.name LIKE :search OR recipe_translations.keywords LIKE :search', search: "%#{search_term}%")
+    # Recipe.with_translations(locale).where('LOWER(recipe_translations.name) LIKE :search OR LOWER(recipe_translations.keywords) LIKE :search', search: "%#{search_term.downcase}%")
   end
+
 
   # def to_param
   #   name.parameterize
