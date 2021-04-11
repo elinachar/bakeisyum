@@ -43,4 +43,7 @@
 /public/uploads
 
 #Ignore sitemap
-/public/public/sitemap.xml.gz
+/public/sitemap.xml.gz
+
+#Ignore ads.txt
+/public/ads.txt
