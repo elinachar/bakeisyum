@@ -1,4 +1,8 @@
 <% content_for :title, t("basic_pages.index.title") %>
+<%= content_for :google_adsense do %>
+  <script data-ad-client="pub-6444566767940880" async src="https://pagead2.googlesyndication.com/
+pagead/js/adsbygoogle.js"></script>
+<% end %>
 <% content_for :switch_path_en, url_for(locale_root_path(locale: "en")) %>
 <% content_for :switch_path_el, url_for(locale_root_path(locale: "el")) %>
 

@@ -32,6 +32,11 @@
   </script>
 <% end %>
 
+<%= content_for :google_adsense do %>
+  <script data-ad-client="pub-6444566767940880" async src="https://pagead2.googlesyndication.com/
+pagead/js/adsbygoogle.js"></script>
+<% end %>
+
 
 <div class="container recipes-index instagram-posts-index">
   <% if signed_in? && (current_user.admin? || current_user.author?) %>
